@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<htmnl>
+<head>
+  <meta charset="UTF-8">
+  <title>logo</title>
+  <style>
+
+    #main_wrap{
+      position: relative;
+      height: 100%;
+      width: 1400px;
+      margin: 0 auto;
+    }
+    
+    /* 헤더 부분 */
+    #main_header{
+      position: relative;
+      height: 80px;
+      width: 1400px;
+      margin-bottom: 0;
+    }
+    h1.logo{
+      position: absolute;
+      left: 10px;
+    }
+    .login{
+      position: absolute;
+      top: 40px;
+      right: 10px;
+    }
+
+    #main_header a {
+      text-decoration: none;
+    }
+
+    /* 메인 컨텐츠 부분 */
+    
+    #content_wrap{
+      position: relative;
+      width: 1400px;
+      height: 785px;
+    }
+
+    #main_avi{
+      position: absolute;
+      /*border: 1px solid black;*/
+    }
+
+    #timeline{
+      position: absolute;
+      top: 0;
+      width: 750px;
+      height: 785px;
+    }
+    
+    #timeline:hover, .h1 {
+      color: white;
+      background: url("beer1.png");
+      background-size: 750px 785px;
+      background-repeat: no-repeat;
+    }
+
+    #beerinfo:hover, .h1 {
+      color: white;
+      background: url("beer2.png");
+      background-size: 650px 261px;
+      background-repeat: no-repeat;
+    }
+
+    #beermarket:hover, .h1 {
+      color: white;
+      background: url("beer3.png");
+      background-size: 650px 261px;
+      background-repeat: no-repeat;
+    }
+
+    #beerboard:hover, .h1 {
+      color: white;
+      background: url("beer1.png");
+      background-size: 650px 261px;
+      background-repeat: no-repeat;
+    }
+          
+    #beerinfo{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 650px;
+      height: 261px;
+    }
+    #beermarket{
+      position: absolute;
+      top: 261px;
+      right: 0;
+      width: 650px;
+      height: 261px;
+    }
+   #beerboard{
+      position: absolute;
+      top: 522px;
+      right: 0;
+      width: 650px;
+      height: 261px;
+    }
+
+    .content_title{
+      position: absolute;
+      float;
+    }
+
+   
+    /* 푸터 부분 */
+    #main_footer{
+      position: relative;
+      width: 1400px;
+      height: 70px;
+      bottom: 0;
+    }
+
+    .snsbutton{
+      position: absolute;
+      float: right;
+      bottom: 30px;
+      right: 5px;
+    }
+
+    .copylogo{
+      position: relative;
+      width: 100px;
+      margin: 0 auto;
+      
+    }
+    .footer_menu{
+      position: absolute;
+      right: 30px;
+      bottom: 5px;
+    }
+
+
+  </style>
+
+  <script language="javascript">
+    function openlogin() {
+      window.open('login01.html','popup','width=500,height=400, resizable=no');
+      }
+  </script>
+</head>
+<body>
+<div id="main_wrap">
+  <header id="main_header">
+    <h1 class="logo">
+      <a href="main01.html">Logo</a>
+    </h1>
+    <div class="login">
+      <span><a href="javascript:openlogin();">login</a></span>
+      <span><a href="#">menu</a></span>
+    </div>
+
+  </header>
+  
+  <div id="content_wrap">
+    <div id="main_avi">
+      <video src="test01.mp4" type="video/mp4" width="1400px" autoplay loop ></video>
+    </div>
+    <div id="timeline" onclick="location.href='timeline01.html'">
+      <h1 class="content_title">Time Line</h1>
+    </div>
+
+    <div id="beerinfo" onclick="location.href='http://www.google.com'">
+    <h1 class="content_title">Beer Info</h1>
+    </div>
+
+    <div id="beermarket" onclick="location.href='http://cafe.naver.com'">
+      <h1 class="content_title">Beer Market</h1>
+    </div>
+
+    <div id="beerboard" onclick="location.href='http://www.naver.com'">
+      <h1 class="content_title">beer Board</h1>
+    </div>
+
+  </div>
+
+  <footer id="main_footer">
+    <p class="copylogo">&copy; logo</p>
+    <div class="footer_menu">
+      <div class="snsbutton">
+        <button>facebook</button>
+        <button>google</button>
+      </div>
+
+      <span><a href="#">about</a></span>
+      <span><a href="#">help</a></span>
+      <select name="language">
+      	<option selected>Korean</option>
+    	  <option>English</option>
+      </select>
+    </div>
+  </footer>
+</div>
+
+	
+</body>
+</htmnl>
