@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<htmnl>
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <style>
+
+  #contents {
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid blue;
+    width: 600px;
+    height: 600px;
+    padding: 10px 10px;
+  }
+  #contents h1{
+    text-align: center;
+  }
+  #signUpForm {
+    position: relative;
+    border: 1px solid green;
+    margin: 0 auto;
+    height: 500px;
+    padding: 10px 10px;
+  }
+
+  .singUpText {
+    width: 300px;
+    height: 20px;
+    margin: 5px auto;
+  }
+
+  .checkEmail {
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    right: 190px;
+    top : 35px;
+  }
+
+  #addtionalInformation {
+    position: absolute;
+    border: 1px solid yellow;
+    margin: 5px auto;
+  }
+
+
+  #btnMenu {
+    position: absolute;
+    border: 1px solid red;
+    width: 300px;
+    height: 50px;
+    margin: 3px auto;
+    bottom: 0;
+  }
+  .okcancelbtn {
+    margin: 0;
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+  }
+
+
+
+  
+  </style>
+  <script language="javascript">
+  function winsize() {
+    window.resizeTo(800,800);
+  }
+  </script>
+
+</head>
+<body onload="winsize()">
+
+  <div id="contents">
+    <h1>회원가입</h1>
+    <div id="signUpForm">
+      이메일<br>
+      <input action="" method="" type="text" name="email" class="singUpText" placeholder="이메일을입력하세요"/><br>
+      비밀번호<br>
+      <input action="" method="" type="text" name="password" class="singUpText" placeholder="비밀번호를입력하세요"/><br>
+      비밀번호 확인<br>
+      <input action="" method="" type="text" name="confirmpassword" class="singUpText" placeholder="비밀번호를입력하세요"/><br>
+      닉네임<br>
+      <input action="" method="" type="text" name="nickname" class="singUpText" placeholder="닉네임을입력하세요"/><br> 
+
+      <div id="addtionalInformation">
+      생년월일 
+      <select name="birthYear">
+      <option value="1996">1996</option>
+      <option value="1995">1995</option>
+      <option value="1994">1994</option>
+      <option value="1993">1993</option>
+      <option value="1992">1992</option>
+      <option value="1991">1991</option>
+      <option value="1990">1990</option>
+      <option value="1989">1989</option>
+      <option value="1988">1988</option>
+      <option value="1987">1987</option>
+      <option value="1986">1986</option>
+      <option value="1985">1985</option>
+      <option value="1984">1984</option>
+      <option value="1983">1983</option>
+      </select>
+      <select name="birthMonth">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      </select>
+      <select name="birthDay">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      </select><br>
+
+      성별 
+      <input action="" method="" type="radio" name="gender" value="male">남자
+      <input action="" method="" type="radio" name="gender" value="female">여자
+      <br>
+
+      선호맥주<br>
+      <input action="" method="" type="text" name="likebeer" class="singUpText" placeholder="선호하는맥주를입력하세요"/><br>
+      선호브랜드<br>
+       <input action="" method="" type="text" name="likebrand" class="singUpText" placeholder="선호하는브랜드를입력하세요"/><br>
+
+      주량<br>
+       <input action="" method="" type="text" name="drink" class="singUpText" placeholder="주량을입력하세요"/><br>
+       </div>
+
+     
+      <button class="checkEmail">이메일 인증</button>
+
+    <div id="btnMenu">
+      <button class="okcancelbtn">확인</button>
+      <button class="okcancelbtn">취소</button>
+    </div>
+    
+
+  </div>
+
+ 
+
+	
+</body>
+</htmnl>

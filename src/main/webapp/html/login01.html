@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<htmnl>
+<head>
+  <meta charset="UTF-8">
+  <title>login Form</title>
+  <style>
+
+  #contents {
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid blue;
+    width: 400px;
+    padding: 10px 10px;
+  }
+  #contents h1{
+    text-align: center;
+  }
+
+  #loginForm {
+    position: relative;
+    border: 1px solid red;
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  #textForm {
+    position: relative;
+    border: 1px solid green;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  #loginbtn {
+    position: absolute;
+    width: 90px;
+    height: 79px;
+    top: 0; right: 0;
+    margin: 3px 0;
+  }
+  .logintext {
+    width: 200px;
+    height: 30px;
+    margin : 3px 0;
+  }
+  #menuForm {
+    position: relative;
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+    margin : 4px auto;
+
+  }
+  #snsForm {
+    position: relative;
+    border: 1px solid orange;
+    width: 300px;
+    height: 20px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  
+  </style>
+
+  <script language="javascript">
+    function signUp(){
+      // window.resizable(600,800);
+      window.
+      window.open('signup.html','popup','width=600, height=800');
+    }
+
+
+  </script>
+</head>
+<body>
+
+  <div id="contents">
+    <h1>로그인</h1>
+    <div id="loginForm">
+      <div id="textForm">
+        <input action="" method="" type="text" name="id" class="logintext" placeholder="아이디"/><br>
+        <input action="" method="" type="password" name="password" class="logintext" placeholder="비밀번호"/><br>
+        <button id="loginbtn">로그인</button>
+      </div>
+      <div id="menuForm">
+        <input type="checkbox"/>아이디 저장
+        <button onclick="signUp()">회원가입</button>
+        <button>아이디/비밀번호 찾기</button>
+      </div>
+      <div id="snsForm">
+        <button>페이스북 로그인</button>
+        <button>카카오 로그인</button>
+        <button>네이버 로그인</button>
+      </div>
+    </div>
+
+  </div>
+
+ 
+
+	
+</body>
+</htmnl>

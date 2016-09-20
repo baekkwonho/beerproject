@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<htmnl>
+<head>
+  <meta charset="UTF-8">
+  <title>logo</title>
+  <style>
+
+    #main_wrap{
+      position: relative;
+      height: 100%;
+      width: 1400px;
+      margin: 0 auto;
+    }
+    
+    /* 헤더 부분 */
+    #main_header{
+      position: relative;
+      height: 80px;
+      width: 1400px;
+     /* margin-bottom: 0;*/
+      border: 1px solid red;
+      margin: 0 auto;
+    }
+    h1.logo{
+      position: absolute;
+      left: 10px;
+    }
+
+    #login_wrap {
+      position: absolute;
+      border: 1px solid blue;
+      width: 200px;
+      right: 0;
+
+    }
+    .logout{
+      /*position: absolute;
+      top: 40px;
+      right: 10px;*/
+    }
+
+    #main_header a {
+      text-decoration: none;
+    }
+
+    #menu_wrap {
+      position: relative;
+      border: 1px solid orange;
+      width: 450px;
+      top: 40px;
+      margin: 0 auto;
+      padding: 10px 10px;
+      
+    }
+
+    .mainmenu {
+      position: relative;
+      bottom: 0;
+      margin: 0 15px;
+     /* text-align: center;*/
+    }
+
+    /* 메인 컨텐츠 부분 */
+    
+    #content_wrap {
+      position: relative;
+      width: 1400px;
+      height: 785px;
+      border: 1px solid green;
+    }
+
+    #article_wrap {
+      position: absolute;
+      border: 1px solid purple;
+      width: 300px;
+      height: 785px;
+    }
+
+    #timeline_wrap {
+      position: absolute;
+      border: 1px solid grey;
+      width: 800px;
+      height: 785px;
+      left: 300px;
+    }
+
+    #ranking_wrap {
+      position: absolute;
+      border: 1px solid pink;
+      width: 300px;
+      height: 785px;
+      right: 0;
+    }
+    
+
+   
+    /* 푸터 부분 */
+    #main_footer{
+      position: relative;
+      width: 1400px;
+      height: 70px;
+      bottom: 0;
+      border: 1px solid blue;
+    }
+
+    .snsbutton{
+      position: absolute;
+      float: right;
+      bottom: 30px;
+      right: 5px;
+    }
+
+    .copylogo{
+      position: relative;
+      width: 100px;
+      margin: 0 auto;
+      
+    }
+    .footer_menu{
+      position: absolute;
+      right: 30px;
+      bottom: 5px;
+    }
+
+
+  </style>
+
+  <script language="javascript">
+    function openlogin() {
+      window.open('login01.html','popup','width=500,height=400, resizable=no');
+      }
+  </script>
+</head>
+<body>
+<div id="main_wrap">
+  <header id="main_header">
+    <h1 class="logo">
+      <a href="main01.html">Logo</a>
+    </h1>
+    <div id="menu_wrap">
+      <span class="mainmenu"><a href="#">TimeLine</span>
+      <span class="mainmenu"><a href="#">BeerInfo</span>
+      <span class="mainmenu"><a href="#">BeerMarket</span>
+      <span class="mainmenu"><a href="#">BeerBoard</span>
+    </div>
+    <div id="login_wrap">
+      <span class="logout"><a href="#">logout</a></span>
+    </div>
+  </header>
+  
+  <div id="content_wrap">
+    <div id="article_wrap">
+      article1<br>
+      article2<br>
+    </div>
+
+    <div id="timeline_wrap">
+      timeline1<br>
+      timeline2<br>
+
+    </div>
+
+    <div id="ranking_wrap">
+      ranking<br>
+
+    </div>
+
+  </div>
+
+  <footer id="main_footer">
+    <p class="copylogo">&copy; logo</p>
+    <div class="footer_menu">
+      <div class="snsbutton">
+        <button>facebook</button>
+        <button>google</button>
+      </div>
+
+      <span><a href="#">about</a></span>
+      <span><a href="#">help</a></span>
+      <select name="language">
+      	<option selected>Korean</option>
+    	  <option>English</option>
+      </select>
+    </div>
+  </footer>
+</div>
+
+	
+</body>
+</htmnl>
