@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>warning page</title>
+
+  <!-- jQuery 2.2.4 version -->
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   
   <!-- animate CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Londrina+Outline|Londrina+Shadow" rel="stylesheet">
+
+   <link href="css/hover.css" rel="stylesheet" media="all">
+
 <style>
 
   html {height: 100%;}
@@ -33,6 +40,17 @@
     overflow: hidden;
   }
   
+  #opacity_wrap {
+   position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 600px;
+    height: 250px;
+    background-color: black;
+    opacity: 0.1;
+    
+  }
+  
   
   
   #warning_wrap {
@@ -53,7 +71,14 @@
     width: 600px;
     height: 150px;
     color: white;
- 
+  }
+  
+  h1 {
+/*     font-family: 'Bungee Shade', cursive; */
+    /* font-family: 'Londrina Outline', cursive; */
+    font-family: 'Londrina Shadow', cursive;
+/*     font-weight: bold; */
+    font-size: 38px;
   }
   
   .message {
@@ -72,6 +97,8 @@
     height: 100px;
   }
   
+  
+  
   .answerBtn {
     width: 150px;
     height: 60px;
@@ -80,6 +107,24 @@
   }
   
   
+  a {
+    text-decoration: none;
+    font-size: 40px;
+  }
+  
+   
+   
+   
+   .hvr-shutter-out-horizontal {
+     width: 100px;
+     color: red;
+     background: white;
+     content: black;
+   }
+   
+   .hvr-shutter-out-horizontal:before {
+    background: red;
+}
    
 </style>
 </head>
@@ -92,15 +137,34 @@
   </div>
   
   <div id="main_wrap">
+  
+  <div id="opacity_wrap"></div>
+  
     <div id="warning_wrap" >
       <div id="message">
-        <h1 class="message animated bounce">Hello! <br>
+        <h1 class="message animated bounce">Hello<br>
         ARE YOU OF LEGAL DRIKING AGE?</h1>
-        <h4 class="message animated bounce">대한민국은 만 19세 이상만 이용 가능합니다.</h4>
+        <h4 class="message animated bounce small">대한민국은 만 19세 이상만 이용 가능합니다.</h4>
       </div>
       
       <div id="answer">
-        <a href="main01.html"><button class="answerBtn">Yes</button></a>
+        <!-- <a href="main01.html" ><button class="answerBtn">Yes</button></a> -->
+       <!--  <a class="waves-effect waves-light btn-large pink" href="main01.html" >Yes</a>
+        <a id="noBtn" class="waves-effect waves-light btn-large red">No</a>
+        <script type="text/javascript">
+          "use strict"
+          var noBtn = document.querySelector("#noBtn")
+          var message = document.querySelector("#warning_wrap")
+          
+          noBtn.addEventListener("click", function(event) {
+        	  message.style["display"] ="none"
+          })
+        </script> -->
+        
+        <a href="#" id = "yesBtn" class="hvr-shutter-out-horizontal">Yes</a>
+        <a href="#" id = "noBtn" class="hvr-shutter-out-horizontal">No</a>
+        
+        <!-- 
         <button id="noBtn" class="answerBtn">No</button>
         <script type="text/javascript">
           "use strict"
@@ -111,10 +175,11 @@
         	  message.style["display"] ="none"
           })
         </script>
-        
+         -->
       </div>
     
     </div>
+
   </div>
   
 
