@@ -1,0 +1,165 @@
+<!doctype>
+<html>
+<head>
+    <meta charset="utf-8">
+		<title>BeerBear</title>
+
+    <style>
+        .container{
+						width:100%;
+						height:100%;
+						margin-left:auto;
+						margin-right:auto;
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+						text-align : right;
+						height : 60px;
+            border-bottom:1px solid gray;
+            padding-left:20px;
+        }
+				/*
+        footer{
+            border-top:1px solid gray;
+            padding:20px;
+
+            text-align: center;
+        }
+				*/
+        .content{
+            display:flex;
+        }
+        .content nav{
+            border-right:1px solid gray;
+        }
+
+        nav{
+
+        		flex-basis: 150px;
+            flex-shrink: 0;
+        }
+        main{
+            /* padding:10px; */
+        }
+				nav td{
+					width:100px;
+					padding-right:10px;
+					font:bold 8pt;
+					color:#5D5D5D;
+					letter-spacing:-1;
+
+				}
+				/*nav table {
+
+
+				}*/
+				a:link{
+					color:black;
+					text-decoration: none;
+
+				}
+				a:visited{
+					color:black;
+					text-decoration: none;
+				}
+				a:hover{
+					color:black;
+					text-decoration: none;
+				}
+				a:active{
+					color:black;
+					text-decoration: none;
+				}
+				nav table tr td.logo{
+					font-size:3rem;
+					color:#5D5D5D;
+					font-family: sans-serif;
+				}
+				nav table tr td.navLink{
+					font-size:20px;
+					color:#5D5D5D;
+					font-family: sans-serif;
+				}
+				nav table tr td.copyright{
+					font-size:20px;
+				}
+				header dl dd a{
+					font-size:15px;
+					font-family: sans-serif;
+				}
+
+    </style>
+</head>
+<body >
+
+    <div class="container">
+        <header>
+					<dl>
+							<dd>
+								<a  href="http://flukeout.github.io/" >맥주창고</a>&nbsp
+								<a  href="http://caniuse.com/#search=flex" >맥주인증샷</a>&nbsp
+								<a  href="http://library.hyundaicard.com/index.hdc" >뱃지랭킹</a>&nbsp
+								<a  href="http://codepen.io/" >맥주위치</a>&nbsp
+								<a  href="http://www.w3schools.com/css/css_colors.asp" >이벤트</a>
+								&nbsp
+							</dd>
+					</dl>
+        </header>
+        <section class="content">
+            <nav>
+							<!--
+							<TABLE  width="100%" height="100%" cellpadding=0 cellspacing=5  >
+								<tr>
+									<td    align="center"><h1>비어베어</h1></td>
+								</tr>
+								<tr><td colspan="2" height=1 bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+								<tr>
+									<td  align="left">	Login</td>
+								</tr>
+								<tr><td colspan=2 height=1 bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+								<tr><td align="left">	Join</td></tr>
+								<tr><td colspan=2 height=1 bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+								<tr>
+										<td rowspan="4" valign="bottom">서울특별시 영등포구 의사당대로3
+현대캐피탈빌딩 | 대표이사 정태영
+사업자등록번호 213-86-15419
+© HYUNDAI CARD Corp.</td>
+								</tr>
+
+							</TABLE>
+						-->
+
+						<TABLE  width="100%" height="100%"   >
+							<tr>
+								<td class="logo" height= "100px" align="center">BeerBear</td>
+							</tr>
+							<tr><td height="1px" bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+							<tr>
+								<td class ="navLink" height="30px" align="left">		<a  href="http://www.naver.com/" >LOGIN</a></td>
+							</tr>
+							<tr><td  height=1 bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+							<tr>
+								<td class="navLink" height="30px" align="left">		<a  href="https://www.google.com/" >JOIN</a></td>
+							</tr>
+							<tr><td height=1 bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+							<tr>
+									<td class="copyright" height="350px" valign="bottom">&copy BeerBear<br/><br/><br/><br/></td>
+							</tr>
+
+						</TABLE>
+
+
+
+
+            </nav>
+            <main>
+                <!-- 사진 -->
+								<img src="beerbear001.jpg" height="100%" width=100% alt="맥주 축제" title="맥주 축제">
+            </main>
+
+        </section>
+
+    </div>
+</body>
+</html>

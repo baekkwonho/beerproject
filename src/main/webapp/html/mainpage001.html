@@ -1,0 +1,161 @@
+<!doctype>
+<html>
+<head>
+    <meta charset="utf-8">
+		<title>BeerBear</title>
+		<link href="https://fonts.googleapis.com/css?family=Antic|Indie+Flower|Montserrat" rel="stylesheet">
+    <style>
+
+        .container{
+            width:100%;
+		    height:100%;
+            margin-left:auto;
+            margin-right:auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header{
+            text-align : right;
+            height : 30px;
+            border-bottom:1px solid gray;
+          	padding-left:20px;
+            padding-bottom: 10px;
+        }
+        
+        .content{
+            display:flex;
+        }
+        
+        .content nav{
+            border-right:1px solid gray;
+        }
+
+        
+        nav{
+            flex-basis: 150px;
+            flex-shrink: 0;
+        }
+        
+        main{
+            /* padding:10px; */
+        }
+        
+		nav td{
+            width:100px;
+            padding-right:10px;
+            font:bold 8pt;
+            letter-spacing:-1;
+        }
+				
+        a:link{
+            color:black;
+            text-decoration: none;
+        }
+		
+        a:visited{
+			color:black;
+            text-decoration: none;
+        }
+        
+        a:hover{
+            color:black;
+            text-decoration: none;
+        }
+		
+        a:active{
+            color:black;
+            text-decoration: none;
+        }
+        
+        nav table tr td.logo{
+            font-size:3rem;
+            font-family: 'Indie Flower', cursive;
+        }
+				
+        nav table tr td.navLink{
+            font-size:15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        nav table tr td.copyright{
+            font-size:20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+				
+        header dl dd a{
+            font-size:18px;
+            font-family: 'Antic', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        header dl{
+            margin-top: 8px;
+        }
+        
+        body{
+            margin : 0px;
+        }
+
+
+    </style>
+</head>
+    
+    
+<body>
+
+    <div class="container">
+        <header>
+					<dl>
+							<dd>
+								<a  href="http://flukeout.github.io/" >brewery</a>&nbsp &nbsp &nbsp
+								<a  href="http://caniuse.com/#search=flex" >photo</a>&nbsp &nbsp &nbsp
+								<a  href="http://library.hyundaicard.com/index.hdc" >rank</a>&nbsp &nbsp &nbsp
+								<a  href="http://codepen.io/" >location</a>&nbsp &nbsp &nbsp
+								<a  href="http://www.w3schools.com/css/css_colors.asp" >event</a>&nbsp &nbsp &nbsp
+							</dd>
+					</dl>
+        </header>
+        
+        <section class="content">
+            
+            
+            <nav>
+                <TABLE  width="100%" height="100%"   >
+							<tr>
+								<td class="logo" height= "100px" align="center"><font color=#5D5D5D>BeerBear</font></td>
+							</tr>
+                    
+							<tr><td height="1px" bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+							
+                            <tr>
+								<td class ="navLink" height="30px" align="left">		<a  href="http://www.naver.com/" >LOGIN</a></td>
+							</tr>
+                    
+							<tr><td  height=1 bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+							
+                            <tr>
+								<td class="navLink" height="30px" align="left">		<a  href="https://www.google.com/" >JOIN</a></td>
+							</tr>
+                    
+							<tr><td height=1 bgcolor="#DEDEDE" style="padding:0px;"></td></tr>
+							
+                            <tr>
+									<td class="copyright" height="350px" valign="bottom"><font color=#5D5D5D>&copy BeerBear</font><br/><br/><br/>
+							</tr>
+
+						</TABLE>
+            </nav>
+            
+            
+            <main>
+                <!-- 사진 -->
+				<img src="beerbear001.jpg" height="100%" width=100% alt="맥주 축제" title="맥주 축제">
+           
+            </main>
+        </section>
+
+    </div>
+    
+</body>
+</html>
