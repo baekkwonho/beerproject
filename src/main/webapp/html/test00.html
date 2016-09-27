@@ -10,37 +10,131 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 
+<style>
+  
+  #header {
+    height: 100px;
+    border: 1px solid black;
+  }
+  
+   #section1 {
+    border: 1px solid blue;
+    height: 600px;
+    background: url(beer2.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    opacity: 0.5;
+    
+  }
+  
+  .section1_search {
+    position: absolute;
+    top: 200px;
+  }
+  
+  .section1_para {
+    position: absolute;
+    color: black;
+    top: 400px;
+    text-align: center;
+  }
+   
+   #search_form {
+    width: 100%;
+   }
+  
+  #section2 {
+    border: 1px solid red;
+    height: 600px;
+  }
+  
+  #footer {
+    border: 1px solid orange;
+    height: 200px;
+  }
+  
+  div {
+    border: 1px solid black;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+
+</style>
+
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
+  
+  <div id="header" class="row">
+    <div class="logo col-xs-3 col-sm-2 col-md-2">BeerBear</div>
+    <div class="col-xs-5 col-sm-6 col-md-8"></div>
+    <div class="col-xs-2 col-sm-2 col-md-1 text-center">Login</div>
+    <div class="col-xs-2 col-sm-2 col-md-1">SignUp</div>
+    
+  </div>
+  
   <div class="row">
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-</div>
-<div class="row">
-  <div class="col-md-8">.col-md-8</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-6">.col-md-6</div>
-  <div class="col-md-6">.col-md-6</div>
-</div>
+    <div id="section1" class="col-xs-12 col-sm-12 col-md-12">
+    </div>
+    
+    <div class="section1_search col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <form id="search_form" class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="button" class="btn btn-default">Search</button>
+      </form>
+    </div>
+  
+    <div class="section1_para col-xs-12 col-sm-12 col-md-12"> 
+      <h1 class="deutch">"Essen ist ein Bedürfnis des Magens,<br>Trinken eines der Seele."</h1>
+      <h1 class="korean">"먹는 것은 위의 욕구이고, 마시는 것은 영혼의 욕구이다."</h1>
+    </div>
+     
+  </div>
+  <div class="row">
+    <div id="section2" class="col-md-12">
+   
+    </div>
+  </div>
+  <div id="footer" class="row">
+    <div class="logo col-md-2">BearBear</div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <ul>
+        <li>BEER</li>
+        <li>BEER</li>
+        <li>BEER</li>
+      </ul>
+    </div>
+     <div class="col-md-2">
+      <ul>
+        <li>BEER</li>
+        <li>BEER</li>
+        <li>BEER</li>
+      </ul>
+    </div>
+     <div class="col-md-2">
+      <ul>
+        <li>BEER</li>
+        <li>BEER</li>
+        <li>BEER</li>
+      </ul>
+    </div>
+    
+    <div class= "col-md-3"></div>
+    
+  </div>
+    
+  
+  
 
 </div>
 
