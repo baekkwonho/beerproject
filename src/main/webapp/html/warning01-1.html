@@ -48,7 +48,6 @@
     height: 250px;
     background-color: black;
     opacity: 0.1;
-    
   }
   
   #warning_wrap {
@@ -111,8 +110,6 @@
   }
   
    
-   
-   
    .hvr-shutter-out-horizontal {
      width: 100px;
      color: red;
@@ -148,16 +145,34 @@
       <div id="answer">
         
         <a href="mainpage001.html" id = "yesBtn" class="hvr-shutter-out-horizontal">Yes</a>
-        <a id = "noBtn" class="hvr-shutter-out-horizontal">No</a>
+        
+        <script>
+          "use strict"
+          var yesBtn= document.querySelector("#yesBtn")
+          
+          yesBtn.onclick = function(event) {
+            window.location.href="mainpage001.html"
+          }
+        
+        </script>
+        
+        <a href="#" id = "noBtn" class="hvr-shutter-out-horizontal">No</a>
         
         <script type="text/javascript">
           "use strict"
           var noBtn = document.querySelector("#noBtn")
           var message = document.querySelector("#warning_wrap")
+          var opacity = document.querySelector("#opacity_wrap")
           
+          noBtn.onclick = function(event) {
+        	  message.style["display"] ="none"
+        	  opacity.style["display"] = "none"
+          }
+          /* 
           noBtn.addEventListener("click", function(event) {
         	  message.style["display"] ="none"
-          })
+        	  opacity.style["display"] = "none"
+          }) */
         </script>
       </div>
     
