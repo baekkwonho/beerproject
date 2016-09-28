@@ -5,10 +5,11 @@
 <title>Insert title here</title>
 <!--   <link rel="stylesheet" href="css/setting.css"> -->
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
 
 <style>
   
@@ -27,6 +28,7 @@
     background-size: cover;
     position: relative;
     opacity: 0.5;
+    padding: 0;
     
   }
   
@@ -41,7 +43,11 @@
     top: 400px;
     text-align: center;
   }
-
+   
+   #search_form {
+    width: 100%;
+   }
+  
   #section2 {
     border: 1px solid red;
     height: 600px;
@@ -49,13 +55,32 @@
     padding: 0;
   }
   
-  #section2_para {
+  .section2_para {
     position: absolute;
+    /* color: black; */
+    top: 100px;
     text-align: center;
     padding: 0;
-    margin: 0;
-    top: 100px;
-    
+  }
+  
+  #section2_menuAll {
+    position: relative;
+    top: 250px;
+    padding: 0;
+    text-align: center;
+    height: 350px;
+  }
+  
+  .section2_menu {
+    position: relative;
+    height: 350px;
+  }
+  
+   .section2_menu_img {
+    position: relative;
+    border: 1px solid blue;
+    height: 150px;
+    margin: 15px 0;
   }
   
   #footer {
@@ -68,9 +93,19 @@
   }
   
   .logo {
-    font-size: 20px;
+    font-size: 40px;
   }
   
+  .deutch {
+    font-size: 50px;
+  }
+  
+  @media only screen and (max-width: @screen-sm) {
+    .deauth {
+      font-size: 20px;
+    }
+}
+
 
 </style>
 
@@ -88,7 +123,8 @@
   </div>
   
   <div class="row">
-    <div id="section1" class="col-xs-12 col-sm-12 col-md-12"></div>
+    <div id="section1" class="col-xs-12 col-sm-12 col-md-12">
+    </div>
     
     <div class="section1_search col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
       <form id="search_form" class="navbar-form navbar-left" role="search">
@@ -105,21 +141,40 @@
     </div>
      
   </div>
-  
   <div class="row">
     <div id="section2" class="col-xs-12 col-sm-12 col-md-12">
-  
-	    <div id="section2_para" class="col-xs-12 col-sm-12 col-md-12"> 
-	      <h1 class="deutch">"Essen ist ein Bedürfnis des Magens,<br>Trinken eines der Seele."</h1>
-	      <h1 class="korean">"먹는 것은 위의 욕구이고, 마시는 것은 영혼의 욕구이다."</h1>
-	    </div>
-     
-     </div>
+    
+      <div class="section2_para col-xs-12 col-sm-12 col-md-12">
+        <h1 class="section2_contents">SPOTIFY GIVES YOU INSTANT ACCESS TO MILLIONS OF SONGS - FROM OLD FAVORITES TO THE LATEST HITS. JUST HIT PLAY TO STREAM ANYTHING YOU LIKE.</h1>
+      </div>
+    
+      <div id="section2_menuAll" class="col-xs-12 col-sm-12 col-md-12">
+        <div id="section2_menu1" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <img src="beer2.png" class="section2_menu_img" />
+          <h4>THIS IS MENU1</h4>
+          <h5>this is menu1 contents.</h5>
+        </div>
+        <div id="section2_menu2" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <img src="beer2.png" class="section2_menu_img" />
+          <h4>THIS IS MENU2</h4>
+          <h5>this is menu2 contents.</h5>
+        </div>
+        <div id="section2_menu3" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <img src="beer2.png" class="section2_menu_img" />
+          <h4>THIS IS MENU3</h4>
+          <h5>this is menu3 contents.</h5>
+        </div>
+        <div id="section2_menu4" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <img src="beer2.png" class="section2_menu_img" />
+          <h4>THIS IS MENU4</h4>
+          <h5>this is menu4 contents.</h5>
+        </div>
+      </div>
+   
+    </div>
   </div>
-  
-  
   <div id="footer" class="row">
-    <div class="logo col-md-2">BearBear</div>
+    <div class="logo col-sx-12 col-sm-12 col-md-2">BearBear</div>
     <div class="col-md-1"></div>
     <div class="col-md-2">
       <ul>

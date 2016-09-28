@@ -20,7 +20,7 @@
    #section1 {
     border: 1px solid blue;
     height: 600px;
-    background: url(beer2.png) no-repeat center center fixed; 
+    background: url(img/beer2.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -78,39 +78,47 @@
    .section2_menu_img {
     position: relative;
     border: 1px solid blue;
-    height: 150px;
+    width: 280px;
+    height: 200px;
     margin: 15px 0;
   }
   
   #footer {
     border: 1px solid orange;
-    height: 200px;
+    height: 120px;
   }
   
   #footer1 {
     border: 1px solid green;
-    height: 130px;
+    height: 80px;
+  }
+  
+  .footer1_align {
+    top: 10px;
+  }
+  
+  .footer1_about {
+    font-size: 18px;
+  }
+  
+  .footer1_sns {
+    font-size: 18px;
   }
   
   #footer2 {
     border: 1px solid blue;
-    height: 70px;
+    height: 40px;
   }
+  
   
   div {
     border: 1px solid black;
   }
-  
-  .footer_logo {
-    font-size: 20px;
-  }
-  
 
 </style>
 
 </head>
 <body>
-
 <div class="container-fluid">
   
   <div id="header" class="row">
@@ -149,33 +157,44 @@
     
 	    <div id="section2_menuAll" class="col-xs-12 col-sm-12 col-md-12">
 	      <div id="section2_menu1" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
-	        <img src="beer2.png" class="section2_menu_img" />
-	        <h4>THIS IS MENU1</h4>
-	        <h5>this is menu1 contents.</h5>
+	        <div id="menu1">
+	        <img src="img/beerbear013.jpg" class="section2_menu_img" />
+	          <h4>THIS IS MENU1(맥주정보)</h4>
+	          <h5>this is menu1 contents.</h5>
+	        </div>
 	      </div>
 	      <div id="section2_menu2" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
-          <img src="beer2.png" class="section2_menu_img" />
-          <h4>THIS IS MENU2</h4>
+          <img src="img/beerbear001.jpg" class="section2_menu_img" />
+          <h4>THIS IS MENU2(맥주인증)</h4>
           <h5>this is menu2 contents.</h5>
         </div>
         <div id="section2_menu3" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
-          <img src="beer2.png" class="section2_menu_img" />
-          <h4>THIS IS MENU3</h4>
+          <img src="img/beerbear019.jpg" class="section2_menu_img" />
+          <h4>THIS IS MENU3(맥주위치)</h4>
           <h5>this is menu3 contents.</h5>
         </div>
         <div id="section2_menu4" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
-          <img src="beer2.png" class="section2_menu_img" />
-          <h4>THIS IS MENU4</h4>
+          <img src="img/beerbear025.jpg" class="section2_menu_img" />
+          <h4>THIS IS MENU4(공지사항)</h4>
           <h5>this is menu4 contents.</h5>
         </div>
 	    </div>
+	    
+	    <script>
+	      "use strict"
+	      var breweryBtn = document.querySelector("#menu1")
+	      
+	      breweryBtn.onclick = function(event) {
+	    	  window.location.href="http://www.naver.com"
+	      }
+	    </script>
    
     </div>
   </div>
   
   <div id="footer" class="row">
   
-	  <div id="footer1" class="col-md-12">
+	 <!--  <div id="footer1" class="col-md-12">
 	    <div class="footer1_space1 col-md-1"></div>
 	    <div class="footer1_logo col-md-1">BEER<br>BEAR</div>
 	    <div class="footer1_about col-md-4">ABOUT BLOG NEWS&EVENTS CONTACT</div>
@@ -183,11 +202,37 @@
 	    <div class="footer1_sns col-md-3">Youtube Facebook Instagram Email</div>
 	    <div class="footer1_space3 col-md-1"></div>
 	    
-	  </div>
+	  </div> -->
+	  
+	   <div id="footer1" class="col-md-12">
+      <div class="footer1_space1 col-md-1"></div>
+      <div class="footer1_logo footer1_align col-md-1">BEER<br>BEAR</div>
+      <div class="footer1_about footer1_align col-md-4">
+        <a href="#"><span class="label label-default">ABOUT</span></a>
+        <a href="#"><span class="label label-default">BLOG</span></a>
+        <a href="#"><span class="label label-default">NEWS&EVENTS</span></a>
+        <a href="#"><span class="label label-default">CONTACT</span></a>
+     </div>
+      <div class="footer1_space2 col-md-2"></div>
+      <div class="footer1_sns footer1_align col-md-3">
+          <a href="#"><span class="label label-danger">Youtube</span></a>
+          <a href="#"><span class="label label-primary">Facebook</span></a>
+          <a href="#"><span class="label label-warning">Instagram</span></a>
+          <a href="#"><span class="label label-success">Email</span></a>
+        <!-- <div class="btn-group" role="group" aria-label="footer1_sns">
+				  <button type="button" class="btn btn-default">Youtube</button>
+				  <button type="button" class="btn btn-default">Facebook</button>
+				  <button type="button" class="btn btn-default">Instagram</button>
+				  <button type="button" class="btn btn-default">Email</button>
+		  	</div> -->
+      </div>
+      <div class="footer1_space3 col-md-1"></div>
+      
+    </div>
 	  
 	  <div id="footer2" class="col-md-12">
 	    <div class="footer2_space1 col-md-1"></div>
-	    <div class="footer2_allrights col-md-4">2016 BEERBEAR All rights reserved.</div>
+	    <div class="footer2_allrights col-md-4">&copy;2016 BEERBEAR All rights reserved.</div>
 	    <div class="footer2_space2 col-md-7"></div>
 	  </div>
 	  
