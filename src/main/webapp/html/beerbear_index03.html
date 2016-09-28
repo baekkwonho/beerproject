@@ -122,11 +122,18 @@
 <div class="container-fluid">
   
   <div id="header" class="row">
-    <div class="logo col-xs-3 col-sm-2 col-md-2">BEER<br>BEAR</div>
-    <div class="col-xs-5 col-sm-6 col-md-8"></div>
-    <div class="col-xs-2 col-sm-2 col-md-1 text-center">Login</div>
-    <div class="col-xs-2 col-sm-2 col-md-1">SignUp</div>
-    
+    <div class="logo col-xs-3 col-sm-2 col-md-2"><a href="beerbear_index03.html">BEER<br>BEAR</a></div>
+    <div class="col-xs-9 col-sm-1 col-md-5"></div>
+    <ul class="nav nav-pills col-xs-12 col-sm-5 col-md-3">
+      <li role="presentation"><a href="beerbear_beerinfo01.html">맥주정보</a></li>
+      <li role="presentation"><a href="beerbear_beervideo01.html">맥주인증</a></li>
+      <li role="presentation"><a href="#">맥주위치</a></li>
+      <li role="presentation"><a href="#">공지사항</a></li>
+    </ul> 
+    <ul class="nav nav-pills col-xs-12 col-sm-4 col-md-2">
+    <li role="presentation"><a href="#">Login</a></li>
+    <li role="presentation"><a href="#">Logout</a></li>
+    </ul>
   </div>
   
   <div class="row">
@@ -185,7 +192,7 @@
 	      var breweryBtn = document.querySelector("#menu1")
 	      
 	      breweryBtn.onclick = function(event) {
-	    	  window.location.href="http://www.naver.com"
+	    	  window.location.href="beerbear_beerinfo01.html"
 	      }
 	    </script>
    
