@@ -27,6 +27,7 @@
     background-size: cover;
     position: relative;
     opacity: 0.5;
+    padding: 0;
     
   }
   
@@ -50,29 +51,34 @@
     border: 1px solid red;
     height: 600px;
     position: relative;
+    padding: 0;
   }
   
   .section2_para {
     position: absolute;
-    color: black;
+    /* color: black; */
     top: 100px;
     text-align: center;
+    padding: 0;
   }
   
   .section2_menu1_img {
     border: 1px solid blue;
     height: 60px;
     background: url(beer2.png) no-repeat center center fixed; 
+   /*  position: relative; */
+  }
+  
+  #section2_menuAll {
     position: relative;
+    top: 300px;
+    padding: 0;
+
+    
   }
   
   #section2_menu1 {
-    posiotion: absolute;
-    border: 4px solid purple;
     background-color: purple;
-    width: 200px;
-    top: 400px;
-    left: 200px;
   }
   
   #footer {
@@ -126,17 +132,32 @@
   <div class="row">
     <div id="section2" class="col-xs-12 col-sm-12 col-md-12">
     
-    <div class="section2_para">
-      <h1 class="section2_contents">SPOTIFY GIVES YOU INSTANT ACCESS TO MILLIONS OF SONGS - FROM OLD FAVORITES TO THE LATEST HITS. JUST HIT PLAY TO STREAM ANYTHING YOU LIKE.</h1>
-    </div>
-      <div id="section2_menu1">
-        <img src="beer2.png" class="section2_menu1_img" />
-        <h4>THIS IS MENU1</h4>
-        <h5>this is menu1 contents.</h5>
+      <div class="section2_para">
+        <h1 class="section2_contents">SPOTIFY GIVES YOU INSTANT ACCESS TO MILLIONS OF SONGS - FROM OLD FAVORITES TO THE LATEST HITS. JUST HIT PLAY TO STREAM ANYTHING YOU LIKE.</h1>
       </div>
-      <div id="menu2"></div>
-      <div id="menu3"></div>
-      <div id="menu4"></div>
+    
+	    <div id="section2_menuAll" class="col-xs-12 col-sm-12 col-md-12">
+	      <div id="section2_menu1" class="col-xs-3 col-sm-3 col-md-3">
+	        <img src="beer2.png" class="section2_menu1_img" />
+	        <h4>THIS IS MENU1</h4>
+	        <h5>this is menu1 contents.</h5>
+	      </div>
+	      <div id="section2_menu2" class="col-xs-3 col-sm-3 col-md-3">
+          <img src="beer2.png" class="section2_menu1_img" />
+          <h4>THIS IS MENU2</h4>
+          <h5>this is menu2 contents.</h5>
+        </div>
+        <div id="section2_menu3" class="col-xs-3 col-sm-3 col-md-3">
+          <img src="beer2.png" class="section2_menu1_img" />
+          <h4>THIS IS MENU3</h4>
+          <h5>this is menu3 contents.</h5>
+        </div>
+        <div id="section2_menu4" class="col-xs-3 col-sm-3 col-md-3">
+          <img src="beer2.png" class="section2_menu1_img" />
+          <h4>THIS IS MENU4</h4>
+          <h5>this is menu4 contents.</h5>
+        </div>
+	    </div>
    
     </div>
   </div>

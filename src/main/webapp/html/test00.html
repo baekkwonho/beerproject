@@ -41,14 +41,21 @@
     top: 400px;
     text-align: center;
   }
-   
-   #search_form {
-    width: 100%;
-   }
-  
+
   #section2 {
     border: 1px solid red;
     height: 600px;
+    position: relative;
+    padding: 0;
+  }
+  
+  #section2_para {
+    position: absolute;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    top: 100px;
+    
   }
   
   #footer {
@@ -81,8 +88,7 @@
   </div>
   
   <div class="row">
-    <div id="section1" class="col-xs-12 col-sm-12 col-md-12">
-    </div>
+    <div id="section1" class="col-xs-12 col-sm-12 col-md-12"></div>
     
     <div class="section1_search col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
       <form id="search_form" class="navbar-form navbar-left" role="search">
@@ -99,11 +105,19 @@
     </div>
      
   </div>
+  
   <div class="row">
-    <div id="section2" class="col-md-12">
-   
-    </div>
+    <div id="section2" class="col-xs-12 col-sm-12 col-md-12">
+  
+	    <div id="section2_para" class="col-xs-12 col-sm-12 col-md-12"> 
+	      <h1 class="deutch">"Essen ist ein Bedürfnis des Magens,<br>Trinken eines der Seele."</h1>
+	      <h1 class="korean">"먹는 것은 위의 욕구이고, 마시는 것은 영혼의 욕구이다."</h1>
+	    </div>
+     
+     </div>
   </div>
+  
+  
   <div id="footer" class="row">
     <div class="logo col-md-2">BearBear</div>
     <div class="col-md-1"></div>
