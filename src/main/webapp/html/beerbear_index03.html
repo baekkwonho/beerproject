@@ -49,6 +49,7 @@
   #section2 {
     border: 1px solid red;
     height: 600px;
+    position: relative;
   }
   
   .section2_para {
@@ -58,12 +59,19 @@
     text-align: center;
   }
   
+  .section2_menu1_img {
+    border: 1px solid blue;
+    height: 60px;
+    background: url(beer2.png) no-repeat center center fixed; 
+    position: relative;
+  }
+  
   #section2_menu1 {
     posiotion: absolute;
     border: 4px solid purple;
     background-color: purple;
     width: 200px;
-    top: 300px;
+    top: 400px;
     left: 200px;
   }
   
@@ -122,7 +130,7 @@
       <h1 class="section2_contents">SPOTIFY GIVES YOU INSTANT ACCESS TO MILLIONS OF SONGS - FROM OLD FAVORITES TO THE LATEST HITS. JUST HIT PLAY TO STREAM ANYTHING YOU LIKE.</h1>
     </div>
       <div id="section2_menu1">
-        <div class="section2_menu1_img"></div>
+        <img src="beer2.png" class="section2_menu1_img" />
         <h4>THIS IS MENU1</h4>
         <h5>this is menu1 contents.</h5>
       </div>
