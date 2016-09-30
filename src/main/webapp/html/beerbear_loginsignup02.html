@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<htmnl>
+<head>
+<meta charset="UTF-8">
+<title>Log-in & Sign-up</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<style>
+
+ /*  #header {
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid blue;
+    width: 400px; 
+    padding: 10px 10px;
+    text-align: center;
+  } */
+  
+  #login {
+    position: ;
+  }
+  
+  #signup {
+    /* position: static; */
+  }
+  
+  #loginForm {
+    position: relative;
+    border: 1px solid red;
+    /* width: 400px; */
+    /* height: 200px; */
+    margin: 0 auto;
+   /*  padding: 10px 0; */
+  /*   top: 200px; */
+  }
+  
+  #loginsignup {
+    position: relative;
+    border: 1px solid orange;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    
+  }
+
+  #textForm {
+    position: relative;
+    border: 1px solid green;
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+ 
+  .logintext {
+    width: 200px;
+    height: 30px;
+    margin : 3px 0;
+  }
+  #menuForm {
+    /* position: static; */
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+    margin : 4px auto;
+
+  }
+  #snsForm {
+    /* position: static; */
+    border: 1px solid orange;
+    width: 400px;
+    /* height: 20px; */
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+</style>
+
+<script language="javascript">
+function signUp(){
+  // window.resizable(600,800);
+  window.open('signup01.html','popup','width=600, height=800');
+}
+
+</script>
+</head>
+
+
+<body>
+
+<div class="contianer-fluid">
+	<div class="row">
+	
+	  <div id="loginForm">
+	  
+	    <div id="loginsignup">
+		    <ul id="header" class="col-xs-12 col-sm-12">
+		      <li id="login" class=""><h1>Log In</h1></li>
+		      <li id="signup" class=""><h1>Sign Up</h1></li>
+		    </ul>
+	    </div>
+	  
+	    <div id="textForm">
+	      <input action="" method="" type="text" name="id" class="logintext" placeholder="아이디를 입력해주세요."/><br>
+	      <input action="" method="" type="password" name="password" class="logintext" placeholder="비밀번호를 입력해주세요."/>
+	      <button id="loginbtn">로그인</button>
+	    </div>
+	    
+	    <div id="menuForm">
+	      <input type="checkbox"/>아이디 저장
+	      <button onclick="signUp()">회원가입</button>
+	      <button>아이디/비밀번호 찾기</button>
+	    </div>
+	    
+	    <div id="snsForm">
+	      <button type="button" class="btn btn-primary">페이스북 로그인</button>
+	      <button type="button" class="btn btn-warning">카카오 로그인</button>
+	      <button type="button" class="btn btn-success">네이버 로그인</button>
+	    </div>
+	    
+	  </div>
+	
+	
+	</div>
+
+</div>
+
+
+</body>
+</htmnl>
