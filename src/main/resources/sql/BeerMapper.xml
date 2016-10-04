@@ -5,27 +5,33 @@
 <mapper namespace="dao.BeerDao">
   <resultMap type="beer" id="beerMap">
     <id column="BRNO" property="no"/> 
-    
     <result column="CATENO" property="cateno"/>
     <result column="BRBRNO" property="brbrno"/>
+    <result column="CATENM" property="catename"/>
+    <result column="BRBRNM" property="brbrname"/>
     <result column="BR_DESC" property="describe"/>
     <result column="CTRY" property="country"/>
     <result column="COMP" property="company"/>
-    <result column="CTRY" property="country"/>
     <result column="ACHL" property="alchol"/>
     <result column="VOL" property="volume"/>
   </resultMap>
   
   <select id="selectList" resultMap="beerMap" parameterType="map">
-    select BRNO, CATENM, BRBRNM, BR_DESC, CTRY, COMP, ACHL, VOL
-    from BEERS join BEERS_CATE on BEERS.CATENO = BEERS_CATE.CATENO
-    join BEERS_BRAND on BEERS.BRBRNO = BEERS_BRAND.BRBRNO
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_cate
+    on beers.cateno = beers_cate.cateno
     limit #{startIndex}, #{length}
   </select>
   
   <select id="selectOne" resultMap="beerMap" parameterType="int">
     select * from beers
-    where no = #{value}
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_cate
+    on beers.cateno = beers_cate.cateno
+    where brno = #{value}
   
   </select>
   

@@ -7,18 +7,15 @@ public class Beer implements Serializable {
   private static final long serialVersionUID = 1L;
   
   protected int no;
-
-//  foreing key도 여기에 변수를 지정해야 하나?
   protected int cateno;
   protected int brbrno;
-
+  protected String catename;
+  protected String brbrname;
   protected String describe;
   protected String country;
   protected String company;
   protected float alchol;
   protected int volume;
-  
-  
   public int getNo() {
     return no;
   }
@@ -36,6 +33,18 @@ public class Beer implements Serializable {
   }
   public void setBrbrno(int brbrno) {
     this.brbrno = brbrno;
+  }
+  public String getCatename() {
+    return catename;
+  }
+  public void setCatename(String catename) {
+    this.catename = catename;
+  }
+  public String getBrbrname() {
+    return brbrname;
+  }
+  public void setBrbrname(String brbrname) {
+    this.brbrname = brbrname;
   }
   public String getDescribe() {
     return describe;

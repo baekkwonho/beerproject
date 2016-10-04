@@ -1,12 +1,14 @@
 package vo;
 
 import java.io.Serializable;
+import java.util.Date;
 
-public class BeerCate implements Serializable {
+public class BeerBrand implements Serializable {
   private static final long serialVersionUID = 1L;
   
   protected int no;
   protected String name;
+  
   
   public int getNo() {
     return no;
@@ -21,6 +23,4 @@ public class BeerCate implements Serializable {
     this.name = name;
   }
   
-  
-
 }

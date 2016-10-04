@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
-import dao.BeerCateDao;
+import dao.BeerBrandDao;
 import vo.BeerCate;
 
 @Controller
-@RequestMapping("/beercate/")
-public class BeerCateController {
+@RequestMapping("/beerbrand/")
+public class BeerBrandController {
   
-  @Autowired BeerCateDao beerCateDao;
+  @Autowired BeerBrandDao beerBrandDao;
   
   @RequestMapping(path="list", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
@@ -33,7 +33,7 @@ public class BeerCateController {
       map.put("startIndex", (pageNo - 1) * length);
       map.put("length", length);
       
-      List<BeerCate> list = beerCateDao.selectList(map);
+      List<BeerCate> list = beerBrandDao.selectList(map);
       
       result.put("state", "success");
       result.put("data", list);

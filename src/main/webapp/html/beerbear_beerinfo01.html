@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!--   <link rel="stylesheet" href="css/setting.css"> -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
@@ -123,23 +122,23 @@
         <div id="section2_menu1" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
           <div id="menu1">
           <img src="img/beerbear013.jpg" class="section2_menu_img" />
-            <h4>THIS IS MENU1(맥주정보)</h4>
+            <h4>국가별 맥주</h4>
             <h5>this is menu1 contents.</h5>
           </div>
         </div>
         <div id="section2_menu2" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
           <img src="img/beerbear001.jpg" class="section2_menu_img" />
-          <h4>THIS IS MENU2(맥주인증)</h4>
+          <h4>제조방식별 맥주</h4>
           <h5>this is menu2 contents.</h5>
         </div>
         <div id="section2_menu3" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
           <img src="img/beerbear019.jpg" class="section2_menu_img" />
-          <h4>THIS IS MENU3(맥주위치)</h4>
+          <h4>순위별 맥주</h4>
           <h5>this is menu3 contents.</h5>
         </div>
         <div id="section2_menu4" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
           <img src="img/beerbear025.jpg" class="section2_menu_img" />
-          <h4>THIS IS MENU4(공지사항)</h4>
+          <h4>오늘의 맥주</h4>
           <h5>this is menu4 contents.</h5>
         </div>
       </div>
@@ -180,10 +179,16 @@
 <script>
   "use strict"
   
-  var menuBtn1 = document.querySelector("#section2_menu1")
+  var menuBtn1 = document.querySelector("#menu1")
   
   menuBtn1.onclick = function(event) {
-	  window.location.href="beerbear_beerdesc01.html"
+	  window.location.href="../beer/beerApp.html"
+  }
+  
+var menuBtn2 = document.querySelector("#section2_menu2")
+  
+  menuBtn2.onclick = function(event) {
+    window.location.href="../beercate/beerCateApp.html"
   }
 
 </script>

@@ -47,11 +47,10 @@ public class BeerController {
   
   @RequestMapping(path="detail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
-  public String detail() throws Exception {
+  public String detail(int no) throws Exception {
     HashMap<String,Object> result = new HashMap<>();
-    
     try {
-      Beer beer = beerDao.selectOne(1);
+      Beer beer = beerDao.selectOne(no);
       
       if (beer == null) 
         throw new Exception("해당 번호의 게시물이 존재하지 않습니다.");
@@ -60,6 +59,7 @@ public class BeerController {
       result.put("data", beer);
       
     } catch (Exception e) {
+      System.out.println("실패" + no);
       result.put("state", "fail");
       result.put("data", e.getMessage());
     }

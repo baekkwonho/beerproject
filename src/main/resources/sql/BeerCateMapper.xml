@@ -10,7 +10,8 @@
   </resultMap>
   
   <select id="selectList" resultMap="beerCateMap" parameterType="map">
-    select * from BEERS_CATE
+    select CATENO, CATENM
+    from BEERS_CATE
     limit #{startIndex}, #{length}
   </select>
 

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 
+
 <style>
 .container {
   width: 600px;
@@ -15,25 +16,32 @@
 
 </head>
 <body>
+<div class="container">     
+  <div style='background-color:navy;font-size:150%;color:white;position:relative;'>
+  맥주 브랜드 리스트
 
-<h1>맥주 분류 목록조회</h1>
+  </div>
+        
+</div>
 
-<table id="beerCateTable" class="table table-hover">
+<h1>게시물 목록조회</h1>
+
+<table id="beerBrandTable" class="table table-hover">
 <thead>
 <tr>
   <th>번호</th>
-  <th>맥주분류명</th>
+  <th>맥주브랜드명</th>
 </tr>
 </thead>
 <tbody></tbody>
 </table>
-      
+
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
-<script type="text/javascript" src="beerCateApp.js"></script>
+<script type="text/javascript" src="beerBrandApp.js"></script>
 <script>
 
-ajaxBeerCateList()
+ajaxBeerBrandList()
 
 </script>
 
