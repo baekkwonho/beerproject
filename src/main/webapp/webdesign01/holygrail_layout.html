@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>holygrail_layout</title>
+    
+    <style>
+        
+       
+        
+        * {
+            box-sizing: border-box;
+        }
+    
+        .container {
+            border: 5px solid black;
+/*            min-width: 600px;*/
+        }
+        
+        .container > * {
+            border: 5px solid red;
+        }
+        
+        .container > .content > * {
+            border: 5px solid green;
+        }
+        
+        .container .content {
+            padding-left: 200px;
+            padding-right: 150px;
+            overflow: hidden;
+        }
+        
+        .container .content > * {
+            float: left;
+            padding-bottom: 2500px;
+            margin-bottom: -2500px;
+        }
+        
+        .container .content main {
+            width: 100%;
+        }
+        
+        .container .content nav {
+            width: 200px;
+            margin-left: -100%;
+            left: -200px;
+            position: relative;
+        }
+        
+        .container .content aside {
+            width: 150px;
+            margin-right: -150px;
+        }
+        
+        .container footer {
+            clear: both;
+        }
+    
+         @media (max-width: 599px) {
+            .container .content {
+                padding-left: 0;
+                padding-right: 0;
+                overflow: visible;
+            }
+        
+            .container .content > * {
+                float: none;
+                padding-bottom: 0;
+                margin-bottom: -0;
+            }
+
+            .container .content main {
+                width: 100%;
+            }
+
+            .container .content nav {
+                width: auto;
+                margin-left: 0;
+                left: 0;
+                position: relative;
+            }
+
+            .container .content aside {
+                width: auto;
+                margin-right: 0;
+            }
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>HEADER</h1>
+        </header>
+        <section class="content">
+            <main>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias culpa inventore, nobis pariatur architecto illum perferendis autem repellendus dolorum, saepe ipsa asperiores. Omnis, quo recusandae cumque pariatur eos ea repellendus enim. Nulla a aspernatur perspiciatis quaerat incidunt saepe, ipsa, eos amet minus fugit libero accusantium reprehenderit et labore quidem pariatur vel repellat eaque in. Laborum reiciendis deleniti doloremque excepturi reprehenderit, consequuntur, iste consequatur impedit nulla aspernatur illum unde incidunt dolore in sint voluptas, dolorum ea quo optio et culpa nam! Odit sunt, possimus, error repellat harum dolorem. Id vel, temporibus a, illo minus doloremque consectetur iste quam placeat blanditiis quas?
+            </main>
+            <nav>
+                <ul>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                </ul>
+            </nav>
+            <aside>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ratione molestias minus doloremque expedita ex, obcaecati dolorum libero saepe at.
+            </aside>
+        </section>
+        <footer>
+            <a href="http://opentutorials.org/course/1">FOOTER</a>
+        </footer>
+    </div>
+    
+</body>
+</html>
