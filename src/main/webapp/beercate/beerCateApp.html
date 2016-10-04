@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<style>
+.container {
+  width: 600px;
+}
+</style>
+
+</head>
+<body>
+<div class="container">     
+  <div style='background-color:navy;font-size:150%;color:white;position:relative;'>
+  맥주 분류 리스트
+
+  </div>
+        
+</div>
+
+<h1>게시물 목록조회</h1>
+
+<table id="beerCateTable" class="table table-hover">
+<thead>
+<tr>
+  <th>번호</th>
+  <th>맥주분류명</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="beerApp.js"></script>
+<script>
+
+ajaxBeerCateList()
+//ajaxBeerOneList() // 게시물 목록 가져오기
+
+</script>
+
+
+</body>
+</html>
+
+
+
+

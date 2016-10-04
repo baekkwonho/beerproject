@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BeerDao">
+  <resultMap type="beer" id="beerMap">
+    <id column="BRNO" property="no"/> 
+    
+    <result column="CATENO" property="cateno"/>
+    <result column="BRBRNO" property="brbrno"/>
+    <result column="BR_DESC" property="describe"/>
+    <result column="CTRY" property="country"/>
+    <result column="COMP" property="company"/>
+    <result column="CTRY" property="country"/>
+    <result column="ACHL" property="alchol"/>
+    <result column="VOL" property="volume"/>
+  </resultMap>
+  
+  <select id="selectList" resultMap="beerMap" parameterType="map">
+    select BRNO, CATENM, BRBRNM, BR_DESC, CTRY, COMP, ACHL, VOL
+    from BEERS join BEERS_CATE on BEERS.CATENO = BEERS_CATE.CATENO
+    join BEERS_BRAND on BEERS.BRBRNO = BEERS_BRAND.BRBRNO
+    limit #{startIndex}, #{length}
+  </select>
+  
+  <select id="selectOne" resultMap="beerMap" parameterType="int">
+    select * from beers
+    where no = #{value}
+  
+  </select>
+  
+
+</mapper>
