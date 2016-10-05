@@ -8,7 +8,7 @@ public class Member implements Serializable {
   
   protected int no;
   protected String email;
-  protected String password;
+  protected transient String password;
   protected String nickname;
   protected Date birth;
   protected boolean gender;

@@ -21,7 +21,7 @@ import dao.MemberDao;
 import vo.Member;
 
 @Controller 
-@RequestMapping("/auth/") 
+@RequestMapping("/webdesign01/signup_loginform") 
 @SessionAttributes({"member"}) // Model 객체에 저장된 정보 중에서 로그인 회원 정보는 따로 세션으로 관리한다.
 public class AuthController {
   
