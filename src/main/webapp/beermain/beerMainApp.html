@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 
 
 <style>
@@ -36,7 +35,7 @@
   #section1 {
     /* border: 1px solid blue; */
     height: 600px;
-    background: url(img/beer2.png) no-repeat center center fixed; 
+    background: url(../img/beer2.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -118,8 +117,8 @@
     <div class="header_space col-xs-8 col-sm-2 col-md-3 col-lg-4"></div>
     <div class="col-xs-12 col-sm-8 col-md-7 col-lg-6">
       <ul class="nav nav-pills menu_right">
-        <li role="presentation" ><a href="beerbear_beerinfo01.html">맥주정보</a></li>
-        <li role="presentation" ><a href="beerbear_beervideo01.html">맥주인증</a></li>
+        <li role="presentation" ><a href="../beerinfo/beerbear_beerinfo01.html">맥주정보</a></li>
+        <li role="presentation" ><a href="../beervideo/beerbear_beervideo01.html">맥주인증</a></li>
         <li role="presentation"><a href="#">맥주위치</a></li>
         <li role="presentation"><a href="#">공지사항</a></li>
         <li role="presentation"><a href="../webdesign01/signup_loginform/index2.html">Login</a></li>
@@ -157,36 +156,29 @@
 	    <div id="section2_menuAll" class="col-xs-12 col-sm-12 col-md-12">
 	      <div id="section2_menu1" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
 	        <div id="menu1">
-	        <img src="img/beerbear013.jpg" class="section2_menu_img" />
+	        <img src="../img/beerbear013.jpg" class="section2_menu_img" />
 	          <h4>THIS IS MENU1(맥주정보)</h4>
 	          <h5>this is menu1 contents.</h5>
 	        </div>
 	      </div>
 	      <div id="section2_menu2" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
-          <img src="img/beerbear001.jpg" class="section2_menu_img" />
+          <img src="../img/beerbear001.jpg" class="section2_menu_img" />
           <h4>THIS IS MENU2(맥주인증)</h4>
           <h5>this is menu2 contents.</h5>
         </div>
         <div id="section2_menu3" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
-          <img src="img/beerbear019.jpg" class="section2_menu_img" />
+          <img src="../img/beerbear019.jpg" class="section2_menu_img" />
           <h4>THIS IS MENU3(맥주위치)</h4>
           <h5>this is menu3 contents.</h5>
         </div>
         <div id="section2_menu4" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
-          <img src="img/beerbear025.jpg" class="section2_menu_img" />
+          <img src="../img/beerbear025.jpg" class="section2_menu_img" />
           <h4>THIS IS MENU4(공지사항)</h4>
           <h5>this is menu4 contents.</h5>
         </div>
 	    </div>
 	    
-	    <script>
-	      "use strict"
-	      var breweryBtn = document.querySelector("#menu1")
-	      
-	      breweryBtn.onclick = function(event) {
-	    	  window.location.href="beerbear_beerinfo01.html"
-	      }
-	    </script>
+	   
    
     </div>
   </div>
@@ -219,6 +211,18 @@
   
 
 </div>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+
+ <script>
+  "use strict"
+  var breweryBtn = document.querySelector("#menu1")
+  
+  breweryBtn.onclick = function(event) {
+    window.location.href="../beerinfo/beerbear_beerinfo01.html"
+  }
+ </script>
 
 
 </body>

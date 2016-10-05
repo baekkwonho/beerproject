@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>warning page</title>
+
+  <!-- jQuery 2.2.4 version -->
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  
+  <!-- animate CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Londrina+Outline|Londrina+Shadow" rel="stylesheet">
+  <!-- Hover css / button hover -->
+  <link href="css/hover.css" rel="stylesheet" media="all">
+
+<style>
+
+  html {height: 100%;}
+  body {height: 100%; margin: 0;}
+
+  #video_wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  #backgroundVideo {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+  }
+  
+  #main_wrap {
+    height: 100%;
+    position: relative;
+  /*   border: 3px solid blue; */
+    overflow: hidden;
+  }
+  
+  #opacity_wrap {
+   position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 600px;
+    height: 250px;
+    background-color: black;
+    opacity: 0.1;
+  }
+  
+  #warning_wrap {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 600px;
+    height: 250px;
+    border: 2px solid red;
+/*     background-color: black; */
+    /* opacity: 0.6; */
+    text-align: center;
+  }
+  
+  #message {
+    position: relative;
+  /*   border: 1px solid green; */
+    width: 600px;
+    height: 150px;
+    color: white;
+  }
+  
+  h1 {
+/*     font-family: 'Bungee Shade', cursive; */
+    /* font-family: 'Londrina Outline', cursive; */
+    font-family: 'Londrina Shadow', cursive;
+/*     font-weight: bold; */
+    font-size: 38px;
+  }
+  
+  .message {
+     -webkit-animation-duration: 1s;
+     /* -webkit-animation-delay: 1s; */
+     -webkit-animation-iteration-count: 1;
+  }
+  
+  
+
+  
+  #answer {
+    position: relative;
+   /*  border: 1px solid yellow; */
+    width: 600px;
+    height: 100px;
+  }
+  
+  
+  
+  .answerBtn {
+    width: 150px;
+    height: 60px;
+    font-size: 30px;
+    margin: 15px 20px;
+  }
+  
+  
+  a {
+    text-decoration: none;
+    font-size: 40px;
+  }
+  
+   
+   .hvr-shutter-out-horizontal {
+     width: 100px;
+     color: red;
+     background: white;
+     content: black;
+   }
+   
+   .hvr-shutter-out-horizontal:before {
+    background: red;
+}
+   
+</style>
+</head>
+<body >
+
+  <div id="video_wrap">
+    <video id="backgroundVideo" muted autoplay loop>
+      <source type="video/mp4" src="../video/warning_movie.mp4">
+    </video>
+  </div>
+  
+  <div id="main_wrap">
+  
+    <div id="opacity_wrap"></div>
+  
+    <div id="warning_wrap" >
+      <div id="message">
+        <h1 class="message animated bounce">Hello<br>
+        ARE YOU OF LEGAL DRIKING AGE?</h1>
+        <h4 class="message animated bounce small">대한민국은 만 19세 이상만 이용 가능합니다.</h4>
+      </div>
+      
+      <div id="answer">
+        
+        <a href="#" id = "yesBtn" class="hvr-shutter-out-horizontal">Yes</a>
+        
+        <script>
+          "use strict"
+          var yesBtn= document.querySelector("#yesBtn")
+          
+          yesBtn.onclick = function(event) {
+            window.location.href="../beermain/beerbear_index03.html"
+          }
+        
+        </script>
+        
+        <a href="#" id = "noBtn" class="hvr-shutter-out-horizontal">No</a>
+        
+        <script type="text/javascript">
+          "use strict"
+          var noBtn = document.querySelector("#noBtn")
+          var message = document.querySelector("#warning_wrap")
+          var opacity = document.querySelector("#opacity_wrap")
+          
+          noBtn.onclick = function(event) {
+        	  message.style["display"] ="none"
+        	  opacity.style["display"] = "none"
+          }
+          
+        </script>
+      </div>
+    
+    </div>
+
+  </div>
+  
+
+
+</body>
+</html>
