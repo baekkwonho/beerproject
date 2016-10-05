@@ -39,7 +39,7 @@
   #beerimg {
     height: 600px;
     
-   background: url(../html/img/beerdesc001.jpg) no-repeat center center; 
+   background: url(../img/beerdesc001.jpg) no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -84,12 +84,12 @@
 <div class="container-fluid">
   
   <div id="header" class="row">
-     <div class="logo col-xs-4 col-sm-2 col-md-2 col-lg-2"><a href="../html/beerbear_index03.html">BEER<br>BEAR</a></div>
+  <div class="logo col-xs-4 col-sm-2 col-md-2 col-lg-2"><a class="logoMenu" href="#">BEER<br>BEAR</a></div>
     <div class="header_space col-xs-8 col-sm-2 col-md-3 col-lg-4"></div>
     <div class="col-xs-12 col-sm-8 col-md-7 col-lg-6">
       <ul class="nav nav-pills menu_right">
-        <li role="presentation" class="active"><a href="#">맥주정보</a></li>
-        <li role="presentation" ><a id="header_menu2" href="#">맥주인증</a></li>
+       <li role="presentation" class="active"><a class="infoMenu" href="#">맥주정보</a></li>
+        <li role="presentation" ><a class="videoMenu" href="#">맥주인증</a></li>
         <li role="presentation"><a href="#">맥주위치</a></li>
         <li role="presentation"><a href="#">공지사항</a></li>
         <li role="presentation"><a href="#">Login</a></li>
@@ -126,7 +126,7 @@
   
   <div id="footer" class="row">
      <div class="col-lg-1"></div>
-     <div class="logo col-xs-2 col-sm-1 col-md-1 col-lg-1"><a href="#">BEER<br>BEAR</a></div>
+      <div class="logo col-xs-2 col-sm-1 col-md-1 col-lg-1"><a class="logoMenu" href="#">BEER<br>BEAR</a></div>
      <div class="col-xs-10 col-sm-6 col-md-6 col-lg-5">
        <ul class="nav nav-pills">
          <li role="presentation"><a href="#">ABOUT</a></li>
@@ -158,14 +158,38 @@
 <script type="text/javascript" src="beerApp.js"></script>
 <script type="text/javascript" src="beerDetail.js"></script>
 <script>
-
-
-<!-- url에서 넘어오는 파라미터 값 no를 잘라낸다. -->
-if (location.search.startsWith("?")) {
-		var no = location.search.split("=")[1];
-    ajaxLoadBeer(no)
-    
-}
+	"use strict"
+	
+	var logoMenu = document.querySelectorAll(".logoMenu")
+	
+	  for(var i = 0; i <logoMenu.length; i++) {
+	    logoMenu[i].onclick = function(event) {
+	      window.location.href="../beermain/beerMainApp.html"
+	    }
+	  }
+	
+	var infoMenu = document.querySelectorAll(".infoMenu")
+	
+	for(var i = 0; i <infoMenu.length; i++) {
+	  infoMenu[i].onclick = function(event) {
+	    window.location.href="../beer/beerInfoApp.html"
+	  }
+	}  
+	
+	var videoMenu = document.querySelectorAll(".videoMenu")
+	
+	for(var i = 0; i <videoMenu.length; i++) {
+	  videoMenu[i].onclick = function(event) {
+	    window.location.href="../beervideo/beerVideoApp.html"
+	  }
+	}
+	
+	<!-- url에서 넘어오는 파라미터 값 no를 잘라낸다. -->
+	if (location.search.startsWith("?")) {
+			var no = location.search.split("=")[1];
+	    ajaxLoadBeer(no)
+	    
+	}
 
 
 

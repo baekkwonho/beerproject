@@ -4,15 +4,13 @@
   <meta charset="UTF-8">
   <title>warning page</title>
 
-  <!-- jQuery 2.2.4 version -->
-  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   
   <!-- animate CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Londrina+Outline|Londrina+Shadow" rel="stylesheet">
   <!-- Hover css / button hover -->
-  <link href="css/hover.css" rel="stylesheet" media="all">
+  <link href="../css/hover.css" rel="stylesheet" media="all">
 
 <style>
 
@@ -146,35 +144,34 @@
         
         <a href="#" id = "yesBtn" class="hvr-shutter-out-horizontal">Yes</a>
         
-        <script>
-          "use strict"
-          var yesBtn= document.querySelector("#yesBtn")
-          
-          yesBtn.onclick = function(event) {
-            window.location.href="../beermain/beerbear_index03.html"
-          }
-        
-        </script>
-        
         <a href="#" id = "noBtn" class="hvr-shutter-out-horizontal">No</a>
         
-        <script type="text/javascript">
-          "use strict"
-          var noBtn = document.querySelector("#noBtn")
-          var message = document.querySelector("#warning_wrap")
-          var opacity = document.querySelector("#opacity_wrap")
-          
-          noBtn.onclick = function(event) {
-        	  message.style["display"] ="none"
-        	  opacity.style["display"] = "none"
-          }
-          
-        </script>
       </div>
     
     </div>
 
   </div>
+  
+  
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  
+  <script>
+	   "use strict"
+	   var yesBtn= document.querySelector("#yesBtn")
+	   
+	   yesBtn.onclick = function(event) {
+	     window.location.href="../beermain/beerMainApp.html"
+	   }
+	   
+	   var noBtn = document.querySelector("#noBtn")
+	   var message = document.querySelector("#warning_wrap")
+	   var opacity = document.querySelector("#opacity_wrap")
+	   
+	   noBtn.onclick = function(event) {
+	     message.style["display"] ="none"
+	     opacity.style["display"] = "none"
+	   }
+  </script>
   
 
 
