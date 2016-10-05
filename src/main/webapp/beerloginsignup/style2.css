@@ -135,13 +135,15 @@ textarea {
 }
 
 #emailbox {
-    margin-bottom: 0px;
+    margin-bottom: 40px;
 }
 
 #checkb {
+    float: left;
     display: inline-block;
     height: 15px;
     width: 15px;
+    margin-top: 8px;
     
 }
 
@@ -150,25 +152,45 @@ textarea {
   margin-bottom: 40px;
 }
 
-#field-pwd {
-  padding-top: 49px;
-	}
-
 .remem-wrap {
-    float: left;
+  display: inline-block;
+  padding-top: 21px;
+}
+
+.forgot {
+	width: 200px;
+  display: inline-block;
+  float: right;
+  text-align: right;
 }
 
 h4 {
   display: inline-block;
-  
   font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 100;
   margin-top: 0px;
-  padding-top: 0px;
-  margin-bottom: 
-  
+  margin-left: 5px;
+  padding-top: -5px;
+  margin-top: 5px;  
 }
+
+.icons {
+    text-align: right;
+    list-style: none;
+    
+}
+
+.icons > li {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+}
+
+.icons > input {
+    
+}
+
 
 .top-row:after {
   content: "";
@@ -247,7 +269,3 @@ h4 {
   width: 100%;
 }
 
-.forgot {
-  margin-top: -20px;
-  text-align: right;
-}
