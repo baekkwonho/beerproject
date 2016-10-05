@@ -140,8 +140,8 @@ textarea {
 
 #checkb {
     display: inline-block;
-    height: 30px;
-    width: 30px;
+    height: 15px;
+    width: 15px;
     
 }
 
@@ -149,6 +149,10 @@ textarea {
   position: relative;
   margin-bottom: 40px;
 }
+
+#field-pwd {
+  padding-top: 49px;
+	}
 
 .remem-wrap {
     float: left;
