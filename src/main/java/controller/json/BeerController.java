@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 
 import dao.BeerDao;
 import vo.Beer;
+import vo.JsonResult;
 
 @Controller
 @RequestMapping("/beer/")
@@ -21,33 +22,26 @@ public class BeerController {
   
   @Autowired BeerDao beerDao;
   
-  @RequestMapping(path="list", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String list(
+  @RequestMapping(path="list")
+  public Object list(
       @RequestParam(defaultValue="1") int pageNo,
       @RequestParam(defaultValue="5") int length) throws Exception{
     
-    HashMap<String,Object> result = new HashMap<>();
     try {
       HashMap<String,Object> map = new HashMap<>();
       map.put("startIndex", (pageNo - 1) * length);
       map.put("length", length);
       
       List<Beer> list = beerDao.selectList(map);
-      
-      result.put("state", "success");
-      result.put("data", list);
+      return JsonResult.success(list);
     } catch (Exception e) {
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
+      return JsonResult.fail(e.getMessage());
     }
-    
-    return new Gson().toJson(result);
   }
   
-  @RequestMapping(path="detail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="detail")
   @ResponseBody
-  public String detail(int no) throws Exception {
+  public Object detail(int no) throws Exception {
     HashMap<String,Object> result = new HashMap<>();
     try {
       Beer beer = beerDao.selectOne(no);
@@ -55,16 +49,14 @@ public class BeerController {
       if (beer == null) 
         throw new Exception("해당 번호의 게시물이 존재하지 않습니다.");
       
-      result.put("state", "success");
-      result.put("data", beer);
+      return JsonResult.success(beer);
+//      result.put("state", "success");
+//      result.put("data", beer);s
       
     } catch (Exception e) {
-      System.out.println("실패" + no);
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
+      return JsonResult.fail(e.getMessage());
+//      result.put("state", "fail");
+//      result.put("data", e.getMessage());
     }
-    
-    return new Gson().toJson(result);
   }
-
 }

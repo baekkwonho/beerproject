@@ -37,6 +37,7 @@ dependencies {
   
   
   providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.3'
   
   
   

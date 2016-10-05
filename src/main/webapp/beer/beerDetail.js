@@ -1,6 +1,7 @@
 
 function ajaxLoadBeer(no) {
-	$.getJSON("detail.json?no="+ no, function(result) {
+	$.getJSON(serverAddr + "/beer/detail.json?no="+ no, function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("조회 실패입니다.")
 			return

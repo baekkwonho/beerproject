@@ -12,4 +12,12 @@
 	<context:component-scan base-package="controller.json" />
 	<mvc:annotation-driven/>
 
+<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+    <property name="defaultViews">
+        <list>
+            <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+        </list>
+    </property>
+</bean>
+
 </beans>

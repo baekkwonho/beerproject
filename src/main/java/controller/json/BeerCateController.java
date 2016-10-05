@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 
 import dao.BeerCateDao;
 import vo.BeerCate;
+import vo.JsonResult;
 
 @Controller
 @RequestMapping("/beercate/")
@@ -21,30 +22,21 @@ public class BeerCateController {
   
   @Autowired BeerCateDao beerCateDao;
   
-  @RequestMapping(path="list", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String list(
+  @RequestMapping(path="list")
+  public Object list(
       @RequestParam(defaultValue="1") int pageNo,
       @RequestParam(defaultValue="5") int length) throws Exception {
     
-    HashMap<String,Object> result = new HashMap<>();
     try {
       HashMap<String,Object> map = new HashMap<>();
       map.put("startIndex", (pageNo - 1) * length);
       map.put("length", length);
       
       List<BeerCate> list = beerCateDao.selectList(map);
-      
-      result.put("state", "success");
-      result.put("data", list);
+      return JsonResult.success(list);
     }catch (Exception e) {
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
+      return JsonResult.fail(e.getMessage());
     }
-  
-  return new Gson().toJson(result);
   }
-  
-  
 }
   
