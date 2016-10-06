@@ -22,6 +22,7 @@
     on beers.brbrno = beers_brand.brbrno
     inner join beers_cate
     on beers.cateno = beers_cate.cateno
+    order by brno
     limit #{startIndex}, #{length}
   </select>
   
@@ -31,9 +32,28 @@
     on beers.brbrno = beers_brand.brbrno
     inner join beers_cate
     on beers.cateno = beers_cate.cateno
-    where brno = #{value}
+    where beers.brno = #{value}
   
   </select>
   
+   <select id="selectListCate" resultMap="beerMap" parameterType="map">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_cate
+    on beers.cateno = beers_cate.cateno
+    where beers.cateno = #{cate}
+    limit #{startIndex}, #{length}
+  </select>
+  
+   <select id="selectOneCate" resultMap="beerMap" parameterType="int">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_cate
+    on beers.cateno = beers_cate.cateno
+    where beers.cateno = #{value}
+    
+  </select>
 
 </mapper>

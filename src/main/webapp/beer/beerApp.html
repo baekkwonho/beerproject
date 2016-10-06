@@ -137,38 +137,30 @@
      </div>
   </div>
 </div>
-      
+
+<script id="trTemplateText" type="text/x-handlebars-template">
+
+{{#each data}}
+<tr>
+  <td><a href="#" class="noBtn" data-no="{{no}}">{{no}}</a></td>
+  <td>{{catename}}</td>
+  <td>{{brbrname}}</td>
+  <td>{{describe}}</td>
+  <td>{{country}}</td>
+  <td>{{company}}</td>
+  <td>{{alchol}}</td>
+  <td>{{volume}}</td>
+</tr>
+{{/each}}
+
+</script>
+
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="beerApp.js"></script>
 <script>
-	"use strict"
-	
-	var logoMenu = document.querySelectorAll(".logoMenu")
-	
-	  for(var i = 0; i <logoMenu.length; i++) {
-	    logoMenu[i].onclick = function(event) {
-	      window.location.href="../beermain/beerMainApp.html"
-	    }
-	  }
-	
-	var infoMenu = document.querySelectorAll(".infoMenu")
-	
-	  for(var i = 0; i <infoMenu.length; i++) {
-	    infoMenu[i].onclick = function(event) {
-	      window.location.href="../beer/beerInfoApp.html"
-	    }
-	  }  
-	
-	var videoMenu = document.querySelectorAll(".videoMenu")
-	  
-	  for(var i = 0; i <videoMenu.length; i++) {
-	    videoMenu[i].onclick = function(event) {
-	      window.location.href="../beervideo/beerVideoApp.html"
-	    }
-	  }
-
 
 ajaxBeerList()
 

@@ -8,6 +8,9 @@ import vo.Beer;
 public interface BeerDao {
   List<Beer> selectList(Map<String,Object> paramMap) throws Exception;
   Beer selectOne(int no) throws Exception;
+  List<Beer> selectListCate(Map<String,Object> paramMap) throws Exception;
+  Beer selectOneCate(int no) throws Exception;
+  
 //  int insert(Beer beer) throws Exception;
 //  int update(Beer beer) throws Exception;
 //  int delete(int no) throws Exception;

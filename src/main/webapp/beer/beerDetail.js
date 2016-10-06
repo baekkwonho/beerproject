@@ -1,3 +1,24 @@
+	var logoMenu = document.querySelectorAll(".logoMenu")
+	  for(var i = 0; i <logoMenu.length; i++) {
+	    logoMenu[i].onclick = function(event) {
+	      window.location.href="../beermain/beerMainApp.html"
+	    }
+	  }
+	
+	var infoMenu = document.querySelectorAll(".infoMenu")
+	for(var i = 0; i <infoMenu.length; i++) {
+	  infoMenu[i].onclick = function(event) {
+	    window.location.href="../beer/beerInfoApp.html"
+	  }
+	}  
+	
+	var videoMenu = document.querySelectorAll(".videoMenu")
+	for(var i = 0; i <videoMenu.length; i++) {
+	  videoMenu[i].onclick = function(event) {
+	    window.location.href="../beervideo/beerVideoApp.html"
+	  }
+	}
+
 
 function ajaxLoadBeer(no) {
 	$.getJSON(serverAddr + "/beer/detail.json?no="+ no, function(obj) {
@@ -6,21 +27,24 @@ function ajaxLoadBeer(no) {
 			alert("조회 실패입니다.")
 			return
 		}
-		var beerdesc = ""
-		var contents = ""
-			
-		beerdesc =
-			"<h1>맥주설명</h1>" + 
-			"<p>" + result.data.describe + "</p>"
-		
-		contents = 
-    		"<div id='beer_country' class='col-sm-6 col-md-6 col-lg-6'><h1>제조국가: " + result.data.country + "</h1></div>" +
-    		"<div id='beer_company' class='col-sm-6 col-md-6 col-lg-6'><h1>제조사: " + result.data.company + "</h1></div>" +
-    		"<div id='beer_alchol' class='col-sm-6 col-md-6 col-lg-6'><h1>알콜: " + result.data.alchol + "%</h1></div>" +
-    		"<div id='beer_volume' class='col-sm-6 col-md-6 col-lg-6'><h1>용량: " + result.data.volume + "ml</h1></div>" +
-    		"<div id='beer_volume' class='col-sm-6 col-md-6 col-lg-6'><h1>제조방식: " + result.data.catename + "</h1></div>"
-    		
-    	$("#beerpara").html(beerdesc)
-    	$("#info_wrap").html(contents)
+    	var beerParaTemplate = Handlebars.compile($("#beerParaTemplateText").html())
+    	$("#beerpara").html(beerParaTemplate(result.data))
+    	var beerDivTemplate = Handlebars.compile($("#beerDivTemplateText").html())
+    	$("#info_wrap").html(beerDivTemplate(result.data))
 	})
 }
+
+function ajaxLoadBeerCate(no) {
+	$.getJSON(serverAddr + "/beer/cateDetail.json?no=" + no, function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("조회 실패입니다.")
+			return
+		}
+    	var beerParaTemplate = Handlebars.compile($("#beerParaTemplateText").html())
+    	$("#beerpara").html(beerParaTemplate(result.data))
+    	var beerDivTemplate = Handlebars.compile($("#beerDivTemplateText").html())
+    	$("#info_wrap").html(beerDivTemplate(result.data))
+	})
+}
+

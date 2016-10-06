@@ -100,9 +100,11 @@
   
   <div class="row">
     <div id="section1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div id="beerimg" class="col-sx-4 col-sm-4 col-md-4 col-lg-4"></div>
+    <div id="beerimg" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
+      <button id="beerAddBtn">맥주등록</button>
+    </div>
     <div id="beerpara" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
-      <!--beerDetail.j에서 값을 넣어줌 -->
+      <!--beerDetail.js에서 값을 넣어줌 -->
     </div>
     <div id="beerchart" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
       <h1>Chart</h1>
@@ -119,7 +121,22 @@
   
   <div class="row">
     <div id="section2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    
+      <h1>관련맥주리스트</h1>
+      <table id="beerTable" class="table table-hover">
+        <thead>
+        <tr>
+          <th>번호</th>
+          <th>맥주분류</th>
+          <th>맥주브랜드</th>
+          <th>설명</th>
+          <th>제조나라</th>
+          <th>제조회사</th>
+          <th>알콜</th>
+          <th>용량</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
     
     </div>
   </div>
@@ -148,51 +165,66 @@
        <h6>&copy;2016 BEERBEAR All rights reserved.</h6>
      </div>
   </div>
-  
-  
 
 </div>
 
+<script id="beerParaTemplateText" type="text/x-handlebars-template">
+
+  <h1>맥주설명</h1>
+  <p>{{describe}}</p>
+
+</script>
+
+<script id="beerDivTemplateText" type="text/x-handlebars-template">
+
+  <div id="beer_country" class="col-sm-6 col-md-6 col-lg-6"><h1>제조국가:{{country}}</h1></div>
+  <div id="beer_company" class="col-sm-6 col-md-6 col-lg-6"><h1>제조사:{{company}}</h1></div>
+  <div id="beer_alchol" class="col-sm-6 col-md-6 col-lg-6"><h1>알콜:{{alchol}}%</h1></div>
+  <div id="beer_volume" class="col-sm-6 col-md-6 col-lg-6"><h1>용량:{{volume}}ml</h1></div>
+  <div id="beer_cate" class="col-sm-6 col-md-6 col-lg-6"><h1>제조방식:{{catename}}</h1></div>
+
+</script>
+
+<script id="trTemplateText" type="text/x-handlebars-template">
+
+{{#each data}}
+<tr>
+  <td><a href="#" class="noBtn" data-no="{{no}}">{{no}}</a></td>
+  <td>{{catename}}</td>
+  <td>{{brbrname}}</td>
+  <td>{{describe}}</td>
+  <td>{{country}}</td>
+  <td>{{company}}</td>
+  <td>{{alchol}}</td>
+  <td>{{volume}}</td>
+</tr>
+{{/each}}
+
+</script>
+
+
+
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="beerApp.js"></script>
 <script type="text/javascript" src="beerDetail.js"></script>
 <script>
-	"use strict"
-	
-	var logoMenu = document.querySelectorAll(".logoMenu")
-	
-	  for(var i = 0; i <logoMenu.length; i++) {
-	    logoMenu[i].onclick = function(event) {
-	      window.location.href="../beermain/beerMainApp.html"
-	    }
-	  }
-	
-	var infoMenu = document.querySelectorAll(".infoMenu")
-	
-	for(var i = 0; i <infoMenu.length; i++) {
-	  infoMenu[i].onclick = function(event) {
-	    window.location.href="../beer/beerInfoApp.html"
-	  }
-	}  
-	
-	var videoMenu = document.querySelectorAll(".videoMenu")
-	
-	for(var i = 0; i <videoMenu.length; i++) {
-	  videoMenu[i].onclick = function(event) {
-	    window.location.href="../beervideo/beerVideoApp.html"
-	  }
-	}
 	
 	<!-- url에서 넘어오는 파라미터 값 no를 잘라낸다. -->
+	
 	if (location.search.startsWith("?")) {
+		if (location.search.endsWith("cate")) {
+			var cateno = location.search.split("cate")[0].split("=")[1]
+			ajaxLoadBeerCate(cateno)
+			ajaxCateBeerList(cateno)
+			console.log(cateno)
+		} else {
 			var no = location.search.split("=")[1];
-	    ajaxLoadBeer(no)
-	    
+			ajaxLoadBeer(no)
+		}
 	}
-
-
 
 </script>
 
