@@ -9,10 +9,15 @@
     <result column="CATENM" property="name"/>
   </resultMap>
   
-  <select id="selectList" resultMap="beerCateMap" parameterType="map">
+  <!-- <select id="selectList" resultMap="beerCateMap" parameterType="map">
     select CATENO, CATENM
     from BEERS_CATE
     limit #{startIndex}, #{length}
-  </select>
+  </select> -->
 
+  <select id="selectList" resultMap="beerCateMap">
+    select CATENO, CATENM
+    from BEERS_CATE
+  <!--   limit #{startIndex}, #{length} -->
+  </select>
 </mapper>

@@ -1,3 +1,26 @@
+	var logoMenu = document.querySelectorAll(".logoMenu")
+	  for(var i = 0; i <logoMenu.length; i++) {
+	    logoMenu[i].onclick = function(event) {
+	      window.location.href="../beermain/beerMainApp.html"
+	    }
+	  }
+	
+	
+	var infoMenu = document.querySelectorAll(".infoMenu")
+	  for(var i = 0; i <infoMenu.length; i++) {
+	    infoMenu[i].onclick = function(event) {
+	      window.location.href="../beer/beerInfoApp.html"
+	    }
+	  }  
+	
+	
+	var videoMenu = document.querySelectorAll(".videoMenu")
+	  for(var i = 0; i <videoMenu.length; i++) {
+	    videoMenu[i].onclick = function(event) {
+	      window.location.href="../beervideo/beerVideoApp.html"
+	    }
+	  }
+
 
 function ajaxBeerCateList() {
 	$.getJSON(serverAddr + "/beercate/list.json", function(obj) {
@@ -7,17 +30,12 @@ function ajaxBeerCateList() {
 	    	 return
 	    }
 		
-		var contents = ""
-	    var arr = result.data
-	    for (var i in arr) {
-	    	contents += "<tr>" +
-	    	  "<td>" + arr[i].no + "</td>" +
-	    	  "<td>" + arr[i].name + "</td>" +
-	    	  "</tr>"
-	    }
-		
-		
-	    $("#beerCateTable tbody").html(contents)
+		var template = Handlebars.compile($("#divTemplateText").html())
+		$("#section2_munuAll").html(template(result))
+	    
+	    $(".menu_div").click(function(event) {
+	    	location.href="../beer/beerDetailApp.html?no=" + $(this).attr("data-no") + "cate"
+	    });
 	   
     })
 }
