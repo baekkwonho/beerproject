@@ -18,18 +18,18 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.google.gson.Gson;
 
 import dao.MemberDao;
+import vo.JsonResult;
 import vo.Member;
 
 @Controller 
-@RequestMapping("/webdesign01/signup_loginform") 
+@RequestMapping("/auth") 
 @SessionAttributes({"member"}) // Model 객체에 저장된 정보 중에서 로그인 회원 정보는 따로 세션으로 관리한다.
 public class AuthController {
   
   @Autowired MemberDao memberDao;
   
-  @RequestMapping(path="login", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String login(
+  @RequestMapping(path="login")
+  public Object login(
       HttpSession session, /* 세션이 무효화된 이후에 세션을 자동 생성하도록 강제한다.*/
       HttpServletResponse response,
       String email,
@@ -38,7 +38,6 @@ public class AuthController {
       Model model,
       SessionStatus sessionStatus) throws Exception {
     
-    HashMap<String,Object> result = new HashMap<>();
     try {
       Cookie cookie = new Cookie("email", email);
       if (!saveEmail){
@@ -62,18 +61,16 @@ public class AuthController {
       
       if (member == null) {
         sessionStatus.setComplete(); // 스프링이 관리하는 세션 값을 무효화시킨다.
-        result.put("state", "fail");
+        return JsonResult.fail();
         
       } else {
         model.addAttribute("member", member); // Model 객체에 로그인 회원 정보를 담는다.
-        result.put("state", "success");
+        return JsonResult.success();
       }
       
     } catch (Exception e) {
-      result.put("state", "error");
-      result.put("data", e.getMessage());
+      return JsonResult.error(e.getMessage());
     }
-    return new Gson().toJson(result);  
   }
   
   @RequestMapping(path="logout", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
