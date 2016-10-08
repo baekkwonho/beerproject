@@ -107,8 +107,8 @@
       <!--beerDetail.js에서 값을 넣어줌 -->
     </div>
     <div id="beerchart" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
-      <h1>Chart</h1>
       <button>평가하기</button>
+      <canvas id="radarChart"></canvas>
     </div>
     <div id="info_wrap" class="col-sx-6 col-sm-6 col-md-5 col-lg-5">
     <!-- beerDetail.js 에서 값을 넣어줌 -->
@@ -178,6 +178,7 @@
 <script id="beerDivTemplateText" type="text/x-handlebars-template">
 
   <div id="beer_country" class="col-sm-6 col-md-6 col-lg-6"><h1>제조국가:{{country}}</h1></div>
+  <div id="beer_brandname" class="col-sm-6 col-md-6 col-lg-6"><h1>브랜드명:{{brbrname}}</h1></div>
   <div id="beer_company" class="col-sm-6 col-md-6 col-lg-6"><h1>제조사:{{company}}</h1></div>
   <div id="beer_alchol" class="col-sm-6 col-md-6 col-lg-6"><h1>알콜:{{alchol}}%</h1></div>
   <div id="beer_volume" class="col-sm-6 col-md-6 col-lg-6"><h1>용량:{{volume}}ml</h1></div>
@@ -207,9 +208,12 @@
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
+<script src="../node_modules/chart.js/dist/Chart.min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="beerApp.js"></script>
 <script type="text/javascript" src="beerDetail.js"></script>
+<script type="text/javascript" src="../beertasteinfo/beerTasteInfoApp.js"></script>
+
 <script>
 	
 	<!-- url에서 넘어오는 파라미터 값 no를 잘라낸다. -->
@@ -219,10 +223,11 @@
 			var cateno = location.search.split("cate")[0].split("=")[1]
 			ajaxLoadBeerCate(cateno)
 			ajaxCateBeerList(cateno)
-			console.log(cateno)
+			ajaxBeerTasteInfoList(1)
 		} else {
 			var no = location.search.split("=")[1];
 			ajaxLoadBeer(no)
+			ajaxBeerTasteInfoList(1)
 		}
 	}
 

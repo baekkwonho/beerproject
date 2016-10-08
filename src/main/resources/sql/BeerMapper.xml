@@ -22,6 +22,8 @@
     on beers.brbrno = beers_brand.brbrno
     inner join beers_cate
     on beers.cateno = beers_cate.cateno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
     order by brno
     limit #{startIndex}, #{length}
   </select>
@@ -32,6 +34,8 @@
     on beers.brbrno = beers_brand.brbrno
     inner join beers_cate
     on beers.cateno = beers_cate.cateno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
     where beers.brno = #{value}
   
   </select>
@@ -42,6 +46,8 @@
     on beers.brbrno = beers_brand.brbrno
     inner join beers_cate
     on beers.cateno = beers_cate.cateno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
     where beers.cateno = #{cate}
     limit #{startIndex}, #{length}
   </select>
@@ -52,7 +58,10 @@
     on beers.brbrno = beers_brand.brbrno
     inner join beers_cate
     on beers.cateno = beers_cate.cateno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
     where beers.cateno = #{value}
+    order by beers.brno asc limit 0, 1
     
   </select>
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BeerTasteInfoDao">
+  <resultMap type="beerTasteInfo" id="beerTasteInfoMap">
+    <id column="BRNO" property="brno"/> 
+    <result column="MNO" property="mno"/>
+    <result column="SCORE" property="score"/>
+    <result column="BITTER" property="bitter"/>
+    <result column="SOUR" property="sour"/>
+    <result column="SWEET" property="sweet"/>
+    <result column="SPARKLE" property="sparkle"/>
+    <result column="BODY" property="body"/>
+    <result column="AROMA" property="aroma"/>
+  </resultMap>
+  
+  <select id="selectList" resultMap="beerTasteInfoMap" parameterType="int">
+    select * from beers_taste_info
+    where brno = #{value}
+  </select>
+  
+ <!--  <select id="selectOne" resultMap="beerMap" parameterType="int">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_cate
+    on beers.cateno = beers_cate.cateno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
+    where beers.brno = #{value}
+  </select> -->
+
+</mapper>

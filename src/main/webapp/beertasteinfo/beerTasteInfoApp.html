@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<style>
+
+  #tastechart {
+    width: 600px;
+    height: 700px;
+    background-color: white;
+    font-size: 20px;
+  }
+</style>
+<body>
+
+  <table id="beerTable" class="table table-hover">
+        <thead>
+        <tr>
+          <th>맥주번호</th>
+          <th>회원번호</th>
+          <th>평점</th>
+          <th>쓴맛</th>
+          <th>신맛</th>
+          <th>단맛</th>
+          <th>탄산</th>
+          <th>풍미</th>
+          <th>향미</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+  </table>
+
+
+<div id="tastechart">
+  <canvas id="radarChart" width="50" height="50"></canvas>
+</div>
+
+<script id="trTemplateText" type="text/x-handlebars-template">
+
+{{#each data}}
+<tr>
+  <td><a href="#" class="noBtn" data-no="{{no}}">{{no}}</a></td>
+  <td>{{brno}}</td>
+  <td>{{mno}}</td>
+  <td>{{score}}</td>
+  <td>{{bitter}}</td>
+  <td>{{sour}}</td>
+  <td>{{sweet}}</td>
+  <td>{{sparkle}}</td>
+  <td>{{body}}</td>
+  <td>{{aroma}}</td>
+</tr>
+{{/each}}
+
+</script>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="beerTasteInfoApp.js"></script>
+
+<script>
+
+ajaxBeerTasteInfoList(1)
+</script>
+
+</body>
+
+
+</html>
