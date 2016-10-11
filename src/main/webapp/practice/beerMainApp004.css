@@ -1,0 +1,270 @@
+header {
+/*    border: 1px solid blue;*/
+    background: rgb(255, 255, 255);
+}
+
+div {
+/*    border: 1px solid red;*/
+}
+
+nav {
+/*    border: 1px solid pink;*/
+}
+
+footer {
+/*    border: 1px solid orange;*/
+    background: #d95130;
+}
+
+nav {
+/*    border: 1px solid green;*/
+}
+
+
+header img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+
+}
+
+.header_logo {
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.header_brname {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #d95130;
+    vertical-align: top;
+    margin-top: 30px;
+    cursor: pointer;
+}
+    
+.header_menu {
+    display: inline-block;
+    float: right;
+    margin: 30px 30px;
+
+}
+
+.header_menu li {
+    display: inline-block;
+}
+
+.header_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.nav_button {
+    color: #d95130;
+    font-weight: 700;
+    background: rgba(255,255,255,0);
+    border: none;
+    width: 80px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.main_container {
+    height: 500px;
+    background: url(beerMainIMG.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+/*    opacity: 0.5;*/
+    padding: 0;
+}
+
+.main_search {
+    
+    text-align: center;
+}
+
+#search_form {
+/*    border: 1px solid black;*/
+    width: 1000px;
+    height: 60px;
+    display: inline-block;
+    position: relative;
+    padding-top: 70px;
+    
+}
+
+.form-control {
+    display: inline-block;
+    width: 500px;
+    border: 3px solid #d95130;
+    
+}
+
+::-webkit-input-placeholder {
+    color: #a2a2a2;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.form_btn {
+    display: inline-block;
+    font-weight: 900;
+    background-color: #d95130;
+    cursor: pointer;
+}
+
+.main_content {
+    padding-top: 60px;
+    margin: 0 200px; 
+    color: white;
+    top: 400px;
+    text-align: center;
+}
+
+
+#section1 {
+    background: rgb(255, 255, 255);
+    height: 200px;
+    padding-top: 70px;
+}
+
+.section1_content {
+    text-align: center;
+    
+}
+
+
+#section2 {
+        background: rgb(255, 255, 255);
+    position: relative;
+/*    border: 2px solid blue;*/
+    height: 400px;
+    
+    text-align: center;
+    
+}
+
+.section2_menu {
+    position: relative;
+/*    border: 1px solid black;*/
+    display: inline-block;
+    margin: 0 25px;
+    text-align: center;
+}
+
+.section2_menu_img {
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+}
+
+.section2_menu_desc {
+    width: 250px;
+    cursor: pointer;
+}
+
+.footer_container {
+    height: 120px;
+}
+
+footer img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.footer_logo {
+    display: inline-block;
+    margin: 10px 30px;
+    position: relative;
+    top: 15px;
+}
+
+.footer_brname {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffffff;
+    top: -15px;
+    cursor: pointer;
+}
+
+.footer_menu {
+    display: inline-block;
+    float: right;
+    margin: 30px 30px;
+    position: relative;
+    top: 40px;
+
+}
+
+.footer_menu li {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+
+.footer_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+ul.icons li .label {
+    display: none;
+}
+
+ul.icons li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav_button2 {
+    border:none;
+    border-radius: 5px;
+    color: #d95130;
+    background: rgb(255, 255, 255);
+    width: 120px;
+    margin: 0 15px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+.footer_bottom_menu li {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: -20px;
+}
+
+.footer_bottom_copyright {
+    text-align: right;
+    position: relative;
+    color: white;
+    padding-right:  34px;
+    top: -10px;
+}
+
+.footer_bottom_copyright h4 {
+    font-weight: 200;
+}
