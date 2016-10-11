@@ -15,5 +15,10 @@
     from MEMBS
     where EMAIL=#{email} and PWD=password(#{password})
   </select>
-
+  
+  
+  <insert id="insert" parameterType="beer" useGeneratedKeys="true" keyColumn="mno" keyProperty="no" >
+  
+  </insert>
+  
 </mapper>

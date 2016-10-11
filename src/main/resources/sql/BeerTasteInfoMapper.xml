@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.BeerTasteInfoDao">
   <resultMap type="beerTasteInfo" id="beerTasteInfoMap">
-    <id column="BRNO" property="brno"/> 
+    <id column="TINO" property="tino"/> 
+    <result column="BRNO" property="brno"/>
     <result column="MNO" property="mno"/>
     <result column="SCORE" property="score"/>
     <result column="BITTER" property="bitter"/>
@@ -19,6 +20,11 @@
     select * from beers_taste_info
     where brno = #{value}
   </select>
+  
+  <insert id="insert" parameterType="beerTasteInfo">
+    insert into beers_taste_info(brno, mno, bitter, sour, sweet, sparkle, body, aroma, score)
+    values(#{brno}, 4, #{bitter}, #{sour}, #{sweet}, #{sparkle}, #{body}, #{aroma}, #{score})
+  </insert>
   
  <!--  <select id="selectOne" resultMap="beerMap" parameterType="int">
     select * from beers

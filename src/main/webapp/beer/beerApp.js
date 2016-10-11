@@ -31,9 +31,7 @@ function ajaxBeerList() {
 		var template = Handlebars.compile($("#trTemplateText").html())
 	    $("#beerTable tbody").html(template(result))
 	    
-	    $(".noBtn").click(function(event) {
-	    	location.href = "beerDetailApp.html?no=" + $(this).attr("data-no")
-	    });
+	   
     })
 }
 
@@ -44,12 +42,20 @@ function ajaxCateBeerList(no) {
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
-		
+		var arr = result.data
+		var brno = arr[0].no
 		var template = Handlebars.compile($("#trTemplateText").html())
 	    $("#beerTable tbody").html(template(result))
-		
+	    
+	   
+	    
+	    $(".noBtn").click(function(event) {
+	    	location.href = "beerDetailApp.html?no=" + $(this).attr("data-no") + arr[0].cateno + "detail" 
+	    });
+		console.log(brno)
+		return brno
 	})
-	
-	
 }
+
+
 

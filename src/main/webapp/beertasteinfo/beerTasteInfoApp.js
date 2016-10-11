@@ -1,17 +1,19 @@
 
+
+
 function ajaxBeerTasteInfoList(no) {
 	$.getJSON(serverAddr + "/beertasteinfo/list.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
 		
 		var arr = result.data
-		
 		if (result.state != "success") {
-	    	 alert("서버에서 데이터를 가져오는데 실패했습니다.")
+	    	 alert("서버에서 데이터를 가져오는데 실패했습니다.??!")
 	    	 return
 	    }
 		
-		var template = Handlebars.compile($("#trTemplateText").html())
-	    $("#beerTable tbody").html(template(result))
+		
+//		var template = Handlebars.compile($("#trTemplateText").html())
+//	    $("#beerTable tbody").html(template(result))
 	    
 	    
 	    var radarData = {
@@ -57,7 +59,72 @@ function ajaxBeerTasteInfoList(no) {
 		  data: radarData,
 		  options : radarOption
 		})
+		
+		var template = Handlebars.compile($("#beerTasteScoreText").html())
+		$("#beerchart span").html(template(result.data[0])) // 확인필요 [0]으로 해놔도 문제없나?
+		
+		$("#tasteAddBtn").click(function(event) {
+			location.href = "../beertasteinfo/beerTasteReview.html?no=" + result.data[0].brno
+			
+		});
     })
+}
+
+
+$("#okBtn").click(function(event) {
+	  var brno = 0;
+	  if (location.search.startsWith("?")) {
+		  brno = location.search.split("=")[1];
+		}
+	  
+	  var beerTasteInfo = {
+			brno: brno,
+	    bitter: parseInt($("#bitterScore").val()),
+	    sour: $("#sourScore").val(),
+	    sweet: $("#sweetScore").val(),
+	    sparkle: $("#sparkleScore").val(),
+	    body: $("#bodyScore").val(),
+	    aroma: $("#aromaScore").val(),
+	    score: $("#avgScore").val()
+	  }
+	  
+	  if (beerTasteInfo.bitter == 0 ) {
+		  alert("Bitter(쓴맛)의 점수를 입력 해 주세요.")
+		  return
+	  } else if (beerTasteInfo.sour == 0) {
+		  alert("Sour(신맛)의 점수를 입력 해 주세요.")
+		  return
+	  } else if (beerTasteInfo.sweet == 0) {
+	    alert("Sweet(단맛)의 점수를 입력 해 주세요.")
+	    return
+	  } else if (beerTasteInfo.sparkle == 0) {
+	    alert("Sparkle(탄산)의 점수를 입력 해 주세요.")
+	    return
+	  } else if (beerTasteInfo.body == 0) {
+	    alert("Body(풍미)의 점수를 입력 해 주세요.")
+	    return
+	  } else if (beerTasteInfo.aroma == 0) {
+	    alert("Aroma(향미)의 점수를 입력 해 주세요.")
+	    return
+	  } else if (beerTasteInfo.score == 0 || beerTasteInfo.score == "" || beerTasteInfo.score < 0 || beerTasteInfo.score > 10) {
+	    alert("평점을 입력 해 주세요. (0~10점 사이에만 입력 해 주세요)")
+	    return
+	  }
+	  
+	  ajaxAddTasteInfo(beerTasteInfo)
+	  
+	});
+	
+	
+function ajaxAddTasteInfo(beerTasteInfo) {
+	$.post(serverAddr + "/beertasteinfo/add.json" , beerTasteInfo, function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("등록 실패입니다.")
+			return
+		}
+		window.location.href = "../beer/beerDetailApp.html?no=" + result.data.brno + "cate"
+	}, "json")
 }
 
 

@@ -64,5 +64,8 @@
     order by beers.brno asc limit 0, 1
     
   </select>
-
+  
+  <insert id="insert" parameterType="beer" useGeneratedKeys="true" keyColumn="brno" keyProperty="no" >
+  
+  </insert>
 </mapper>

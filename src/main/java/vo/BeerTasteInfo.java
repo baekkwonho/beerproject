@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class BeerTasteInfo implements Serializable {
   private static final long serialVersionUID = 1L;
   
+  protected int tino;
   protected int brno;
   protected int mno;
   protected float score;
@@ -14,6 +15,13 @@ public class BeerTasteInfo implements Serializable {
   protected int sparkle;
   protected int body;
   protected int aroma;
+  
+  public int getTino() {
+    return tino;
+  }
+  public void setTino(int tino) {
+    this.tino = tino;
+  }
   
   public int getBrno() {
     return brno;

@@ -107,8 +107,11 @@
       <!--beerDetail.js에서 값을 넣어줌 -->
     </div>
     <div id="beerchart" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
-      <button>평가하기</button>
+      <button id = "tasteAddBtn">평가하기</button>
       <canvas id="radarChart"></canvas>
+      <span>
+      </span>
+      <!-- <div id="score"></div> -->
     </div>
     <div id="info_wrap" class="col-sx-6 col-sm-6 col-md-5 col-lg-5">
     <!-- beerDetail.js 에서 값을 넣어줌 -->
@@ -186,11 +189,15 @@
 
 </script>
 
+<script id="beerTasteScoreText" type="Text/x-handlebars-template">
+  <h1>{{score}}</h1>
+</script>
+
 <script id="trTemplateText" type="text/x-handlebars-template">
 
 {{#each data}}
 <tr>
-  <td><a href="#" class="noBtn" data-no="{{no}}">{{no}}</a></td>
+  <td><a href="#" class="noBtn" data-no="{{no}}" cate-no="{{cateno}}">{{no}}</a></td>
   <td>{{catename}}</td>
   <td>{{brbrname}}</td>
   <td>{{describe}}</td>
@@ -223,8 +230,19 @@
 			var cateno = location.search.split("cate")[0].split("=")[1]
 			ajaxLoadBeerCate(cateno)
 			ajaxCateBeerList(cateno)
+			
+			// var brno = ajaxCateBeerList(cateno)
+			// console.log(brno)  return값을 왜 받지 못하는건가..
+			
 			ajaxBeerTasteInfoList(1)
-		} else {
+		} else if(location.search.endsWith("detail")) {
+		   var cateno = location.search.split("detail")[0].split("=")[1] % 10
+			 var brno = parseInt(location.search.split("detail")[0].split("=")[1] / 10)
+			 console.log(cateno, brno)
+			 ajaxLoadBeer(brno)
+			 ajaxCateBeerList(cateno)
+			 ajaxBeerTasteInfoList(1) //brno
+		}else {
 			var no = location.search.split("=")[1];
 			ajaxLoadBeer(no)
 			ajaxBeerTasteInfoList(1)
