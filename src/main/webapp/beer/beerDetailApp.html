@@ -228,21 +228,23 @@
 	if (location.search.startsWith("?")) {
 		if (location.search.endsWith("cate")) {
 			var cateno = location.search.split("cate")[0].split("=")[1]
-			ajaxLoadBeerCate(cateno)
+		  ajaxLoadBeerCate(cateno)
+			
 			ajaxCateBeerList(cateno)
 			
-			// var brno = ajaxCateBeerList(cateno)
-			// console.log(brno)  return값을 왜 받지 못하는건가..
+			//var brno = ajaxCateBeerList(cateno)
+			//console.log(brno,"aaa")  //return값을 왜 받지 못하는건가..
 			
-			ajaxBeerTasteInfoList(1)
+			ajaxBeerTasteInfoList(cateno)
+			
 		} else if(location.search.endsWith("detail")) {
 		   var cateno = location.search.split("detail")[0].split("=")[1] % 10
 			 var brno = parseInt(location.search.split("detail")[0].split("=")[1] / 10)
-			 console.log(cateno, brno)
+			 //console.log(cateno, brno)
 			 ajaxLoadBeer(brno)
 			 ajaxCateBeerList(cateno)
-			 ajaxBeerTasteInfoList(1) //brno
-		}else {
+			 ajaxBeerTasteInfoListDetail(brno) //brno
+		}else { 
 			var no = location.search.split("=")[1];
 			ajaxLoadBeer(no)
 			ajaxBeerTasteInfoList(1)

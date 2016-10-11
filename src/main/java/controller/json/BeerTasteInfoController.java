@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.BeerDao;
 import dao.BeerTasteInfoDao;
-import dao.MemberDao;
+import vo.Beer;
 import vo.BeerTasteInfo;
 import vo.JsonResult;
 
@@ -19,45 +19,47 @@ public class BeerTasteInfoController {
   
   
   @Autowired BeerTasteInfoDao beerTasteInfoDao;
+  @Autowired BeerDao beerDao;
   
-  @RequestMapping(path="list")
+  @RequestMapping(path="list") // cateno로 넘긴 값을 받는 메서드
   public Object list(int no) throws Exception{
     
     
     try {
-      List<BeerTasteInfo> list = beerTasteInfoDao.selectList(no);
+      Beer beer = beerDao.selectOneCate(no);
+      System.out.println(beer.getNo());
+      System.out.println(beer.getCateno());
+      List<BeerTasteInfo> list = beerTasteInfoDao.selectList(beer.getNo());
       if (list.size() == 1) {
         return JsonResult.success(list);
       } else {
-      /*  for (int i = 0; i < list.size() - 1; i++) {
-          BeerTasteInfo ct = list.get(i + 1);
-          temp.setBitter(temp.getBitter() + ct.getBitter());
-          temp.setSour(temp.getSour() + ct.getSour());
-          temp.setSweet(temp.getSweet() + ct.getSweet());
-          temp.setSparkle(temp.getSparkle() + ct.getSparkle());
-          temp.setBody(temp.getBody() + ct.getBody());
-          temp.setAroma(temp.getAroma() + ct.getAroma());
-        }
-        temp.setBitter(temp.getBitter() / list.size());
-        temp.setSour(temp.getSour() / list.size());
-        temp.setSweet(temp.getSweet() / list.size());
-        temp.setSparkle(temp.getSparkle() / list.size());
-        temp.setBody(temp.getBody() / list.size());
-        temp.setAroma(temp.getAroma() / list.size());
-        
-        List<BeerTasteInfo> resultList = (List<BeerTasteInfo>) temp; 
-        */
-        
-        
         List<BeerTasteInfo> resultList = tasteCalc(list);
-        
         return JsonResult.success(resultList);
       }
-      
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
     }
   }
+  
+  @RequestMapping(path="detailList")  //brno로 넘긴 값을 받는 메서드
+  public Object detailList(int no) throws Exception{
+    
+    try {
+      
+      List<BeerTasteInfo> list = beerTasteInfoDao.selectList(no);
+      if (list.size() == 1) {
+        return JsonResult.success(list);
+      } else {
+        List<BeerTasteInfo> resultList = tasteCalc(list);
+        return JsonResult.success(resultList);
+      }
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
+  
   
   @RequestMapping(path="add")
   public Object add(BeerTasteInfo beerTasteInfo) throws Exception {

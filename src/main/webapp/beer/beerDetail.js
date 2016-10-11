@@ -45,6 +45,7 @@ function ajaxLoadBeerCate(no) {
     	$("#beerpara").html(beerParaTemplate(result.data))
     	var beerDivTemplate = Handlebars.compile($("#beerDivTemplateText").html())
     	$("#info_wrap").html(beerDivTemplate(result.data))
+    	
 	})
 }
 

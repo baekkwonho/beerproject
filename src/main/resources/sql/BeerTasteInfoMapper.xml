@@ -25,16 +25,5 @@
     insert into beers_taste_info(brno, mno, bitter, sour, sweet, sparkle, body, aroma, score)
     values(#{brno}, 4, #{bitter}, #{sour}, #{sweet}, #{sparkle}, #{body}, #{aroma}, #{score})
   </insert>
-  
- <!--  <select id="selectOne" resultMap="beerMap" parameterType="int">
-    select * from beers
-    inner join beers_brand
-    on beers.brbrno = beers_brand.brbrno
-    inner join beers_cate
-    on beers.cateno = beers_cate.cateno
-    inner join beers_ctry
-    on beers.ctryno = beers_ctry.ctryno
-    where beers.brno = #{value}
-  </select> -->
 
 </mapper>

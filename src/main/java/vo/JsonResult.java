@@ -38,7 +38,6 @@ public class JsonResult {
   public JsonResult(String state, Object data) {
     this.state = state;
     this.data = data;
-    
   }
   
   
@@ -54,6 +53,7 @@ public class JsonResult {
   public void setData(Object data) {
     this.data = data;
   }
+  
   
   
 

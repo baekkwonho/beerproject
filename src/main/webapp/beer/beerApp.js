@@ -43,18 +43,15 @@ function ajaxCateBeerList(no) {
 			return
 		}
 		var arr = result.data
-		var brno = arr[0].no
 		var template = Handlebars.compile($("#trTemplateText").html())
 	    $("#beerTable tbody").html(template(result))
 	    
-	   
-	    
 	    $(".noBtn").click(function(event) {
-	    	location.href = "beerDetailApp.html?no=" + $(this).attr("data-no") + arr[0].cateno + "detail" 
+	    	location.href = "beerDetailApp.html?no=" + $(this).attr("data-no") + arr[0].cateno + "detail"
 	    });
-		console.log(brno)
-		return brno
+		
 	})
+	
 }
 
 

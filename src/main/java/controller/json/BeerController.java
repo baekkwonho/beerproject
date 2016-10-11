@@ -72,7 +72,6 @@ public class BeerController {
       
       List<Beer> list = beerDao.selectListCate(map);
       
-      
       return JsonResult.success(list);
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());

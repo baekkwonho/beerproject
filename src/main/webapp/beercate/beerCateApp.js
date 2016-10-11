@@ -36,6 +36,7 @@ function ajaxBeerCateList() {
 	    $(".menu_div").click(function(event) {
 	    	location.href="../beer/beerDetailApp.html?no=" + $(this).attr("data-no") + "cate"
 	    });
+		
 	   
     })
 }
