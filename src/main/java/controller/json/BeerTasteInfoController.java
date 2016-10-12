@@ -65,6 +65,10 @@ public class BeerTasteInfoController {
   public Object add(BeerTasteInfo beerTasteInfo) throws Exception {
     
     
+    System.out.println(beerTasteInfo.getBitter());
+    System.out.println(beerTasteInfo.getSour());
+    System.out.println(beerTasteInfo.getSweet());
+    
     try {
       beerTasteInfoDao.insert(beerTasteInfo);
       return JsonResult.success(beerTasteInfo);

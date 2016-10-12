@@ -23,7 +23,7 @@
   
   <insert id="insert" parameterType="beerTasteInfo">
     insert into beers_taste_info(brno, mno, bitter, sour, sweet, sparkle, body, aroma, score)
-    values(#{brno}, 4, #{bitter}, #{sour}, #{sweet}, #{sparkle}, #{body}, #{aroma}, #{score})
+    values(#{brno}, 1, #{bitter}, #{sour}, #{sweet}, #{sparkle}, #{body}, #{aroma}, #{score})
   </insert>
 
 </mapper>
