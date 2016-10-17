@@ -4,16 +4,23 @@
 <meta charset="UTF-8">
 <title>Drink! Drink! Drink!</title>
 
-<link rel="stylesheet" type="text/css" href="beerMainApp004.css" />
+<link rel="stylesheet" type="text/css" href="beerMainApp006.css" />
 <link rel="stylesheet" type="text/css" href="fontello-a28e58c3/css/fontello.css" />
+<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
 
+    <!-- 모달 npm -->
+    
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
 
-<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+    <!-- 모달 관련  -->
+    
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
 
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style006.css">
 
 </head>
 
@@ -29,14 +36,14 @@
                 <li><input class="nav_button" type="button" value="맥주인증" style="font-size:15px;" /></li>
                 <li><input class="nav_button" type="button" value="맥주위치" style="font-size:15px;" /></li>
                 <li><input class="nav_button" type="button" value="공지사항" style="font-size:15px;" /></li>
-                <!-- 모달 버튼 -->
-                <li><input class="nav_button" type="button" value="Login" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
+                <li><input class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
             </ul></nav>
         </div>
     </header>
     
     
-    <!-- 모달 팝업 -->
+    
+      <!-- 모달 팝업 -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
       <div class="modal-content">
@@ -228,15 +235,15 @@
            <div class="main_content">
                 <h1 class="deutch">"Essen ist ein Bedürfnis des Magens,<br>Trinken eines der Seele."
                 </h1>
-                <h1 class="korean">"먹는 것은 위의 욕구이고, 마시는 것은 영혼의 욕구이다."</h1>
+                <h1 class="korean">"먹는 것은 위의 욕구이고,<br>마시는 것은 영혼의 욕구이다."</h1>
             </div>
             
             <div class="main_search">
                 <form id="search_form" class="navbar-form navbar-left" role="search">
                     
-                    <input type="text" class="form-control" style="height:50px;" placeholder="  What do you want to know about?">
+                    <input type="text" class="form-control" id="searchbar" style="width:500px;height:50px;font-size:25px;" placeholder="  What do you want to know about?" >
                     
-                    <button type="button" class="form_btn btn btn-default" style="width:60px;height:56px;">Search</button>
+                    <button type="button" class="form_btn btn btn-default" id="searchbtn" style="width:65px;height:50px;background-color:#d95130;font-weight:900;">Search  </button>
                     
                 </form>
             </div>
@@ -255,32 +262,32 @@
             <div id="section2_menu1" class="section2_menu infoMenu">
                 <img src="beerbear013.jpg" class="section2_menu_img" />
                 <div class="section2_menu_desc">
-                <h4>More about Beer Information</h4>
-                <h5>this is menu1 contents. click here to get more information about beer.</h5>
+                <h4>맥주 정보</h4>
+                <h5>맥주에 대한 정보가 있습니다. 직접 맥주에 대한 평가도 하고, 다른 사람들의 평가와 비교해보세요.</h5>
                 </div>
             </div>
             
             <div id="section2_menu2" class="section2_menu videoMenu">
                 <img src="beerbear001.jpg" class="section2_menu_img" />
                 <div class="section2_menu_desc">
-                <h4>Videos of Drinking Beers</h4>
-                <h5>this is menu2 contents. click here to get more information about beer.</h5>
+                <h4>맥주 인증</h4>
+                <h5>누구보다 맥주를 맛있게 마시는 당신! 그 모습을 영상으로 인증하세요! 다른 사람들의 영상도 볼 수 있습니다.</h5>
                 </div>
             </div>
             
             <div id="section2_menu3" class="section2_menu locaMenu">
                 <img src="beerbear019.jpg" class="section2_menu_img" />
                 <div class="section2_menu_desc">
-                <h4>Location of Hot Beer Pub</h4>
-                <h5>this is menu3 contents. click here to get more information about beer.</h5>
+                <h4>맥주 위치</h4>
+                <h5>도대체 이 맥주는 어디서 파는거야?! 당신의 현 위치에서 가장 가까운 맥주 판매점을 알려드립니다.</h5>
                 </div>
             </div>
             
             <div id="section2_menu4" class="section2_menu infoMenu">
                 <img src="beerbear025.jpg" class="section2_menu_img" />
                 <div class="section2_menu_desc">
-                <h4>Festivals related with Beers</h4>
-                <h5>this is menu5 contents. click here to get more information about beer.</h5>
+                <h4>맥주 축제</h4>
+                <h5>맛있는 맥주와 함께하는 신나는 축제! 남들보다 한발 빠르게 축제 일정을 확인하고 예약하자!</h5>
                 </div>
             </div>
             
@@ -298,11 +305,11 @@
             
             <nav id="navmenue" class="footer_menu"><ul class="icons">
                
-               <li><a href="#" class="icon-twitter"><span class="label">Twitter</span></a></li>
-               <li><a href="#" class="icon-youtube"><span class="label">youtube</span></a></li>
-               <li><a href="#" class="icon-facebook"><span class="label">facebook</span></a></li>
-               <li><a href="#" class="icon-instagram"><span class="label">instagram</span></a></li>
-               <li><a href="#" class="icon-mail-alt"><span class="label">mail</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-twitter icon"><span class="label">Twitter</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-youtube icon"><span class="label">youtube</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-facebook icon"><span class="label">facebook</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-instagram icon"><span class="label">instagram</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-mail-alt icon"><span class="label">mail</span></a></li>
                
 <!--
                 <li><input class="nav_button" type="button" value="Youtube" style="font-size:15px;" /></li>
@@ -311,6 +318,15 @@
                 <li><input class="nav_button" type="button" value="Email" style="font-size:15px;" /></li>
                 <li><input class="nav_button" type="button" value="Login" style="font-size:15px;" /></li>
 -->
+
+<!--
+                <li><input class="icon-twitter footer_list" type="button" style="font-size:15px;" /></li>
+                <li><input class="icon-youtube footer_list" type="button" style="font-size:15px;" /></li>
+                <li><input class="icon-facebook footer_list" type="button" style="font-size:15px;" /></li>
+                <li><input class="icon-instagram footer_list" type="button" style="font-size:15px;" /></li>
+                <li><input class="icon-mail-alt nav_button" type="button" style="font-size:15px;" /></li>
+-->
+
                 
             </ul></nav>
             
@@ -334,29 +350,23 @@
         </div>
     </footer>
     
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-    <script src="bootstrap/dist/css/bootstrap.min.css"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
-<script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->
-<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js -->
+    
+    <!-- 모달 관련 -->
+    <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+    <!-- <script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script>ie10-viewport-bug-workaround.js
+    <script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script>holder.js -->
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/bit.js"></script>
     <script type="text/javascript" src="beerLoginSignupApp.js"></script>
     
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
     <script src="index.js"></script>
-
     
-
-
-
 
 </body>
 </html>
