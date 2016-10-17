@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.BeerDao">
+<mapper namespace="dao.BeerListDao">
   <resultMap type="beer" id="beerMap">
     <id column="BRNO" property="no"/> 
     <result column="CATENO" property="cateno"/>
@@ -16,6 +16,45 @@
     <result column="ACHL" property="alchol"/>
     <result column="VOL" property="volume"/>
   </resultMap>
+  
+  <select id="selectBrandList" resultMap="beerMap">
+    select * from beers_brand
+  </select>
+  
+  <select id="selectCateList" resultMap="beerMap">
+    select * from beers_cate
+  </select>
+  
+  <select id="selectCtryList" resultMap="beerMap">
+    select * from beers_ctry
+  </select>
+  
+  <select id="getBeerBrandNo" resultMap="beerMap" parameterType="map">
+    select brbrno from beers_brand
+    where beers_brand.brbrnm = #{brand}
+  </select>
+  
+  <select id="getBeerCateNo" resultMap="beerMap" parameterType="map">
+    select cateno from beers_cate
+    where beers_cate.catenm = #{cate}
+  </select>
+  
+  <select id="getBeerCtryNo" resultMap="beerMap" parameterType="map">
+    select ctryno from beers_ctry
+    where beers_ctry.ctry = #{ctry}
+  </select>
+  
+  <insert id="insert" parameterType="beer">
+    insert into beers(cateno, brbrno, ctryno, br_desc, comp, achl, vol)
+    values(#{cateno}, #{brbrno}, #{ctryno}, #{describe}, #{company}, #{alchol}, #{volume})
+  </insert>
+  
+  <insert id="brandInsert" parameterType="String">
+    insert into beers_brand(brbrnm)
+    values(#{brbrnm})
+  </insert>
+  
+  
   
   <select id="selectList" resultMap="beerMap" parameterType="map">
     select * from beers
@@ -66,7 +105,4 @@
     
   </select>
   
-  <insert id="insert" parameterType="beer" useGeneratedKeys="true" keyColumn="brno" keyProperty="no" >
-  
-  </insert>
 </mapper>

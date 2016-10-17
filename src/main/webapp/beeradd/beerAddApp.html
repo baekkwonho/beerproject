@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<style>
+
+ label {
+   font-size: 20px;
+   float: left;
+ }
+ select {
+   width: 100px;
+   font-size: 20px;
+   float: right;
+   text-align: center;
+ }
+ .inputBox {
+    width: 200px;
+    height: 20px;
+  }
+  
+  #beerDesc {
+    height: 150px;
+  }
+  
+ #okBtn {
+   width: 100px;
+   height: 50px;
+ }
+
+
+ div {
+   width: 400px;
+   height: 200px;
+   border: 1px solid blue;
+ }
+ 
+
+</style>
+<body>
+
+<h1>맥주 등록하기</h1>
+
+<div>
+	<label for="Brand">Beer Brand (맥주브랜드)</label>
+	<form name="beerBrandForm">
+		<select name="Brand" id="beerBrand" onChange="checkBrandText()">
+		</select>
+		<input type="text" name="brandText" id="brandText" style="display:none">
+	</form>
+</div>
+
+
+<div>
+	<label for="cate">Category (맥주 분류)</label>
+	<form name="beerCateForm">
+		<select name="cate" id="beerCate" onChange="checkCateText()">
+		</select>
+		<input type="text" name="cateText" id="cateText" style="display:none">
+	</form>
+</div>
+
+<div>
+	<label for="country">Country (제조 국가)</label>
+	<form name="beerCtryForm">
+		<select name="country" id="beerCtry" onChange="checkCtryText()">
+		</select>
+		<input type="text" name="ctryText" id="ctryText" style="display:none">
+	</form>
+</div>
+
+<div>
+	<label>Description (맥주 설명)</label>
+	<textarea id="beerDesc" cols="50" rows ="10" placeholder="맥주에 대해 설명 해 주세요."></textarea>
+</div>
+
+<div>
+	<label>Company (제조사)</label>
+	<input type="text" id="beerComp" value ="0" placeholder="제조사를 입력 해 주세요." class="inputBox"/>
+</div>
+
+<div>
+	<label>Alcohol (도수)</label>
+	<input type="text" id="beerAchl" value ="0" placeholder="도수를 입력 해 주세요." class="inputBox"/>
+</div>
+
+<div>
+  <label>Volume (용량)</label>
+  <input type="text" id="beerVol" value ="0" placeholder="용량을 입력 해 주세요." class="inputBox"/>
+</div>
+
+<div>
+  <label>Photo (사진)</label>
+  
+</div>
+
+<button id="okBtn">확인</button>
+
+
+<script id="beerBrandTemplate" type="text/x-handlebars-template">
+<option value="0">선택해주세요</option>
+{{#each data}}
+<option value="{{brbrname}}">{{brbrname}}</option>
+{{/each}}
+<option value="1">직접입력</option>
+
+</script>
+
+<script id="beerCateTemplate" type="text/x-handlebars-template">
+<option value="0">선택해주세요</option>
+{{#each data}}
+<option value="{{catename}}">{{catename}}</option>
+{{/each}}
+<option value="1">직접입력</option>
+</script>
+
+<script id="beerCtryTemplate" type="text/x-handlebars-template">
+<option value="0">선택해주세요</option>
+{{#each data}}
+<option value="{{country}}">{{country}}</option>
+{{/each}}
+<option value="1">직접입력</option>
+</script>
+
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="beerAddApp.js"></script>
+
+<script>
+ajaxLoadBrandList()
+ajaxLoadCateList()
+ajaxLoadCtryList()
+
+</script>
+
+
+
+</body>
+</html>

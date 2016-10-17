@@ -1,7 +1,6 @@
 package vo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Beer implements Serializable {
   private static final long serialVersionUID = 1L;
@@ -9,6 +8,7 @@ public class Beer implements Serializable {
   protected int no;
   protected int cateno;
   protected int brbrno;
+  protected int ctryno;
   protected String catename;
   protected String brbrname;
   protected String describe;
@@ -16,6 +16,7 @@ public class Beer implements Serializable {
   protected String company;
   protected float alchol;
   protected int volume;
+  
   public int getNo() {
     return no;
   }
@@ -33,6 +34,12 @@ public class Beer implements Serializable {
   }
   public void setBrbrno(int brbrno) {
     this.brbrno = brbrno;
+  }
+  public int getCtryno() {
+    return ctryno;
+  }
+  public void setCtryno(int ctryno) {
+    this.ctryno = ctryno;
   }
   public String getCatename() {
     return catename;
@@ -76,6 +83,8 @@ public class Beer implements Serializable {
   public void setVolume(int volume) {
     this.volume = volume;
   }
+  
+  
   
   
   

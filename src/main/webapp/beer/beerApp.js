@@ -18,6 +18,8 @@
 	      window.location.href="../beervideo/beerVideoApp.html"
 	    }
 	  }
+	
+	
 
 
 function ajaxBeerList() {
