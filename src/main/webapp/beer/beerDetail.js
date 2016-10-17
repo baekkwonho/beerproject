@@ -19,6 +19,12 @@
 	  }
 	}
 
+	var addBtn = document.querySelector("#beerAddBtn")
+    addBtn.onclick = function(event) {
+      window.location.href="../beeradd/beerAddApp.html"
+  }
+
+	
 
 function ajaxLoadBeer(no) {
 	$.getJSON(serverAddr + "/beer/detail.json?no="+ no, function(obj) {

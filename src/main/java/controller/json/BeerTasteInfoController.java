@@ -27,8 +27,6 @@ public class BeerTasteInfoController {
     
     try {
       Beer beer = beerDao.selectOneCate(no);
-      System.out.println(beer.getNo());
-      System.out.println(beer.getCateno());
       List<BeerTasteInfo> list = beerTasteInfoDao.selectList(beer.getNo());
       if (list.size() == 1) {
         return JsonResult.success(list);
@@ -64,10 +62,6 @@ public class BeerTasteInfoController {
   @RequestMapping(path="add")
   public Object add(BeerTasteInfo beerTasteInfo) throws Exception {
     
-    
-    System.out.println(beerTasteInfo.getBitter());
-    System.out.println(beerTasteInfo.getSour());
-    System.out.println(beerTasteInfo.getSweet());
     
     try {
       beerTasteInfoDao.insert(beerTasteInfo);
