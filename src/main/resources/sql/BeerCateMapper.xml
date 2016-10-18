@@ -5,19 +5,11 @@
 <mapper namespace="dao.BeerCateDao">
   <resultMap type="beerCate" id="beerCateMap">
     <id column="CATENO" property="no"/> 
-    
     <result column="CATENM" property="name"/>
   </resultMap>
   
-  <!-- <select id="selectList" resultMap="beerCateMap" parameterType="map">
-    select CATENO, CATENM
-    from BEERS_CATE
-    limit #{startIndex}, #{length}
-  </select> -->
-
   <select id="selectList" resultMap="beerCateMap">
-    select CATENO, CATENM
-    from BEERS_CATE
-  <!--   limit #{startIndex}, #{length} -->
+    select * from beers_cate
   </select>
+
 </mapper>

@@ -39,6 +39,18 @@ function ajaxLoadCtryList() {
 	})
 }
 
+function ajaxLoadCompList() {
+	$.getJSON(serverAddr + "/beerlist/compList.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("조회 실패입니다.")
+			return
+		}
+		var compListTemplate = Handlebars.compile($("#beerCompTemplate").html())
+		$("#beerComp").html(compListTemplate(result))
+	})
+}
+
 
 $("#okBtn").click(function(event) {
 	var beer = {
@@ -47,7 +59,7 @@ $("#okBtn").click(function(event) {
 			country: $("#beerCtry").val(),
 			describe: $("#beerDesc").val(),
 			company: $("#beerComp").val(),
-			alchol: parseInt($("#beerAchl").val()),
+			alchol: parseFloat($("#beerAchl").val()),
 			volume: parseInt($("#beerVol").val())
 	}
 	
@@ -61,7 +73,11 @@ $("#okBtn").click(function(event) {
 	}
 	
 	if (beer.country == 1) {
-		beer.country == $("#ctryText").val()
+		beer.country = $("#ctryText").val()
+	}
+	
+	if (beer.company == 1) {
+		beer.company = $("#compText").val()
 	}
 	
 	
@@ -146,6 +162,14 @@ function checkCtryText() {
 	}
 }
 
-
+function checkCompText() {
+	var compForm = document.forms['beerCompForm']
+	if (compForm.company.value == '1') {
+		compForm.compText.style.display = "inline"
+		compForm.company.style.display = "none"
+	} else {
+		compForm.compText.style.display = "none"
+	}
+}
 
 

@@ -9,6 +9,7 @@ public class Beer implements Serializable {
   protected int cateno;
   protected int brbrno;
   protected int ctryno;
+  protected int cono;
   protected String catename;
   protected String brbrname;
   protected String describe;
@@ -40,6 +41,12 @@ public class Beer implements Serializable {
   }
   public void setCtryno(int ctryno) {
     this.ctryno = ctryno;
+  }
+  public int getCono() {
+    return cono;
+  }
+  public void setCono(int cono) {
+    this.cono = cono;
   }
   public String getCatename() {
     return catename;
@@ -83,9 +90,6 @@ public class Beer implements Serializable {
   public void setVolume(int volume) {
     this.volume = volume;
   }
-  
-  
-  
   
   
 }

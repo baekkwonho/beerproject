@@ -8,6 +8,7 @@
     <result column="CATENO" property="cateno"/>
     <result column="BRBRNO" property="brbrno"/>
     <result column="CTRYNO" property="ctryno"/>
+    <result column="CONO" property="cono"/>
     <result column="CATENM" property="catename"/>
     <result column="BRBRNM" property="brbrname"/>
     <result column="BR_DESC" property="describe"/>
@@ -29,6 +30,10 @@
     select * from beers_ctry
   </select>
   
+  <select id="selectCompList" resultMap="beerMap">
+    select * from beers_comp
+  </select>
+  
   <select id="getBeerBrandNo" resultMap="beerMap" parameterType="map">
     select brbrno from beers_brand
     where beers_brand.brbrnm = #{brand}
@@ -44,9 +49,14 @@
     where beers_ctry.ctry = #{ctry}
   </select>
   
+  <select id="getBeerCompNo" resultMap="beerMap" parameterType="map">
+    select cono from beers_comp
+    where beers_comp.comp = #{comp}
+  </select>
+  
   <insert id="insert" parameterType="beer">
-    insert into beers(cateno, brbrno, ctryno, br_desc, comp, achl, vol)
-    values(#{cateno}, #{brbrno}, #{ctryno}, #{describe}, #{company}, #{alchol}, #{volume})
+    insert into beers(cateno, brbrno, ctryno,cono, br_desc, achl, vol)
+    values(#{cateno}, #{brbrno}, #{ctryno}, #{cono}, #{describe}, #{alchol}, #{volume})
   </insert>
   
   <insert id="brandInsert" parameterType="String">
@@ -54,55 +64,12 @@
     values(#{brbrnm})
   </insert>
   
+  <insert id="compInsert" parameterType="String">
+    insert into beers_comp(comp)
+    values(#{company})
+  </insert>
   
   
-  <select id="selectList" resultMap="beerMap" parameterType="map">
-    select * from beers
-    inner join beers_brand
-    on beers.brbrno = beers_brand.brbrno
-    inner join beers_cate
-    on beers.cateno = beers_cate.cateno
-    inner join beers_ctry
-    on beers.ctryno = beers_ctry.ctryno
-    order by brno
-    limit #{startIndex}, #{length}
-  </select>
   
-  <select id="selectOne" resultMap="beerMap" parameterType="int">
-    select * from beers
-    inner join beers_brand
-    on beers.brbrno = beers_brand.brbrno
-    inner join beers_cate
-    on beers.cateno = beers_cate.cateno
-    inner join beers_ctry
-    on beers.ctryno = beers_ctry.ctryno
-    where beers.brno = #{value}
-  
-  </select>
-  
-   <select id="selectListCate" resultMap="beerMap" parameterType="map">
-    select * from beers
-    inner join beers_brand
-    on beers.brbrno = beers_brand.brbrno
-    inner join beers_cate
-    on beers.cateno = beers_cate.cateno
-    inner join beers_ctry
-    on beers.ctryno = beers_ctry.ctryno
-    where beers.cateno = #{cate}
-    limit #{startIndex}, #{length}
-  </select>
-  
-   <select id="selectOneCate" resultMap="beerMap" parameterType="int">
-    select * from beers
-    inner join beers_brand
-    on beers.brbrno = beers_brand.brbrno
-    inner join beers_cate
-    on beers.cateno = beers_cate.cateno
-    inner join beers_ctry
-    on beers.ctryno = beers_ctry.ctryno
-    where beers.cateno = #{value}
-    order by beers.brno asc limit 0, 1
-    
-  </select>
   
 </mapper>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form name="uploadForm" id="uploadForm" method="post" enctype="multipart/form-data">
+  맥주사진: <input type="file" name="file"/><br>
+  
+  <button id="uplBtn">등록</button>
+</form>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+
+<script>
+
+var uploadBtn = document.querySelector('#uplBtn')
+uploadBtn.onclick = function(event) {
+	  var form = document.forms['uploadForm']
+	  var file = form.file.value
+	  console.log(file)
+	  ajaxLoadPhoto(file)
+	
+}
+
+function ajaxLoadPhoto(file) {
+	$.post(serverAddr + "/beerphoto/add.json", file, function(obj) {
+	    var result = obj.jsonResult
+	    
+	    if (result.state != "success") {
+	        alert ("등록 실패입니다.")
+	        return
+	      }
+	    
+	    console.log("성공?")
+	    
+	  })
+}
+
+
+
+
+</script>
+
+</body>
+</html>

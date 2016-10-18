@@ -78,8 +78,12 @@
 </div>
 
 <div>
-	<label>Company (제조사)</label>
-	<input type="text" id="beerComp" value ="0" placeholder="제조사를 입력 해 주세요." class="inputBox"/>
+	<label for="company">Company (제조사)</label>
+	<form name="beerCompForm">
+	  <select name="company" id="beerComp" onChange="checkCompText()">
+	  </select>
+	  <input type="text" name="compText" id="compText" style="display:none">
+	</form>
 </div>
 
 <div>
@@ -125,6 +129,15 @@
 <option value="1">직접입력</option>
 </script>
 
+<script id="beerCompTemplate" type="text/x-handlebars-template">
+<option value="0">선택해주세요</option>
+{{#each data}}
+<option value="{{company}}">{{company}}</option>
+{{/each}}
+<option value="1">직접입력</option>
+</script>
+
+
 
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
@@ -135,6 +148,7 @@
 ajaxLoadBrandList()
 ajaxLoadCateList()
 ajaxLoadCtryList()
+ajaxLoadCompList()
 
 </script>
 

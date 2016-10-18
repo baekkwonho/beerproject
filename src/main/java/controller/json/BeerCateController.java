@@ -19,13 +19,13 @@ public class BeerCateController {
   
   @RequestMapping(path="list")
   public Object list() throws Exception {
-    
     try {
       List<BeerCate> list = beerCateDao.selectList();
       
       return JsonResult.success(list);
       
     }catch (Exception e) {
+      e.printStackTrace();
       return JsonResult.fail(e.getMessage());
     }
   }

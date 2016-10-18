@@ -13,3 +13,29 @@ for(var i = 0; i <infoBtn.length; i++) {
 	    }
 	  }
 
+var searchBtn = document.querySelector("#searchbtn")
+searchBtn.onclick = function(event) {
+	var beer = {
+		brbrname : $('#searchbar').val()
+	}
+	
+	ajaxSearchBeer(beer)
+}
+
+function ajaxSearchBeer(beer) {
+	$.post(serverAddr + "/beerlist/search.json", beer, function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("검색 결과가 없습니다.")
+			return
+		}
+		
+		var brno = result.data.brbrno
+		var cateno = result.data.cateno
+		
+		window.location.href="../beer/beerDetailApp.html?no="+brno+cateno+"detail"
+		
+	})
+	
+}
+

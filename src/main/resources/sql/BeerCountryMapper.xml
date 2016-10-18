@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BeerCtryDao">
+  <resultMap type="beerCountry" id="beerCtryMap">
+    <id column="CTRYNO" property="no"/> 
+    <result column="CTRY" property="country"/>
+  </resultMap>
+  
+  <insert id="insert" parameterType="map">
+    insert into beers_ctry(ctry)
+    values(#{country})
+  </insert>
+  
+  
+</mapper>

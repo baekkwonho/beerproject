@@ -244,7 +244,12 @@
 			 ajaxLoadBeer(brno)
 			 ajaxCateBeerList(cateno)
 			 ajaxBeerTasteInfoListDetail(brno) //brno
-		}else { 
+		} 
+		/* else if(location.search.endsWith("search")){
+		   var brno = parseInt(location.search.split("search")[0].split("=")[1])
+		   ajaxLoadBeer(brno)
+		 */   
+		 else { 
 			var no = location.search.split("=")[1];
 			ajaxLoadBeer(no)
 			ajaxBeerTasteInfoList(1)
