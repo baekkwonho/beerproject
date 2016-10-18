@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
+
+<style>
+  
+  #header {
+    height: 100px;
+    background-color: #8C8C8C;
+  }
+  
+  a {
+    color: #FFBB00;
+  }
+  
+  .logo {
+    color: #FFBB00;
+  }
+  
+  .active a{
+    color: #FFBB00 !important;
+    background: black !important;
+  }
+  
+  .menu_right{
+    float: right;
+  }
+  
+  #section1 {
+    height: 500px;
+    padding: 0;
+  }
+  
+  #section1_bg {
+    height: 500px;
+    background: url(../img/beer2.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    opacity: 0.5;
+    padding: 0;
+  }
+  
+  .section1_search {
+    position: absolute;
+    top: 50px;
+  }
+   
+   #search_form {
+    width: 100%;
+   }
+  
+   #section2 {
+    height: 600px;
+    padding: 0;
+    position: relative;
+  }
+  
+   
+   #section2_menuAll {
+     position: relative;
+     top: 50px;
+   }
+   
+   .section2_menu {
+    position: relative;
+    height: 350px;
+  }
+  
+   .section2_menu_img {
+    position: relative;
+    width: 280px;
+    height: 200px;
+    margin: 15px 0;
+  }
+   
+   
+  
+  #footer {
+    background-color: #8C8C8C;
+  }
+  
+  div {
+    border: 1px solid black;
+  }
+
+</style>
+
+</head>
+<body>
+<div class="container-fluid">
+  
+  <div id="header" class="row">
+    <div class="logo col-xs-4 col-sm-2 col-md-2 col-lg-2"><a class="logoMenu" href="#">BEER<br>BEAR</a></div>
+    <div class="header_space col-xs-8 col-sm-2 col-md-3 col-lg-4"></div>
+    <div class="col-xs-12 col-sm-8 col-md-7 col-lg-6">
+      <ul class="nav nav-pills menu_right">
+        <li role="presentation" class="active"><a class="infoMenu" href="#">맥주정보</a></li>
+        <li role="presentation" ><a class="videoMenu" href="#">맥주인증</a></li>
+        <li role="presentation"><a href="#">맥주위치</a></li>
+        <li role="presentation"><a href="#">공지사항</a></li>
+        <li role="presentation"><a href="#">Login</a></li>
+        <li role="presentation"><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+   
+  <div class="row">
+  
+    <div id="section1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="section1_bg" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+      <div class="section1_search col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+        <form id="search_form" class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="button" class="btn btn-default">Search</button>
+        </form>
+      </div>
+    </div>
+  
+    <div id="section2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="section2_menuAll" class="col-xs-12 col-sm-12 col-md-12">
+        <div id="section2_menu1" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <div id="menu1">
+          <img src="../img/beerbear013.jpg" class="section2_menu_img" />
+            <h4>국가별 맥주</h4>
+            <h5>this is menu1 contents.</h5>
+          </div>
+        </div>
+        <div id="section2_menu2" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <div id="menu2">
+	          <img src="../img/beerbear001.jpg" class="section2_menu_img" />
+	          <h4>제조방식별 맥주</h4>
+	          <h5>this is menu2 contents.</h5>
+          </div>
+        </div>
+        <div id="section2_menu3" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <div id="menu3">
+	          <img src="../img/beerbear019.jpg" class="section2_menu_img" />
+	          <h4>순위별 맥주</h4>
+	          <h5>this is menu3 contents.</h5>
+          </div>
+        </div>
+        <div id="section2_menu4" class="col-xs-12 col-sm-6 col-md-3 section2_menu">
+          <div id="menu4">
+	          <img src="../img/beerbear025.jpg" class="section2_menu_img" />
+	          <h4>오늘의 맥주</h4>
+	          <h5>this is menu4 contents.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     
+  </div>
+  
+  <div id="footer" class="row">
+     <div class="col-lg-1"></div>
+     <div class="logo col-xs-2 col-sm-1 col-md-1 col-lg-1"><a class="logoMenu" href="#">BEER<br>BEAR</a></div>
+     <div class="col-xs-10 col-sm-6 col-md-6 col-lg-5">
+       <ul class="nav nav-pills">
+         <li role="presentation"><a href="#">ABOUT</a></li>
+         <li role="presentation"><a href="#">BLOG</a></li>
+         <li role="presentation"><a href="#">NEWS&EVENTS</a></li>
+         <li role="presentation"><a href="#">CONTACT</a></li>
+       </ul>
+     </div>
+     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+       <ul class="nav nav-pills menu_right">
+         <li role="presentation"><a href="#">Youtube</a></li>
+         <li role="presentation"><a href="#">Facebook</a></li>
+         <li role="presentation"><a href="#">Instagram</a></li>
+         <li role="presentation"><a href="#">Email</a></li>
+       </ul>
+     </div>
+     <div class="col-lg-1"></div>
+     <div class="col-lg-11">
+       <h6>&copy;2016 BEERBEAR All rights reserved.</h6>
+     </div>
+  </div>
+  
+  
+
+</div>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="../js/common.js"></script>
+
+<script>
+  "use strict"
+  
+  var logoMenu = document.querySelectorAll(".logoMenu")
+  
+    for(var i = 0; i <logoMenu.length; i++) {
+      logoMenu[i].onclick = function(event) {
+        window.location.href="../beermain/beerMainApp.html"
+      }
+    }
+  
+  var infoMenu = document.querySelectorAll(".infoMenu")
+  
+  for(var i = 0; i <infoMenu.length; i++) {
+    infoMenu[i].onclick = function(event) {
+      window.location.href="../beer/beerInfoApp.html"
+    }
+  }  
+
+var videoMenu = document.querySelectorAll(".videoMenu")
+  
+  for(var i = 0; i <videoMenu.length; i++) {
+    videoMenu[i].onclick = function(event) {
+      window.location.href="../beervideo/beerVideoApp.html"
+    }
+  }
+  
+  
+  var menuBtn1 = document.querySelector("#menu1")
+  
+  menuBtn1.onclick = function(event) {
+	  window.location.href="../beer/beerApp.html"
+  }
+  
+var menuBtn2 = document.querySelector("#menu2")
+  
+  menuBtn2.onclick = function(event) {
+    window.location.href="../beercate/beerCateApp.html"
+  }
+
+</script>
+
+</body>
+</html>

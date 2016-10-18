@@ -188,15 +188,15 @@ textarea {
 }
 
 #emailbox {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 #saveEmail {
-    float: left;
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    margin-top: 8px;
+  float: left;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-top: 8px;
     
 }
 
@@ -229,22 +229,22 @@ h4 {
 }
 
 .icons {
-    text-align: right;
-    list-style: none;
-    margin-top: 25px;
+  text-align: right;
+  list-style: none;
+  margin-top: 25px;
 }
 
 .icons > li {
-    height: 30px;
-    width: 80px;
-    display: inline-block;
-    margin-left: 15px;
+  height: 30px;
+  width: 80px;
+  display: inline-block;
+  margin-left: 15px;
 
 }
 
 .icon-btn {
-    border-radius: 5%;
-    border: none;
+  border-radius: 5%;
+  border: none;
 
 }
 
@@ -277,7 +277,7 @@ h4 {
 }
 
 .birth-row {
-    height: 87px;
+  height: 87px;
 }
 
 .birth-row > div {
@@ -303,9 +303,6 @@ h4 {
   padding: 0 auto;
   font-size: 15px;
   font-weight: 400;
-  
-
-
   background-size:50%;
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -333,6 +330,7 @@ h4 {
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
+
 .button:hover, .button:focus {
   /* background: #179b77; */
   background: #d13d19;

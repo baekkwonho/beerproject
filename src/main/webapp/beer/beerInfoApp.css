@@ -1,6 +1,6 @@
 header {
 /*    border: 1px solid blue;*/
-    background: rgb(255, 255, 255);
+    background: #3d3c3d;
 }
 
 div {
@@ -21,7 +21,7 @@ nav {
 }
 
 .wrap {
-	background: rgb(255, 255, 255);
+/* 	background: #96976f; */
 }
 
 header img {
@@ -41,10 +41,14 @@ header img {
     display: inline-block;
     font-size: 50px;
     font-weight: 900;
-    color: #d95130;
+    color: #96976f;
     vertical-align: top;
     margin-top: 22px;
     cursor: pointer;
+}
+
+.header_brname a {
+	  color: #96976f
 }
     
 .header_menu {
@@ -67,7 +71,7 @@ header img {
 
 
 .nav_button {
-    color: #d95130;
+    color: #96976f;
     font-weight: 700;
     background: rgba(255,255,255,0);
     border: none;
@@ -80,8 +84,9 @@ header img {
 
 
 .main_container {
-    height: 500px;
-    background: url(../img/beerMainIMG.jpg) no-repeat center center fixed; 
+    height: 850px;
+    /* background: url(../img/beerMainIMG.jpg) no-repeat center center fixed;  */
+    background-color: #d95130;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -91,19 +96,7 @@ header img {
     padding: 0;
 }
 
-.main_content {
-    padding-top: 80px;
-    margin: 0 200px; 
-    color: white;
-    top: 400px;
-    text-align: center;
-    font-size: 17px;
-    font-weight: 900;
-    
-}
-
 .main_search {
-    
     text-align: center;
 }
 
@@ -113,11 +106,10 @@ header img {
     height: 60px;
     display: inline-block;
     position: absolute;
-    padding-top: 30px;
+    padding-top: 50px;
     text-align: center;
     left: 50%;
     margin-left: -500px;
-    
 }
 
 .form-control {
@@ -125,12 +117,10 @@ header img {
     width: 500px;
    /*  border: 3px solid #d95130; */
     margin: 0 10px;
-    
 }
 
 #searchbar {
-	border: 3px solid #d95130;
-	
+  border: 3px solid #3d3c3d;
 }
 
 ::-webkit-input-placeholder {
@@ -145,56 +135,150 @@ header img {
     /* background-color: #d95130; */
     cursor: pointer;
     margin-left: -10px;
-    
 }
 
 #searchbtn {
-  border: 3px solid #d95130;
+  border: 3px solid #3d3c3d;
   text-align: center;
   
 }
 
+.main_content {
+	  /* border: 2px solid blue; */
+    color: white;
+    position: relative;
+    top: 180px;
+    left: 10%;
+    width: 500px;
+    text-align: left;
+    font-size: 17px;
+    padding: 0 0;
+}
+
+.main_content h1 {
+	text-align: center;
+	font-weight: 900;
+}
+
+.main_image {
+	float: right;
+	padding-right: 20px;
+	position: relative;
+	top: -280px;
+	padding-bottom: 0;
+}
+
+/* #section00 {
+	height: 800px;
+} */
+
+/* .section_00 {
+	  height: 800px;
+    background: url(../img/beer-category.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+   opacity: 0.5;
+    padding: 0;
+} */
+
+#section0 {
+	/* border: 1px solid black; */
+	height: 330px;
+	background: #96976f;
+	text-align: center;
+	padding-top: 10px;
+
+}
+
+#section0 h2 {
+	margin-top: 100px;
+  margin-bottom: 0px;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 90%;
+}
+
 #section1 {
-    /* border: 2px solid red; */
-    background: rgb(255, 255, 255);
-    /* height: 200px; */
-    padding-top: 70px;
+	  /* border: 1px solid blue; */
+    background: #96976f;
+    position: relative;
+    /* display: inline; */
+    height: 270px;
+    text-align: left;
 }
 
-.section1_content {
-    text-align: center;
-    
+.section1_menu {
+    top: 30px;
+    position: relative;
+    /* border: 3px solid black; */
+    display: inline;
+    margin: 0 5px;
+    text-align: left;
 }
 
-.section1_content h1 {
-	/* color: #d95130; */
-	color: black;
-	line-height: 10%;
-	font-weight: 500;
+#section1_menu1 {
+	/* border: 1px solid pink; */
+	margin-left: 6%;
+}
+
+#section1_menu2 {
+  /* border: 1px solid white; */
+  margin:0 10%;
+}
+
+#section2_menu3 {
+  /* border: 1px solid purple; */
+  margin-left: 6%;
+}
+
+#section2_menu4 {
+  /* border: 1px solid black; */
+  margin:0 10%;
+}
+
+.section1_menu_img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border: 4px solid #3d3c3d;
+    margin-bottom: 100px;
+}
+
+.section1_menu_desc {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#section1 h4 {
+  position: relative;
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 #section2 {
-    /* border: 2px solid blue; */
-    background: rgb(255, 255, 255);
+	/* border: 1px solid red; */
+    background: #96976f;
     position: relative;
-    height: 400px;
-    text-align: center;
-    
-}
-
-#section2 h4 {
-	color: black;
-	font-weight: 700;
-	font-size: 20px;
+    /* display: inline; */
+    height: 300px;
+    text-align: left;
 }
 
 .section2_menu {
-	  top: 20px;
+    top: 20px;
     position: relative;
 /*    border: 1px solid black;*/
-    display: inline-block;
-    margin: 0 10px;
-    text-align: center;
+    display: inline;
+    margin: 0 5px;
+    text-align: left;
 }
 
 .section2_menu_img {
@@ -202,13 +286,25 @@ header img {
     width: 200px;
     height: 200px;
     cursor: pointer;
-    border: 4px solid #d95130;
-    margin-bottom: 20px;
+    border: 4px solid #3d3c3d;
+    margin-bottom: 120px;
 }
 
 .section2_menu_desc {
+    display: inline-block;
     width: 200px;
+    height: 200px;
     cursor: pointer;
+    margin: 20px;
+    /* top: 20px; */
+}
+
+#section2 h4 {
+	/* border: 1px solid black; */
+  position: relative;
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .footer_container {
