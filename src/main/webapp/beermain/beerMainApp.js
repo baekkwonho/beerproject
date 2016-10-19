@@ -16,7 +16,7 @@ for(var i = 0; i <infoBtn.length; i++) {
 var searchBtn = document.querySelector("#searchbtn")
 searchBtn.onclick = function(event) {
 	var beer = {
-		brbrname : $('#searchbar').val()
+		search : $('#searchbar').val()
 	}
 	
 	ajaxSearchBeer(beer)
@@ -32,7 +32,6 @@ function ajaxSearchBeer(beer) {
 		
 		var brno = result.data.brbrno
 		var cateno = result.data.cateno
-		
 		window.location.href="../beer/beerDetailApp.html?no="+brno+cateno+"detail"
 		
 	})

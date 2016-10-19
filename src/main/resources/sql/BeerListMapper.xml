@@ -54,6 +54,16 @@
     where beers_comp.comp = #{comp}
   </select>
   
+  <select id="searchBrandNo" resultMap="beerMap" parameterType="map">
+    select brbrno from beers_brand
+    where beers_brand.brbrnm = #{search}
+  </select>
+  
+   <select id="searchCateNo" resultMap="beerMap" parameterType="map">
+    select cateno from beers_cate
+    where beers_cate.catenm = #{search}
+  </select>
+  
   <insert id="insert" parameterType="beer">
     insert into beers(cateno, brbrno, ctryno,cono, br_desc, achl, vol)
     values(#{cateno}, #{brbrno}, #{ctryno}, #{cono}, #{describe}, #{alchol}, #{volume})

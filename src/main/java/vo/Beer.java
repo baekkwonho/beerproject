@@ -17,6 +17,7 @@ public class Beer implements Serializable {
   protected String company;
   protected float alchol;
   protected int volume;
+  protected String search;
   
   public int getNo() {
     return no;
@@ -89,6 +90,12 @@ public class Beer implements Serializable {
   }
   public void setVolume(int volume) {
     this.volume = volume;
+  }
+  public String getSearch() {
+    return search;
+  }
+  public void setSearch(String search) {
+    this.search = search;
   }
   
   

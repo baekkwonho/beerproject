@@ -18,6 +18,8 @@ public interface BeerListDao {
   int insert(Beer beer) throws Exception;
   int brandInsert(String BRBRNM) throws Exception;
   int compInsert(String company) throws Exception;
+  List<Beer> searchBrandNo(Map<String,Object> paramMap) throws Exception;
+  List<Beer> searchCateNo(Map<String,Object> paramMap) throws Exception;
   
 //  int insert(Beer beer) throws Exception;
 //  int update(Beer beer) throws Exception;

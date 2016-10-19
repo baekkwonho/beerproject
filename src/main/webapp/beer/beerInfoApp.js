@@ -13,3 +13,9 @@ for(var i = 0; i <infoBtn.length; i++) {
 	    }
 	  }
 
+var cateBtn = document.querySelectorAll(".cateBtn")
+for(var i = 0; i <cateBtn.length; i++) {
+	cateBtn[i].onclick = function(event) {
+		window.location.href="../beercate/beerCateApp.html"
+	}
+}

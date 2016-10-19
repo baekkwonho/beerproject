@@ -66,19 +66,29 @@ public class BeerListController {
   @RequestMapping(path="search")
   public Object search(Beer beer) throws Exception{
     try {
-      String brbrname = beer.getBrbrname();
+      String search = beer.getSearch();
       HashMap<String,Object> map = new HashMap<>();
-      map.put("brand", brbrname);
+      map.put("search", search);
       
-      List<Beer> brandList = beerListDao.getBeerBrandNo(map);
-      if(brandList.isEmpty()) {
+      List<Beer> brandList = beerListDao.searchBrandNo(map);
+      List<Beer> cateList = beerListDao.searchCateNo(map);
+      
+      
+      if(brandList.isEmpty() && cateList.isEmpty()) {
         return JsonResult.fail();
+      } else if (!brandList.isEmpty() && cateList.isEmpty()) {
+        beer.setBrbrno(brandList.get(0).getBrbrno());
+        beer = beerDao.selectOne(beer.getBrbrno());
+        return JsonResult.success(beer);
+      } else if (brandList.isEmpty() && !cateList.isEmpty()) {
+        beer.setCateno(cateList.get(0).getCateno());
+        beer = beerDao.selectOneCate(beer.getCateno());
+        return JsonResult.success(beer);
+      } else {
+        beer.setBrbrno(brandList.get(0).getBrbrno());
+        beer = beerDao.selectOne(beer.getBrbrno());
+        return JsonResult.success(beer);
       }
-      
-      beer.setBrbrno(brandList.get(0).getBrbrno());
-      beer = beerDao.selectOne(beer.getBrbrno());
-      
-      return JsonResult.success(beer);
     } catch (Exception e) {
       e.printStackTrace();
       return JsonResult.fail(e.getMessage());
