@@ -19,3 +19,4 @@ for(var i = 0; i <cateBtn.length; i++) {
 		window.location.href="../beercate/beerCateApp.html"
 	}
 }
+// 링크 
