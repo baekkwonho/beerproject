@@ -15,6 +15,13 @@ public class Member implements Serializable {
   protected String drink;
   protected String address;
   protected int level;
+  
+  @Override
+  public String toString() {
+    return "Member [no=" + no + ", email=" + email + ", password=" + password + ", nickname=" + nickname + ", birth="
+        + birth + ", gender=" + gender + ", drink=" + drink + ", address=" + address + ", level=" + level + "]";
+  }
+  
   public int getNo() {
     return no;
   }

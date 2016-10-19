@@ -7,22 +7,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-
-import com.google.gson.Gson;
 
 import dao.MemberDao;
 import vo.JsonResult;
 import vo.Member;
 
 @Controller 
-@RequestMapping("/auth") 
+@RequestMapping("/auth/") 
 @SessionAttributes({"member"}) // Model 객체에 저장된 정보 중에서 로그인 회원 정보는 따로 세션으로 관리한다.
 public class AuthController {
   
@@ -73,38 +69,31 @@ public class AuthController {
     }
   }
   
-  @RequestMapping(path="logout", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String logout(HttpSession session, SessionStatus sessionStatus) throws Exception {
-    HashMap<String,Object> result = new HashMap<>();
+  @RequestMapping(path="logout")
+  public Object logout(HttpSession session, SessionStatus sessionStatus) throws Exception {
     try {
       sessionStatus.setComplete();
       session.invalidate();
-      result.put("state", "success");
+      return JsonResult.success();
+      
     } catch (Exception e) {
-      result.put("state", "error");
-      result.put("data", e.getMessage());
+      return JsonResult.error(e.getMessage());
     }
-    return new Gson().toJson(result);   
   }
   
-  @RequestMapping(path="loginUser", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String loginUser(HttpSession session) throws Exception {
+  @RequestMapping(path="loginUser")
+  public Object loginUser(HttpSession session) throws Exception {
     
-    HashMap<String,Object> result = new HashMap<>();
     try {
       Member member = (Member)session.getAttribute("member");
       if (member == null) {
         throw new Exception("로그인이 되지 않았습니다.");
       }
-      result.put("state", "success");
-      result.put("data", member);
+      return JsonResult.success(member);
+      
     } catch (Exception e) {
-      result.put("state", "error");
-      result.put("data", e.getMessage());
+      return JsonResult.error(e.getMessage());
     }
-    return new Gson().toJson(result);  
   }
   
 }
