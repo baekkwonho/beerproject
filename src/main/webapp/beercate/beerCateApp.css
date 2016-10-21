@@ -81,20 +81,23 @@ header img {
     cursor: pointer;
 }
 
-
-
 .main_container {
+	height: 850px;
+	background: url(../img/beer-category_ex3.jpeg) no-repeat center center;
+	background-color: #f7f2df;
+	padding: 0;
+}
+
+/* .main_container {
     height: 850px;
     background: url(../img/beer-category.jpg) no-repeat center center fixed;  
-    /* background-color: #d95130; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     position: relative;
-/*    opacity: 0.5;*/
     padding: 0;
-}
+} */
 
 .main_search {
     text-align: center;
@@ -166,17 +169,6 @@ header img {
 	position: relative;
 	top: -280px;
 	padding-bottom: 0;
-}
-
-#section {
-	position: relative;
-	padding: 0;
-	height: 500px;
-}
-
-.section_menu {
-	display: inline-block;
-	height: 250px;
 }
 
 .cate_img {
