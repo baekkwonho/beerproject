@@ -21,6 +21,11 @@ public interface BeerListDao {
   List<Beer> searchBrandNo(Map<String,Object> paramMap) throws Exception;
   List<Beer> searchCateNo(Map<String,Object> paramMap) throws Exception;
   
+  List<Beer> getAleList() throws Exception;
+  List<Beer> getLagerList() throws Exception;
+  List<Beer> getEtcList() throws Exception;
+  
+  
 //  int insert(Beer beer) throws Exception;
 //  int update(Beer beer) throws Exception;
 //  int delete(int no) throws Exception;

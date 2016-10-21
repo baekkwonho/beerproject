@@ -1,0 +1,409 @@
+header {
+/*    border: 1px solid blue;*/
+    background: #3d3c3d;
+}
+
+div {
+/*    border: 1px solid red;*/
+}
+
+nav {
+/*    border: 1px solid pink;*/
+}
+
+footer {
+/*    border: 1px solid orange;*/
+    background: #d95130;
+}
+
+nav {
+/*    border: 1px solid green;*/
+}
+
+.wrap {
+/* 	background: #96976f; */
+}
+
+header img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+
+}
+
+.header_logo {
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.header_brname {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #96976f;
+    vertical-align: top;
+    margin-top: 22px;
+    cursor: pointer;
+}
+
+.header_brname a {
+	  color: #96976f
+}
+    
+.header_menu {
+    display: inline-block;
+    float: right;
+    margin: 30px 3px;
+
+}
+
+.header_menu li {
+    display: inline-block;
+}
+
+.header_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+
+.nav_button {
+    color: #96976f;
+    font-weight: 700;
+    background: rgba(255,255,255,0);
+    border: none;
+    width: 80px;
+    margin: 0 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.main_container {
+    height: 850px;
+    /* background: url(../img/beerMainIMG.jpg) no-repeat center center fixed;  */
+    background-color: #d95130;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+/*    opacity: 0.5;*/
+    padding: 0;
+}
+
+.main_search {
+    text-align: center;
+}
+
+#search_form {
+    /* border: 1px solid black; */
+    width: 1000px;
+    height: 60px;
+    display: inline-block;
+    position: absolute;
+    padding-top: 50px;
+    text-align: center;
+    left: 50%;
+    margin-left: -500px;
+}
+
+.form-control {
+    display: inline-block;
+    width: 500px;
+   /*  border: 3px solid #d95130; */
+    margin: 0 10px;
+}
+
+#searchbar {
+  border: 3px solid #3d3c3d;
+}
+
+::-webkit-input-placeholder {
+    color: #a2a2a2;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.form_btn {
+    display: inline-block;
+    /* font-weight: 900; */
+    /* background-color: #d95130; */
+    cursor: pointer;
+    margin-left: -10px;
+}
+
+#searchbtn {
+  border: 3px solid #3d3c3d;
+  text-align: center;
+  
+}
+
+.main_content {
+	  /* border: 2px solid blue; */
+    color: white;
+    position: relative;
+    top: 180px;
+    left: 10%;
+    width: 500px;
+    text-align: left;
+    font-size: 17px;
+    padding: 0 0;
+}
+
+.main_content h1 {
+	text-align: center;
+	font-weight: 900;
+}
+
+.main_image {
+	float: right;
+	padding-right: 20px;
+	position: relative;
+	top: -280px;
+	padding-bottom: 0;
+}
+
+/* #section00 {
+	height: 800px;
+} */
+
+/* .section_00 {
+	  height: 800px;
+    background: url(../img/beer-category.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+   opacity: 0.5;
+    padding: 0;
+} */
+
+#section0 {
+	/* border: 1px solid black; */
+	height: 330px;
+	background: #96976f;
+	text-align: center;
+	padding-top: 10px;
+}
+
+#section0 h2 {
+	margin-top: 100px;
+  margin-bottom: 0px;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 90%;
+}
+
+#section1 {
+	  border: 1px solid blue;
+    background: #96976f;
+    position: relative;
+    /* display: inline; */
+    height: 270px;
+   /*  text-align: left; */
+}
+
+.section1_menu {
+	border: 1px solid red;
+	position: relative;
+	/* height: 150px; */
+	width: 300px;
+	float: left;
+}
+
+.section1_menu_img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border: 4px solid #3d3c3d;
+    
+/*     margin-bottom: 100px; */
+}
+
+#section2 {
+  
+}
+
+
+
+
+
+
+/* 
+.section1_menu {
+	  border: 1px solid black;
+	  height: 400px;
+	  width: 300px;
+    top: 30px;
+    position: relative;
+    border: 3px solid black;
+    display: inline;
+    margin: 0 5px;
+    text-align: left;
+}
+
+#section1_menu1 {
+	border: 1px solid pink;
+	margin-left: 6%;
+}
+
+#section1_menu2 {
+  border: 1px solid white;
+  margin:0 10%;
+}
+
+
+.section1_menu_img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border: 4px solid #3d3c3d;
+    margin-bottom: 100px;
+}
+
+.section1_menu_desc {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#section1 h4 {
+  position: relative;
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+}
+ */
+.footer_container {
+    height: 120px;
+}
+
+footer img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.footer_logo {
+    display: inline-block;
+    margin: 10px 30px;
+    position: relative;
+    top: 15px;
+}
+
+.footer_brname {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffffff;
+    top: 25px;
+    cursor: pointer;
+}
+
+.footer_brname a {
+	color: #ffffff;
+}
+
+.footer_brname a:hover {
+	color: #ffffff;
+}
+
+.footer_menu {
+    display: inline-block;
+    float: right;
+    margin: 0px 0px;
+    position: relative;
+    top: 40px;
+
+}
+
+.footer_menu li {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+a.icon {
+    display: inline-block;
+    padding-top: 4px;
+}
+
+.footer_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0px 0px;
+}
+
+ul.icons {
+	margin-top: 25px;
+	margin-right: 25px;
+}
+
+ul.icons li .label {
+    display: none;
+
+}
+
+ul.icons li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav_button2 {
+    border:none;
+    border-radius: 5px;
+    color: #d95130;
+    background: rgb(255, 255, 255);
+    width: 120px;
+    margin: 0 15px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+.footer_bottom_menu ul {
+	  margin-top: 20px;
+	  
+}
+
+.footer_bottom_menu li {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: -20px;
+    font-weight: 600;
+}
+
+.footer_bottom_copyright {
+    text-align: right;
+    position: relative;
+    color: white;
+    padding-right:  34px;
+    top: -10px;
+    
+}
+
+.footer_bottom_copyright h4 {
+    font-weight: 500;
+}

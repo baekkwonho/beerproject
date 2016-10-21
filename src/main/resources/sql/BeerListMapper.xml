@@ -16,6 +16,12 @@
     <result column="COMP" property="company"/>
     <result column="ACHL" property="alchol"/>
     <result column="VOL" property="volume"/>
+    <result column="ALENO" property="aleno"/>
+    <result column="ALENM" property="alename"/>
+    <result column="LAGERNO" property="lagerno"/>
+    <result column="LAGERNM" property="lagername"/>
+    <result column="ETCNO" property="etcno"/>
+    <result column="ETCNM" property="etcname"/>
   </resultMap>
   
   <select id="selectBrandList" resultMap="beerMap">
@@ -79,7 +85,22 @@
     values(#{company})
   </insert>
   
+  <select id="getAleList" resultMap = "beerMap"> 
+    select aleno, alenm, catenm from ale
+    inner join beers_cate
+    on ale.cateno = beers_cate.cateno
+  </select>
+  <select id="getLagerList" resultMap = "beerMap"> 
+    select lagerno, lagernm, catenm from lager
+    inner join beers_cate
+    on lager.cateno = beers_cate.cateno
+  </select>
   
+  <select id="getEtcList" resultMap = "beerMap"> 
+    select etcno, etcnm, catenm from etc
+    inner join beers_cate
+    on etc.cateno = beers_cate.cateno
+  </select>
   
   
 </mapper>

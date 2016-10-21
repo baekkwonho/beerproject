@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Drink! Drink! Drink!</title>
+
+<link rel="stylesheet" type="text/css" href="beerInfoApp03.css" />
+<link rel="stylesheet" type="text/css" href="../beermain/fontello-a28e58c3/css/fontello.css" />
+<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- 모달 관련  -->
+ 
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../beermain/normalize.css">
+    <link rel="stylesheet" href="../beermain/style.css">
+
+</head>
+
+
+<body>
+ 
+    <header>
+        <div class="header_container">
+            <div id="bblogo" class="header_logo homeBtn"><img src="../img/beerbear_logo01.jpeg" /></div>
+            <nav id="bbname" class="header_brname homeBtn"><a>BEER BEAR</a></nav>
+            <nav id="navmenue" class="header_menu"><ul>
+                <li><input class="nav_button infoBtn" type="button" value="맥주정보" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="맥주인증" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="맥주위치" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="공지사항" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
+            </ul></nav>
+        </div>
+    </header>
+    
+    
+    
+      <!-- 모달 팝업 -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span class="close_x" aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <div class="modal-body">   <!-- @@@@@@@@@@@@@@@@@@  -->
+    
+    
+        <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#login">Log In</a></li>
+        <li class="tab"><a href="#signup">Sign Up</a></li>
+      </ul>
+      
+      <div class="tab-content">
+       
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+           
+          <form action="/" method="post">
+          
+          
+          
+          <div id="emailbox" class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" id="email" required autocomplete="off"/>
+          </div>
+          
+          
+          
+          <div id="field-pwd" class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" id="password" required autocomplete="off"/>
+          </div>
+          
+          <div class="remem-wrap">
+              <input type="checkbox" id="saveEmail">
+              <h4>Remember Email</h4>
+          
+          </div>
+          
+          <h3 class="forgot"><a href="#">Forgot Password?</a></h3>
+          
+          <button id="loginBtn" class="button button-block">Log In</button>
+          
+          <div>
+              
+            <ul class="icons">
+               
+                <li><a href="#" class=""><input type="button" class="icon-btn icon-f" value="facebook" style="font-size:15px" /></a></li>
+                
+                <li><a href="#" class=""><input type="button" class="icon-btn icon-k" value="kakao" style="font-size:15px" /></a></li>
+                
+                <li><a href="#" class=""><input type="button" class="icon-btn icon-n" value="naver" style="font-size:15px" /></a></li>
+                
+                
+            </ul>
+              
+          </div>
+          
+          </form>
+
+        </div>
+       
+       
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          <h3>Essential Input Data</h3>
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div id="top-email" class="field-wrap">
+              <label>
+                Email Address<span class="req">*</span>
+              </label>
+              <input type="email" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap button-conf1">
+              <button type="submit" class="button-conf button-block" style="letter-spacing: 0.5px;">Confirmation</button>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Confirm Your Password Again<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Nickname<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <h3>Optional Input Data</h3>
+          
+          <div class="birth-row">
+            <div class="field-wrap">
+              <label>
+                Year(yyyy)
+              </label>
+              <input type="text" maxlength="4" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Month(mm)
+              </label>
+              <input type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Date(dd)
+              </label>
+<!--              <input type="tel" maxlength="2" required autocomplete="off"/>-->
+              <input type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="field-wrap">
+            <label>
+              Favorite Beer Type
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Favorite Beer Brand
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Capability of Drinking
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block">Get Started</button>
+          
+          </form>
+
+        </div>
+        
+       
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+    
+    
+        </div>  <!-- @@@@@@@@@@@@@@@@@@  -->
+<!--         <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+    
+    
+    
+    <div class="wrap">
+        <div class="main_container">
+
+          <div class="main_search">
+                <form id="search_form" class="navbar-form navbar-left" role="search">
+                    
+                    <input type="text" class="form-control" id="searchbar" style="width:500px;height:50px;font-size:25px;" placeholder="  What do you want to know about?" >
+                    
+                    <button type="button" class="form_btn btn btn-default" id="searchbtn" style="width:65px;height:50px;background-color:#3d3c3d;font-weight:900;color:#96976f">Search  </button>
+                    
+                </form>
+            </div>
+
+           <div class="main_content">
+                <h1 class="main_subject">Information of Beer</h1>
+                <h3 class="korean">"Beer is the world's most widely consumed and probably the oldest alcoholic beverage; it is the third most popular drink overall, after water and tea. <br><br>The production of beer is called brewing, which involves the fermentation of starches, mainly derived from cereal grains—most commonly malted barley, although wheat, maize (corn), and rice are widely used.<br><br> Most beer is flavoured with hops, which add bitterness and act as a natural preservative, though other flavourings such as herbs or fruit may occasionally be included. "</h3>
+            </div>
+            
+            <div id="beerinfoimage" class="main_image"><img src="beerglassIMG01.png" style="width:500px;height:480px;" /></div>
+            
+        </div>
+    </div>
+        
+<!--        <section id="section00">
+         <div class="section_00"></div>
+       </section> -->
+       
+        <section id="section0"><div class="section_0">
+          
+          <h2>CLASSIFICATION<br>of<br>BEER</h2>
+          
+        </div></section>
+        
+        <section id="section1">
+        
+        <div class="section1_menu">
+         <img id="section1_menu1" src="../img/beerinfo_013.jpeg" class="section1_menu_img" />
+        </div>
+        
+        <div class="section1_menu">
+        <img id="section1_menu2" src="../img/beerinfo_011.jpeg" class="section1_menu_img" />
+        </div>
+        
+        <div class="section1_menu">
+        <img id="section1_menu3" src="../img/beerinfo_009.jpeg" class="section1_menu_img" />
+        </div>
+           
+        
+        </section>
+        
+         <section id="section2" style="display:none">
+         <h1>Ale</h1>
+         <div id="alelist">
+         </div>
+         </div>
+         <div>
+         <h1>Lager</h1>
+         <div id="lagerlist">
+         </div>
+         </div>
+         <div>
+         <h1>Etc</h1>
+         <div id="etclist">
+         </div>
+         </div>
+        
+        </section>
+        
+        <!-- 
+           
+            <div id="section1_menu1" class="section1_menu locaMenu">
+                <img src="../img/beerinfo_013.jpeg" class="section1_menu_img" />
+                <div class="section1_menu_desc">
+                <h4>by COUNTRY of MANUFACTURE</h4>
+                <h5>Germany, USA, Korea, France, Belgium, Italy, Canada, Mexico, Japan, and so on.</h5>
+                </div>
+            </div>
+            
+            <div id="section1_menu2" class="section1_menu infoMenu">
+                <img src="../img/beerinfo_011.jpeg" class="section1_menu_img cateBtn" />
+                <div class="section1_menu_desc cateBtn">
+                <h4>by PROCESS of MANUFACTURE</h4>
+                <h5>Ale, Stout, Weizen, Golden Ale, Indian Pale Ale, Lager, Porter, Pale Ale, Pilsner, Dark Lager, and so on.</h5>
+                </div>
+            </div>
+            
+               <div id="section1_menu3" class="section1_menu locaMenu">
+                <img src="../img/beerinfo_009.jpeg" class="section1_menu_img" />
+                <div class="section1_menu_desc">
+                <h4>by SCORE of EVALUATION</h4>
+                <h5>You can evaluate beers you've drunk. Also you can see the score of beers which other users have evaluated.</h5>
+                </div>
+            </div> -->
+            
+     
+        
+       
+        
+        
+       <!--  <section id="section2"><div class="section_34">
+           
+            <div id="section2_menu3" class="section2_menu locaMenu">
+                <img src="../img/beerinfo_009.jpeg" class="section2_menu_img" />
+                <div class="section2_menu_desc">
+                <h4>by SCORE of EVALUATION</h4>
+                <h5>You can evaluate beers you've drunk. Also you can see the score of beers which other users have evaluated.</h5>
+                </div>
+            </div>
+            
+            <div id="section2_menu4" class="section2_menu infoMenu">
+                <img src="../img/beerinfo_012.jpeg" class="section2_menu_img" />
+                <div class="section2_menu_desc">
+                <h4>TODAY's RECOMMENDATION</h4>
+                <h5>If you don't know which beer to drink today, here is the solution for you. We recommend a beer which you may be in favor of based on your preference.</h5>
+                </div>
+            </div>
+            
+        </div></section>
+    </div> -->
+    
+    <footer>
+        <div class="footer_container">
+           
+            <div id="bblogo" class="footer_logo homeBtn"><img src="../img/beerbear_logo01.jpeg" /></div>
+            
+            <nav id="bbname" class="footer_brname homeBtn"><a>BEER BEAR</a></nav>
+            
+            
+            
+            <nav id="navmenue" class="footer_menu"><ul class="icons">
+               
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-twitter icon"><span class="label">Twitter</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-youtube icon"><span class="label">youtube</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-facebook icon"><span class="label">facebook</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-instagram icon"><span class="label">instagram</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-mail-alt icon"><span class="label">mail</span></a></li>
+               
+            </ul></nav>
+            
+        </div>
+        
+        <div class="footer_bottom">
+           
+            <nav id="navmenue" class="footer_bottom_menu"><ul>
+               
+                <li><input class="nav_button2" type="button" value="ABOUT" style="font-size:15px;" /></li>
+                <li><input class="nav_button2" type="button" value="BLOG" style="font-size:15px;" /></li>
+                <li><input class="nav_button2" type="button" value="NEWS&EVENT" style="font-size:15px;" /></li>
+                <li><input class="nav_button2" type="button" value="CONTACT" style="font-size:15px;" /></li>
+                
+            </ul></nav>
+            
+            <div class="footer_bottom_copyright">
+               <h4>&copy;2016 BEERBEAR All rights reserved.</h4>
+            </div>
+            
+        </div>
+       
+    </footer>
+<!--     
+    <script id="cateListTemplateText" type="text/x-handlebars-template">
+      {{#each data}}
+        <h1 class="cateno" cate-no="{{cateno}}">{{cateno}} : {{catename}}</h1>
+      {{/each}}
+    </script>
+ -->
+    <script id="cateInfoAleTemplateText" type="text/x-handlebars-template">
+    {{#each data}}
+      <h4 class="aleno" ale-no="{{aleno}}">{{aleno}} : {{alename}}</h4>
+    {{/each}}
+    </script>
+    
+    <script id="cateInfoLagerTemplateText" type="text/x-handlebars-template">
+    {{#each data}}
+      <h4 class="lagerno" lager-no="{{lagerno}}">{{lagerno}} : {{lagername}}</h4>
+    {{/each}}
+    </script>
+    
+    <script id="cateInfoEtcTemplateText" type="text/x-handlebars-template">
+    {{#each data}}
+      <h4 class="etcno" etc-no="{{etcno}}">{{etcno}} : {{etcname}}</h4>
+    {{/each}}
+    </script>
+    
+    
+    <!-- 모달 관련 -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+    <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/bit.js"></script>
+    <script src="../beermain/index.js"></script>
+    <script src="beerInfoApp03.js"></script>
+    
+    
+
+</body>
+</html>

@@ -18,7 +18,12 @@ public class Beer implements Serializable {
   protected float alchol;
   protected int volume;
   protected String search;
-  
+  protected int aleno;
+  protected String alename;
+  protected int lagerno;
+  protected String lagername;
+  protected int etcno;
+  protected String etcname;
   public int getNo() {
     return no;
   }
@@ -96,6 +101,42 @@ public class Beer implements Serializable {
   }
   public void setSearch(String search) {
     this.search = search;
+  }
+  public int getAleno() {
+    return aleno;
+  }
+  public void setAleno(int aleno) {
+    this.aleno = aleno;
+  }
+  public String getAlename() {
+    return alename;
+  }
+  public void setAlename(String alename) {
+    this.alename = alename;
+  }
+  public int getLagerno() {
+    return lagerno;
+  }
+  public void setLagerno(int lagerno) {
+    this.lagerno = lagerno;
+  }
+  public String getLagername() {
+    return lagername;
+  }
+  public void setLagername(String lagername) {
+    this.lagername = lagername;
+  }
+  public int getEtcno() {
+    return etcno;
+  }
+  public void setEtcno(int etcno) {
+    this.etcno = etcno;
+  }
+  public String getEtcname() {
+    return etcname;
+  }
+  public void setEtcname(String etcname) {
+    this.etcname = etcname;
   }
   
   

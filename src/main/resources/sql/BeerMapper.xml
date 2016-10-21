@@ -16,6 +16,12 @@
     <result column="COMP" property="company"/>
     <result column="ACHL" property="alchol"/>
     <result column="VOL" property="volume"/>
+    <result column="ALENO" property="aleno"/>
+    <result column="ALENM" property="alename"/>
+    <result column="LAGERNO" property="lagerno"/>
+    <result column="LAGERNM" property="lagername"/>
+    <result column="ETCNO" property="etcno"/>
+    <result column="ETCNM" property="etcname"/>
   </resultMap>
   
   <select id="selectList" resultMap="beerMap" parameterType="map">

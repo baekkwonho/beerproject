@@ -41,6 +41,7 @@ public class BeerListController {
     }
   }
   
+  
   @RequestMapping(path="ctryList")
   public Object ctryList() throws Exception{
     
@@ -148,6 +149,40 @@ public class BeerListController {
       return JsonResult.success();
     } catch (Exception e) {
       e.printStackTrace();
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
+  @RequestMapping(path="cateinfoale")
+  public Object cateInfoAle() throws Exception{
+    
+    try {
+      List<Beer> list = beerListDao.getAleList();
+      return JsonResult.success(list);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  @RequestMapping(path="cateinfolager")
+  public Object cateInfoLager() throws Exception{
+    
+    try {
+      List<Beer> list = beerListDao.getLagerList();
+      return JsonResult.success(list);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  @RequestMapping(path="cateinfoetc")
+  public Object cateInfoEtc() throws Exception{
+    
+    try {
+      List<Beer> list = beerListDao.getEtcList();
+      return JsonResult.success(list);
+    } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
     }
   }
