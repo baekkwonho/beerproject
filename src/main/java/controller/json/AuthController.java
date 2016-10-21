@@ -43,8 +43,7 @@ public class AuthController {
       }
       response.addCookie(cookie);
       
-      
-      
+
       HashMap<String,Object> paramMap = new HashMap<>();
       paramMap.put("email", email);
       paramMap.put("password", password);

@@ -62,6 +62,11 @@
   height: 200px;
   }
   
+  #hashTag_wrap {
+    height: 80px;
+    background-color: red;
+  }
+  
   
   
   #section2 {
@@ -117,6 +122,12 @@
     <!-- beerDetail.js 에서 값을 넣어줌 -->
     </div>
     <div id="beer_video" class="col-sx-6 col-sm-2 col-md-3 col-lg-3"><h1>Video</h1></div>
+    <div id="hashTag_wrap" class="col-sx-4 col-sm-4 col-md-8 col-lg-8">
+    <input type="text" name="hashTagText" id="hashTagText" style="display:none">
+    <button id="htBtn">HashTag</button>
+    <button id="htAddBtn" style="display:none">등록하기</button>
+    
+    </div>
    
     </div>
      
@@ -143,7 +154,6 @@
     
     </div>
   </div>
-  
   <div id="footer" class="row">
      <div class="col-lg-1"></div>
       <div class="logo col-xs-2 col-sm-1 col-md-1 col-lg-1"><a class="logoMenu" href="#">BEER<br>BEAR</a></div>
@@ -168,7 +178,6 @@
        <h6>&copy;2016 BEERBEAR All rights reserved.</h6>
      </div>
   </div>
-
 </div>
 
 <script id="beerParaTemplateText" type="text/x-handlebars-template">
@@ -186,8 +195,11 @@
   <div id="beer_alchol" class="col-sm-6 col-md-6 col-lg-6"><h1>알콜:{{alchol}}%</h1></div>
   <div id="beer_volume" class="col-sm-6 col-md-6 col-lg-6"><h1>용량:{{volume}}ml</h1></div>
   <div id="beer_cate" class="col-sm-6 col-md-6 col-lg-6"><h1>제조방식:{{catename}}</h1></div>
-
+  <select id="beerNo" style="display:none">
+  <option value={{no}}>{{no}}</option>
+  </select>
 </script>
+
 
 <script id="beerTasteScoreText" type="Text/x-handlebars-template">
   <h1>{{score}}</h1>
@@ -252,7 +264,6 @@
 	}
 
 </script>
-
 
 </body>
 </html>
