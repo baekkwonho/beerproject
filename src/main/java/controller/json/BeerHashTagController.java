@@ -33,9 +33,11 @@ public class BeerHashTagController {
     
     List<BeerHashTag> hashTagList = beerHashTagDao.selectHashTagBrno(map);
     
+    
     //brno로 검색해온 리스트가 없을 경우
     if(hashTagList.size() == 0) {
-      return JsonResult.fail();
+      beerHashTagDao.insert(beerHashTag);
+      return JsonResult.success();
     }
     
     //리스트가 있고, 내용값이 같은 경우 count증가

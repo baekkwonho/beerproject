@@ -74,32 +74,6 @@
   #footer {
     background-color: #8C8C8C;
   }
-  
-  #fileupload, #newFileName {
-    display: none;
-  }
-  
- /*  <!-- 평가하기  -->
-   select {
-   width: 100px;
-   font-size: 20px;
-   float: right;
-   text-align: center;
- }
- #avgScore {
-   float: right;
- }
- 
- #okBtn {
-   width: 100px;
-   height: 50px;
- } */
- 
- 
- /*  
-  div {
-    border: 1px solid black;
-  } */
 
 </style>
 
@@ -126,83 +100,7 @@
   <div class="row">
     <div id="section1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div id="beerimg" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
-      
-      <button id="beerAddBtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#beerAddModal">맥주등록</button>
-      <!-- 맥주 등록 modal -->
-      
-      <div class="modal fade" id="beerAddModal" tabindex="-1" role="dialog" aria-labelledby="beerAddModalLabel" aria-hidden="true">
-			  <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			        <h4 class="modal-title" id="beerAddModalLabel">Beer Add</h4>
-			      </div>
-			      <div class="modal-body">
-			
-			        <div>
-			          <label for="Brand">Beer Brand (맥주브랜드)</label>
-			          <form name="beerBrandForm">
-			            <select name="Brand" id="beerBrand" onChange="checkBrandText()">
-			            </select>
-			            <input type="text" name="brandText" id="brandText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label for="cate">Category (맥주 분류)</label>
-			          <form name="beerCateForm">
-			            <select name="cate" id="beerCate" onChange="checkCateText()">
-			            </select>
-			            <input type="text" name="cateText" id="cateText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label for="country">Country (제조 국가)</label>
-			          <form name="beerCtryForm">
-			            <select name="country" id="beerCtry" onChange="checkCtryText()">
-			            </select>
-			            <input type="text" name="ctryText" id="ctryText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label>Description (맥주 설명)</label>
-			          <textarea id="beerDesc" cols="50" rows ="10" placeholder="맥주에 대해 설명 해 주세요."></textarea>
-			        </div>
-			        
-			        <div>
-			          <label for="company">Company (제조사)</label>
-			          <form name="beerCompForm">
-			            <select name="company" id="beerComp" onChange="checkCompText()">
-			            </select>
-			            <input type="text" name="compText" id="compText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label>Alcohol (도수)</label>
-			          <input type="text" id="beerAchl" value ="0" placeholder="도수를 입력 해 주세요." class="inputBox"/>
-			        </div>
-			        
-			        <div>
-			          <label>Photo (사진)</label>
-			          <img id="uploadImage" src="">
-			          <button id="selectFileBtn">파일 선택</button>
-			          <input id="fileupload" type="file" name="file" multiple>
-			          <p id="newFileName"></p>
-			          
-			        </div>
-			        
-			        </div>
-			      <div class="modal-footer">
-			        <button  id="beerAddSaveBtn" type="button" class="btn btn-primary">Save changes</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			      
-      
+      <button id="beerAddBtn">맥주등록</button>
     </div>
     <div id="beerpara" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
       <!--beerDetail.js에서 값을 넣어줌 -->
@@ -212,8 +110,6 @@
 <button id="tasteAddBtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#reviewModal">
   평가하기
 </button>
-
-<!-- 평가하기 modal -->
 
 <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -334,7 +230,7 @@
        </div> <!-- modal body -->
        
        <div class="modal-footer">
-        <button id="reviewAddBtn" type="button" class="btn btn-primary">Save changes</button>
+        <button id="okBtn" type="button" class="btn btn-primary">Save changes</button>
       </div>
        
        
@@ -354,23 +250,9 @@
     </div>
   <!--   <div id="beer_video" class="col-sx-6 col-sm-2 col-md-3 col-lg-3"><h1>Video</h1></div> -->
     <div id="hashTag_wrap" class="col-sx-4 col-sm-4 col-md-8 col-lg-8">
-      <button id="htBtn" class="btn btn-primary" data-toggle="modal" data-target="#HashTagModal">HashTag</button>
-      
-        <div class="modal fade bs-example-modal-sm" id="HashTagModal" tabindex="-1" role="dialog" aria-labelledby="HashTagModalLabel" aria-hidden="true">
-				  <div class="modal-dialog modal-sm">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="HashTagModalLabel">HashTag</h4>
-				      </div>
-				      <div class="modal-body">
-					      <input type="text" name="tagContent" id="tagContent"> <!--  style="display:none"> -->
-					      <button id="htAddBtn" class="btn btn-primary">Save changes </button>
-					    </div>
-           </div>
-         </div>
-       </div>
-      
+	    <input type="text" name="tagContent" id="tagContent" style="display:none">
+	    <button id="htBtn">HashTag</button>
+	    <button id="htAddBtn" style="display:none">등록하기</button>
       <div id="hashTag_text">
       </div>
     </div>
@@ -471,79 +353,35 @@
 </script>
 
 
-<script id="beerBrandTemplate" type="text/x-handlebars-template">
-<option value="0">선택해주세요</option>
-{{#each data}}
-<option value="{{brbrname}}">{{brbrname}}</option>
-{{/each}}
-<option value="1">직접입력</option>
-
-</script>
-
-<script id="beerCateTemplate" type="text/x-handlebars-template">
-<option value="0">선택해주세요</option>
-{{#each data}}
-<option value="{{scname}}">{{scname}}</option>
-{{/each}}
-<option value="1">직접입력</option>
-</script>
-
-<script id="beerCtryTemplate" type="text/x-handlebars-template">
-<option value="0">선택해주세요</option>
-{{#each data}}
-<option value="{{country}}">{{country}}</option>
-{{/each}}
-<option value="1">직접입력</option>
-</script>
-
-<script id="beerCompTemplate" type="text/x-handlebars-template">
-<option value="0">선택해주세요</option>
-{{#each data}}
-<option value="{{company}}">{{company}}</option>
-{{/each}}
-<option value="1">직접입력</option>
-</script>
-
-
-
-
 
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
-<script src="../node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
-<script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
 <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="beerDetailApp.js"></script>
 <script type="text/javascript" src="../beertasteinfo/beerTasteInfoApp.js"></script>
-<script type="text/javascript" src="../beeradd/beerAddApp.js"></script>
 
 <script>
-
-ajaxLoadBrandList()
-ajaxLoadCateList()
-ajaxLoadCtryList()
-ajaxLoadCompList()
-  
-  <!-- url에서 넘어오는 파라미터 값 no를 잘라낸다. -->
-  
-  if (location.search.startsWith("?")) {
-    if (location.search.split("=")[0] == "?scno") {
-      var no = location.search.split("=")[1]
-        ajaxLoadBeerDetailScno(no)
-        ajaxLoadSubCateList(no)
-        ajaxLoadTasteInfoScno(no)
-        ajaxLoadHashTagScno(no)
-    } else if (location.search.split("?")[1].split("=")[0] == "no")
-      var brno = location.search.split("?")[1].split("=")[1]
-      var subcateno = location.search.split("?")[2].split("=")[1]
-      ajaxLoadBeerDetailBrno(brno)
-      ajaxLoadSubCateList(subcateno)
-      ajaxLoadTasteInfoBrno(brno)
-      ajaxLoadHashTagBrno(brno)
-  }
-  
+	
+	<!-- url에서 넘어오는 파라미터 값 no를 잘라낸다. -->
+	
+	if (location.search.startsWith("?")) {
+		if (location.search.split("=")[0] == "?scno") {
+			var no = location.search.split("=")[1]
+			  ajaxLoadBeerDetailScno(no)
+				ajaxLoadSubCateList(no)
+				ajaxLoadTasteInfoScno(no)
+				ajaxLoadHashTagScno(no)
+		} else if (location.search.split("?")[1].split("=")[0] == "no")
+			var brno = location.search.split("?")[1].split("=")[1]
+		  var subcateno = location.search.split("?")[2].split("=")[1]
+		  ajaxLoadBeerDetailBrno(brno)
+		  ajaxLoadSubCateList(subcateno)
+		  ajaxLoadTasteInfoBrno(brno)
+		  ajaxLoadHashTagBrno(brno)
+	}
+	
 </script>
 
 </body>

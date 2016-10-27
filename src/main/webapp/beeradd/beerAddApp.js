@@ -79,7 +79,7 @@ function ajaxLoadCompList() {
 }
 
 
-$("#okBtn").click(function(event) {
+$("#beerAddSaveBtn").click(function(event) {
 	var beer = {
 			brbrname: $("#beerBrand").val(),
 			scname: $("#beerCate").val(),

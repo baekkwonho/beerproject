@@ -18,22 +18,28 @@
 	    window.location.href="../beervideo/beerVideoApp.html"
 	  }
 	}
-
-	var addBtn = document.querySelector("#beerAddBtn")
-    addBtn.onclick = function(event) {
-      window.location.href="../beeradd/beerAddApp.html"
-  }
-
-	$(document.body).on('click','#htBtn',function(event) {
-		document.getElementById("tagContent").style.display="inline"
-		document.getElementById("htAddBtn").style.display="inline"
-		this.style.display="none"
-	})
-	
+//
+//	var addBtn = document.querySelector("#beerAddBtn")
+//    addBtn.onclick = function(event) {
+//
+//      // window.location.href="../beeradd/beerAddApp.html"
+//  }
+//
+//	$(document.body).on('click','#htBtn',function(event) {
+//		document.getElementById("tagContent").style.display="inline"
+//		document.getElementById("htAddBtn").style.display="inline"
+//		this.style.display="none"
+//	})
+//	
 	$(document.body).on('click','#htAddBtn',function(event) {
-		document.getElementById("tagContent").style.display="none"
-		document.getElementById("htBtn").style.display="inline"
-		this.style.display="none"
+//		document.getElementById("tagContent").style.display="none"
+//		document.getElementById("htBtn").style.display="inline"
+//		this.style.display="none"
+//		
+		if ($("#tagContent").val() == "") {
+			alert("내용을 입력 해 주세요.")
+			return
+		}
 		
 		var beerHashTag = {
 			tagContent : $("#tagContent").val(),

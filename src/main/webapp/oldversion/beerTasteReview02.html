@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+
+<style>
+/* 
+ label {
+   font-size: 20px;
+   float: left;
+ }
+ select {
+   width: 100px;
+   font-size: 20px;
+   float: right;
+   text-align: center;
+ }
+ #avgScore {
+   float: right;
+ }
+ 
+ #okBtn {
+   width: 100px;
+   height: 50px;
+ }
+
+ div {
+   width: 250px;
+   height: 50px;
+   border: 1px solid blue;
+ }
+ 
+ */
+</style>
+<body>
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#reviewModal">
+  평가하기
+</button>
+
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="reviewModalLabel">Review</h4>
+      </div>
+      
+       <div class="modal-body">
+         <div>
+					  <label for="bitter">Bitter(쓴맛)</label>
+					  <select name="bitter" id="bitterScore">
+					    <option value="0" selected> 선택해 주세요</option>
+					    <option value=10>10</option>
+					    <option value="9">9</option>
+					    <option value="8">8</option>
+					    <option value="7">7</option>
+					    <option value="6">6</option>
+					    <option value="5">5</option>
+					    <option value="4">4</option>
+					    <option value="3">3</option>
+					    <option value="2">2</option>
+					    <option value="1">1</option>
+					  </select>
+					</div>
+					
+					<div>
+					  <label for="sour">Sour(신맛)</label>
+					  <select name="sour" id="sourScore">
+					    <option value="0" selected> 선택해 주세요</option>
+					    <option value="10">10</option>
+					    <option value="9">9</option>
+					    <option value="8">8</option>
+					    <option value="7">7</option>
+					    <option value="6">6</option>
+					    <option value="5">5</option>
+					    <option value="4">4</option>
+					    <option value="3">3</option>
+					    <option value="2">2</option>
+					    <option value="1">1</option>
+					  </select>
+					</div>
+					
+					<div>
+					  <label for="sweet">Sweet(단맛)</label>
+					  <select name="sweet" id="sweetScore">
+					    <option value="0" selected> 선택해 주세요</option>
+					    <option value="10">10</option>
+					    <option value="9">9</option>
+					    <option value="8">8</option>
+					    <option value="7">7</option>
+					    <option value="6">6</option>
+					    <option value="5">5</option>
+					    <option value="4">4</option>
+					    <option value="3">3</option>
+					    <option value="2">2</option>
+					    <option value="1">1</option>
+					  </select>
+					</div>
+					
+					<div>
+					  <label for="sparkle">Sparkle(탄산)</label>
+					  <select name="sparkle" id="sparkleScore">
+					    <option value="0" selected> 선택해 주세요</option>
+					    <option value="10">10</option>
+					    <option value="9">9</option>
+					    <option value="8">8</option>
+					    <option value="7">7</option>
+					    <option value="6">6</option>
+					    <option value="5">5</option>
+					    <option value="4">4</option>
+					    <option value="3">3</option>
+					    <option value="2">2</option>
+					    <option value="1">1</option>
+					  </select>
+					</div>
+					
+					<div>
+					  <label for="body">Body(풍미)</label>
+					  <select name="body" id="bodyScore">
+					    <option value="0" selected> 선택해 주세요</option>
+					    <option value="10">10</option>
+					    <option value="9">9</option>
+					    <option value="8">8</option>
+					    <option value="7">7</option>
+					    <option value="6">6</option>
+					    <option value="5">5</option>
+					    <option value="4">4</option>
+					    <option value="3">3</option>
+					    <option value="2">2</option>
+					    <option value="1">1</option>
+					  </select>
+					</div>
+					
+					<div>
+					  <label for="aroma">Aroma(향미)</label>
+					  <select name="aroma" id="aromaScore">
+					    <option value="0" selected> 선택해 주세요</option>
+					    <option value="10">10</option>
+					    <option value="9">9</option>
+					    <option value="8">8</option>
+					    <option value="7">7</option>
+					    <option value="6">6</option>
+					    <option value="5">5</option>
+					    <option value="4">4</option>
+					    <option value="3">3</option>
+					    <option value="2">2</option>
+					    <option value="1">1</option>
+					  </select>
+					</div>
+					
+					<div>
+					  <label>전체평점</label>
+					  <input type="text" id="avgScore" value="0">
+					</div>
+         
+       </div> <!-- modal body -->
+       
+       <div class="modal-footer">
+        <button id="okBtn" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+       
+       
+    </div>
+  </div>
+</div>
+
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="beerTasteInfoApp02.js"></script>
+
+
+</body>
+</html>
