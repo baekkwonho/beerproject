@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.BeerDao;
 import dao.BeerListDao;
+import dao.BeerPhotoDao;
 import vo.Beer;
+import vo.BeerPhoto;
 import vo.JsonResult;
 
 @Controller
@@ -18,8 +20,9 @@ public class BeerListController {
   
   @Autowired BeerListDao beerListDao;
   @Autowired BeerDao beerDao;
+  @Autowired BeerPhotoDao beerPhotoDao;
   
-  @RequestMapping(path="brandList")
+  @RequestMapping(path="brandlist")
   public Object brandList() throws Exception{
     
     try {
@@ -30,11 +33,11 @@ public class BeerListController {
     }
   }
   
-  @RequestMapping(path="cateList")
-  public Object cateList() throws Exception{
+  @RequestMapping(path="subcatelist")
+  public Object subCateList() throws Exception{
     
     try {
-      List<Beer> list = beerListDao.selectCateList();
+      List<Beer> list = beerListDao.selectSubCateListAll();
       return JsonResult.success(list);
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
@@ -42,7 +45,7 @@ public class BeerListController {
   }
   
   
-  @RequestMapping(path="ctryList")
+  @RequestMapping(path="ctrylist")
   public Object ctryList() throws Exception{
     
     try {
@@ -53,7 +56,7 @@ public class BeerListController {
     }
   }
   
-  @RequestMapping(path="compList")
+  @RequestMapping(path="complist")
   public Object compList() throws Exception{
     
     try {
@@ -72,22 +75,22 @@ public class BeerListController {
       map.put("search", search);
       
       List<Beer> brandList = beerListDao.searchBrandNo(map);
-      List<Beer> cateList = beerListDao.searchCateNo(map);
+      List<Beer> subCateList = beerListDao.searchSubCateNo(map);
       
       
-      if(brandList.isEmpty() && cateList.isEmpty()) {
+      if(brandList.isEmpty() && subCateList.isEmpty()) { // 둘다 비어있을 경우
         return JsonResult.fail();
-      } else if (!brandList.isEmpty() && cateList.isEmpty()) {
+      } else if (!brandList.isEmpty() && subCateList.isEmpty()) { //brandList에서 찾았을 경우
         beer.setBrbrno(brandList.get(0).getBrbrno());
-        beer = beerDao.selectOne(beer.getBrbrno());
+        beer = beerDao.selectOneBrand(beer.getBrbrno());
         return JsonResult.success(beer);
-      } else if (brandList.isEmpty() && !cateList.isEmpty()) {
-        beer.setCateno(cateList.get(0).getCateno());
-        beer = beerDao.selectOneCate(beer.getCateno());
+      } else if (brandList.isEmpty() && !subCateList.isEmpty()) { //subcateList에서 찾았을 경우
+        beer.setScno(subCateList.get(0).getScno());
+        beer = beerDao.selectOneCate(beer.getScno());
         return JsonResult.success(beer);
       } else {
         beer.setBrbrno(brandList.get(0).getBrbrno());
-        beer = beerDao.selectOne(beer.getBrbrno());
+        beer = beerDao.selectOneBrand(beer.getBrbrno());
         return JsonResult.success(beer);
       }
     } catch (Exception e) {
@@ -102,13 +105,13 @@ public class BeerListController {
   public Object add(Beer beer) throws Exception{
     try {
       String brbrname = beer.getBrbrname();
-      String catename = beer.getCatename();
+      String scname = beer.getScname();
       String ctryname = beer.getCountry();
       String company = beer.getCompany();
       
       HashMap<String, Object> map = new HashMap<>();
       map.put("brand", brbrname);
-      map.put("cate", catename);
+      map.put("subcate", scname);
       map.put("ctry", ctryname);
       map.put("comp", company);
       
@@ -121,7 +124,7 @@ public class BeerListController {
        brandList = beerListDao.getBeerBrandNo(map);
       }
       
-      List<Beer> cateList = beerListDao.getBeerCateNo(map);
+      List<Beer> subCateList = beerListDao.getBeerSubCateNo(map);
       List<Beer> ctryList = beerListDao.getBeerCtryNo(map);
       List<Beer> compList = beerListDao.getBeerCompNo(map);
       
@@ -132,20 +135,23 @@ public class BeerListController {
         compList = beerListDao.getBeerCompNo(map);
       }
       
-      Beer brand = brandList.get(0);
-      Beer cate = cateList.get(0);
-      Beer ctry = ctryList.get(0);
-      Beer comp = compList.get(0);
-      int brbrno = brand.getBrbrno();
-      int cateno = cate.getCateno();
-      int ctryno = ctry.getCtryno();
-      int cono = comp.getCono();
-      beer.setBrbrno(brbrno);
-      beer.setCateno(cateno);
-      beer.setCtryno(ctryno);
-      beer.setCono(cono);
+      beer.setBrbrno(brandList.get(0).getBrbrno());
+      beer.setScno(subCateList.get(0).getScno());
+      beer.setCtryno(ctryList.get(0).getCtryno());
+      beer.setCono(compList.get(0).getCono());
+      
       
       beerListDao.insert(beer);
+      
+      //사진 추가하기
+      
+      BeerPhoto beerPhoto = new BeerPhoto();
+      beerPhoto.setBrno(beerDao.getBrnoDesc().getNo());
+      beerPhoto.setBrphoto_path(beer.getBrphoto_path());
+      
+      beerPhotoDao.insert(beerPhoto);
+      
+      
       return JsonResult.success();
     } catch (Exception e) {
       e.printStackTrace();
@@ -154,9 +160,8 @@ public class BeerListController {
   }
   
   
-  @RequestMapping(path="cateinfoale")
-  public Object cateInfoAle() throws Exception{
-    
+  @RequestMapping(path="subcateale")
+  public Object subCateAle() throws Exception{
     try {
       List<Beer> list = beerListDao.getAleList();
       return JsonResult.success(list);
@@ -165,8 +170,8 @@ public class BeerListController {
     }
   }
   
-  @RequestMapping(path="cateinfolager")
-  public Object cateInfoLager() throws Exception{
+  @RequestMapping(path="subcatelager")
+  public Object subCateLager() throws Exception{
     
     try {
       List<Beer> list = beerListDao.getLagerList();
@@ -176,8 +181,8 @@ public class BeerListController {
     }
   }
   
-  @RequestMapping(path="cateinfoetc")
-  public Object cateInfoEtc() throws Exception{
+  @RequestMapping(path="subcateetc")
+  public Object subCateEtc() throws Exception{
     
     try {
       List<Beer> list = beerListDao.getEtcList();
@@ -186,6 +191,29 @@ public class BeerListController {
       return JsonResult.fail(e.getMessage());
     }
   }
+  
+  
+  @RequestMapping(path="subcatelistone")
+  public Object subCateListOne(int no) throws Exception {
+    try {
+      List<Beer> list = beerListDao.selectSubCateListOne(no);
+      return JsonResult.success(list);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  @RequestMapping(path="selectonephoto")
+  public Object selectOnePhoto(int no) throws Exception {
+    try {
+      List<BeerPhoto> list = beerPhotoDao.selectOnePhoto(no);
+      return JsonResult.success(list);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
   
   
 }

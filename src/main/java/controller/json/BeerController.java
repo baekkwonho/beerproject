@@ -1,16 +1,8 @@
 package controller.json;
 
-import java.util.HashMap;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.google.gson.Gson;
 
 import dao.BeerDao;
 import vo.Beer;
@@ -21,7 +13,8 @@ import vo.JsonResult;
 public class BeerController {
   
   @Autowired BeerDao beerDao;
-  
+
+/*
   @RequestMapping(path="list")
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,
@@ -38,7 +31,40 @@ public class BeerController {
       return JsonResult.fail(e.getMessage());
     }
   }
+*/
   
+  @RequestMapping(path="subcateonescno")
+  public Object subCateDetailScno(int no) throws Exception {
+    try {
+      Beer beer = beerDao.selectSubCateOneScno(no);
+      
+      if (beer == null)
+        throw new Exception("해당 번호의 게시물이 존재하지 않습니다.");
+      
+      return JsonResult.success(beer);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+
+  @RequestMapping(path="subcateonebrno")
+  public Object subCateDetailBrno(int no) throws Exception {
+    try {
+      Beer beer = beerDao.selectSubCateOneBrno(no);
+      
+      if (beer == null)
+        throw new Exception("해당 번호의 게시물이 존재하지 않습니다.");
+      
+      return JsonResult.success(beer);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
+/*
+ 
   @RequestMapping(path="detail")
   public Object detail(int no) throws Exception {
     try {
@@ -93,5 +119,6 @@ public class BeerController {
   }
   
   
+*/
   
 }

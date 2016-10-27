@@ -5,31 +5,26 @@
 <mapper namespace="dao.BeerListDao">
   <resultMap type="beer" id="beerMap">
     <id column="BRNO" property="no"/> 
-    <result column="CATENO" property="cateno"/>
+    <result column="SCNO" property="scno"/>
     <result column="BRBRNO" property="brbrno"/>
     <result column="CTRYNO" property="ctryno"/>
     <result column="CONO" property="cono"/>
-    <result column="CATENM" property="catename"/>
+    <result column="MCNO" property="mcno"/>
+    <result column="SCNM" property="scname"/>
+    <result column="MCNM" property="mcname"/>
     <result column="BRBRNM" property="brbrname"/>
     <result column="BR_DESC" property="describe"/>
     <result column="CTRY" property="country"/>
     <result column="COMP" property="company"/>
     <result column="ACHL" property="alchol"/>
-    <result column="VOL" property="volume"/>
-    <result column="ALENO" property="aleno"/>
-    <result column="ALENM" property="alename"/>
-    <result column="LAGERNO" property="lagerno"/>
-    <result column="LAGERNM" property="lagername"/>
-    <result column="ETCNO" property="etcno"/>
-    <result column="ETCNM" property="etcname"/>
   </resultMap>
   
   <select id="selectBrandList" resultMap="beerMap">
     select * from beers_brand
   </select>
   
-  <select id="selectCateList" resultMap="beerMap">
-    select * from beers_cate
+  <select id="selectSubCateListAll" resultMap="beerMap">
+    select * from beers_sub_cate
   </select>
   
   <select id="selectCtryList" resultMap="beerMap">
@@ -45,9 +40,9 @@
     where beers_brand.brbrnm = #{brand}
   </select>
   
-  <select id="getBeerCateNo" resultMap="beerMap" parameterType="map">
-    select cateno from beers_cate
-    where beers_cate.catenm = #{cate}
+  <select id="getBeerSubCateNo" resultMap="beerMap" parameterType="map">
+    select scno from beers_sub_cate
+    where beers_sub_cate.scnm = #{subcate}
   </select>
   
   <select id="getBeerCtryNo" resultMap="beerMap" parameterType="map">
@@ -65,14 +60,14 @@
     where beers_brand.brbrnm = #{search}
   </select>
   
-   <select id="searchCateNo" resultMap="beerMap" parameterType="map">
-    select cateno from beers_cate
-    where beers_cate.catenm = #{search}
+   <select id="searchSubCateNo" resultMap="beerMap" parameterType="map">
+    select scno from beers_sub_cate
+    where beers_sub_cate.scnm = #{search}
   </select>
   
   <insert id="insert" parameterType="beer">
-    insert into beers(cateno, brbrno, ctryno,cono, br_desc, achl, vol)
-    values(#{cateno}, #{brbrno}, #{ctryno}, #{cono}, #{describe}, #{alchol}, #{volume})
+    insert into beers(scno, brbrno, ctryno, cono, br_desc, achl)
+    values(#{scno}, #{brbrno}, #{ctryno}, #{cono}, #{describe}, #{alchol})
   </insert>
   
   <insert id="brandInsert" parameterType="String">
@@ -86,20 +81,38 @@
   </insert>
   
   <select id="getAleList" resultMap = "beerMap"> 
-    select aleno, alenm, catenm from ale
-    inner join beers_cate
-    on ale.cateno = beers_cate.cateno
+    select scno, scnm, mcnm from beers_sub_cate
+    inner join beers_main_cate
+    on beers_sub_cate.mcno = beers_main_cate.mcno
+    where beers_sub_cate.mcno = 1
   </select>
   <select id="getLagerList" resultMap = "beerMap"> 
-    select lagerno, lagernm, catenm from lager
-    inner join beers_cate
-    on lager.cateno = beers_cate.cateno
+    select scno, scnm, mcnm from beers_sub_cate
+    inner join beers_main_cate
+    on beers_sub_cate.mcno = beers_main_cate.mcno
+    where beers_sub_cate.mcno = 2
   </select>
   
   <select id="getEtcList" resultMap = "beerMap"> 
-    select etcno, etcnm, catenm from etc
-    inner join beers_cate
-    on etc.cateno = beers_cate.cateno
+    select scno, scnm, mcnm from beers_sub_cate
+    inner join beers_main_cate
+    on beers_sub_cate.mcno = beers_main_cate.mcno
+    where beers_sub_cate.mcno = 3
+  </select>
+  
+  
+  <select id="selectSubCateListOne" resultMap = "beerMap">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_sub_cate
+    on beers.scno = beers_sub_cate.scno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
+    inner join beers_comp
+    on beers.cono = beers_comp.cono
+    where beers.scno = #{no}
+    
   </select>
   
   

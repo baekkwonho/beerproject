@@ -6,35 +6,34 @@ public class Beer implements Serializable {
   private static final long serialVersionUID = 1L;
   
   protected int no;
-  protected int cateno;
+  protected int scno;
   protected int brbrno;
   protected int ctryno;
   protected int cono;
-  protected String catename;
+  protected int mcno;
+  protected String mcname;
+  protected String scname;
   protected String brbrname;
   protected String describe;
   protected String country;
   protected String company;
   protected float alchol;
-  protected int volume;
+  protected String brphoto_path;
   protected String search;
-  protected int aleno;
-  protected String alename;
-  protected int lagerno;
-  protected String lagername;
-  protected int etcno;
-  protected String etcname;
+  
+  
+  
   public int getNo() {
     return no;
   }
   public void setNo(int no) {
     this.no = no;
   }
-  public int getCateno() {
-    return cateno;
+  public int getScno() {
+    return scno;
   }
-  public void setCateno(int cateno) {
-    this.cateno = cateno;
+  public void setScno(int scno) {
+    this.scno = scno;
   }
   public int getBrbrno() {
     return brbrno;
@@ -54,11 +53,23 @@ public class Beer implements Serializable {
   public void setCono(int cono) {
     this.cono = cono;
   }
-  public String getCatename() {
-    return catename;
+  public int getMcno() {
+    return mcno;
   }
-  public void setCatename(String catename) {
-    this.catename = catename;
+  public void setMcno(int mcno) {
+    this.mcno = mcno;
+  }
+  public String getMcname() {
+    return mcname;
+  }
+  public void setMcname(String mcname) {
+    this.mcname = mcname;
+  }
+  public String getScname() {
+    return scname;
+  }
+  public void setScname(String scname) {
+    this.scname = scname;
   }
   public String getBrbrname() {
     return brbrname;
@@ -90,11 +101,11 @@ public class Beer implements Serializable {
   public void setAlchol(float alchol) {
     this.alchol = alchol;
   }
-  public int getVolume() {
-    return volume;
+  public String getBrphoto_path() {
+    return brphoto_path;
   }
-  public void setVolume(int volume) {
-    this.volume = volume;
+  public void setBrphoto_path(String brphoto_path) {
+    this.brphoto_path = brphoto_path;
   }
   public String getSearch() {
     return search;
@@ -102,42 +113,7 @@ public class Beer implements Serializable {
   public void setSearch(String search) {
     this.search = search;
   }
-  public int getAleno() {
-    return aleno;
-  }
-  public void setAleno(int aleno) {
-    this.aleno = aleno;
-  }
-  public String getAlename() {
-    return alename;
-  }
-  public void setAlename(String alename) {
-    this.alename = alename;
-  }
-  public int getLagerno() {
-    return lagerno;
-  }
-  public void setLagerno(int lagerno) {
-    this.lagerno = lagerno;
-  }
-  public String getLagername() {
-    return lagername;
-  }
-  public void setLagername(String lagername) {
-    this.lagername = lagername;
-  }
-  public int getEtcno() {
-    return etcno;
-  }
-  public void setEtcno(int etcno) {
-    this.etcno = etcno;
-  }
-  public String getEtcname() {
-    return etcname;
-  }
-  public void setEtcname(String etcname) {
-    this.etcname = etcname;
-  }
+  
   
   
 }

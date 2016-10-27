@@ -2,33 +2,33 @@ package vo;
 
 import java.io.Serializable;
 
-public class HashTag implements Serializable {
+public class BeerHashTag implements Serializable {
   private static final long serialVersionUID = 1L;
-  
-  protected int tagNo;
-  protected int brNo;
-  protected int mNo;
+
+  protected int tagno;
+  protected int brno;
+  protected int mno;
   protected String tagContent;
   protected int tagCount;
   
   
-  public int getTagNo() {
-    return tagNo;
+  public int getTagno() {
+    return tagno;
   }
-  public void setTagNo(int tagNo) {
-    this.tagNo = tagNo;
+  public void setTagno(int tagno) {
+    this.tagno = tagno;
   }
-  public int getBrNo() {
-    return brNo;
+  public int getBrno() {
+    return brno;
   }
-  public void setBrNo(int brNo) {
-    this.brNo = brNo;
+  public void setBrno(int brno) {
+    this.brno = brno;
   }
-  public int getmNo() {
-    return mNo;
+  public int getMno() {
+    return mno;
   }
-  public void setmNo(int mNo) {
-    this.mNo = mNo;
+  public void setMno(int mno) {
+    this.mno = mno;
   }
   public String getTagContent() {
     return tagContent;
@@ -42,8 +42,6 @@ public class HashTag implements Serializable {
   public void setTagCount(int tagCount) {
     this.tagCount = tagCount;
   }
-  
-  
   
   
 }

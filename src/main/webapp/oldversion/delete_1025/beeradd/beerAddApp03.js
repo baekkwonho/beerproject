@@ -1,32 +1,5 @@
 
 
-
-$("#selectFileBtn").on('click', function() {
-	console.log("aa")
-	$("#fileupload").click()
-})
-
-
-$(function () {
-	  
-	  $("#fileupload").fileupload({
-	    url : serverAddr + "/beerphoto/add.json",
-	    dataType: "json",
-	    add: function(e, data) {
-	      data.submit()
-	    },
-	    done: function(e, data) {
-	    	$("#newFileName").text(data.result.filename)
-	    	$("#uploadImage").attr({src: "/beerproject/upload/"+data.result.filename, height:"150px"})
-	    	console.log(data.result.filename)
-	    	console.log(data.result.originFilename)
-	    	
-	    }
-	  })
-})
-
-
-
 function ajaxLoadBrandList() {
 	$.getJSON(serverAddr + "/beerlist/brandlist.json", function(obj) {
 		var result = obj.jsonResult
@@ -87,7 +60,6 @@ $("#okBtn").click(function(event) {
 			describe: $("#beerDesc").val(),
 			company: $("#beerComp").val(),
 			alchol: parseFloat($("#beerAchl").val()),
-			brphoto_path: $("#newFileName").text()
 	}
 	
 	
@@ -106,6 +78,7 @@ $("#okBtn").click(function(event) {
 	if (beer.company == 1) {
 		beer.company = $("#compText").val()
 	}
+	
 	
 	 
 	if (beer.brbrname == 0) {
@@ -129,10 +102,7 @@ $("#okBtn").click(function(event) {
 	} else if (isNaN(beer.alchol) == true) {
 		alert("Alchol(도수)의 값을 숫자로 입력 해 주세요.")
 		return
-	}  else if(beer.brphot_path == "") {
-		alert("사진을 등록 해 주세요")
-		return
-	}
+	} 
 	
 	ajaxAddBeer(beer)
 	
@@ -148,7 +118,7 @@ function ajaxAddBeer(beer) {
 			return
 		}
 		
-		window.location.href = "../beer/beerInfoApp.html"
+		window.location.href = "../beer/beerInfoApp03.html"
 		
 	})
 }

@@ -230,8 +230,9 @@
 <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
 <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="beerDetailApp.js"></script>
-<script type="text/javascript" src="../beertasteinfo/beerTasteInfoApp.js"></script>
+<!-- <script type="text/javascript" src="beerApp03.js"></script> -->
+<script type="text/javascript" src="beerDetail03.js"></script>
+<script type="text/javascript" src="../beertasteinfo/beerTasteInfoApp03.js"></script>
 
 <script>
 	
@@ -247,6 +248,7 @@
 		} else if (location.search.split("?")[1].split("=")[0] == "no")
 			var brno = location.search.split("?")[1].split("=")[1]
 		  var subcateno = location.search.split("?")[2].split("=")[1]
+		  console.log(brno)
 		  ajaxLoadBeerDetailBrno(brno)
 		  ajaxLoadSubCateList(subcateno)
 		  ajaxLoadTasteInfoBrno(brno)

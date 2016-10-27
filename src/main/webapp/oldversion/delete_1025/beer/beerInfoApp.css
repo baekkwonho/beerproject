@@ -190,6 +190,7 @@ header img {
 	background: #96976f;
 	text-align: center;
 	padding-top: 10px;
+
 }
 
 #section0 h2 {
@@ -201,64 +202,42 @@ header img {
 }
 
 #section1 {
-	  border: 1px solid blue;
+	  /* border: 1px solid blue; */
     background: #96976f;
     position: relative;
     /* display: inline; */
     height: 270px;
-   /*  text-align: left; */
+    text-align: left;
 }
 
 .section1_menu {
-	border: 1px solid red;
-	position: relative;
-	/* height: 150px; */
-	width: 300px;
-	float: left;
-}
-
-.section1_menu_img {
-    border-radius: 100%;
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    border: 4px solid #3d3c3d;
-    
-/*     margin-bottom: 100px; */
-}
-
-#section2 {
-  
-}
-
-
-
-
-
-
-/* 
-.section1_menu {
-	  border: 1px solid black;
-	  height: 400px;
-	  width: 300px;
     top: 30px;
     position: relative;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     display: inline;
     margin: 0 5px;
     text-align: left;
 }
 
 #section1_menu1 {
-	border: 1px solid pink;
+	/* border: 1px solid pink; */
 	margin-left: 6%;
 }
 
 #section1_menu2 {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   margin:0 10%;
 }
 
+#section2_menu3 {
+  /* border: 1px solid purple; */
+  margin-left: 6%;
+}
+
+#section2_menu4 {
+  /* border: 1px solid black; */
+  margin:0 10%;
+}
 
 .section1_menu_img {
     border-radius: 100%;
@@ -283,7 +262,51 @@ header img {
   font-weight: 700;
   font-size: 20px;
 }
- */
+
+#section2 {
+	/* border: 1px solid red; */
+    background: #96976f;
+    position: relative;
+    /* display: inline; */
+    height: 300px;
+    text-align: left;
+}
+
+.section2_menu {
+    top: 20px;
+    position: relative;
+/*    border: 1px solid black;*/
+    display: inline;
+    margin: 0 5px;
+    text-align: left;
+}
+
+.section2_menu_img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border: 4px solid #3d3c3d;
+    margin-bottom: 120px;
+}
+
+.section2_menu_desc {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin: 20px;
+    /* top: 20px; */
+}
+
+#section2 h4 {
+	/* border: 1px solid black; */
+  position: relative;
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+}
+
 .footer_container {
     height: 120px;
 }

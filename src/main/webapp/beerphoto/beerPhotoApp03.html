@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+  #fileupload {
+    display: none;
+  }
+  
+</style>
+</head>
+<body>
+<!-- 
+<form name="uploadForm" id="uploadForm" method="post" enctype="multipart/form-data">
+   맥주사진: <input id="fileupload" type="file" name="file"><br>
+  <button id="uldBtn">등록</button>
+</form>
+  -->
+<!--  파일들어갔을때 --> 
+   <button id="selectfileBtn">파일 선택</button>
+   <input id="fileupload" type="file" name="file" multiple><br>
+   <p id="originfilename"></p>
+   <img id="uldimg" src=""><br>
+  <button id="uldBtn">등록</button>
+  
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+<script>
+
+$("#selectfileBtn").on('click', function() {
+	$("#fileupload").click()
+})
+
+
+$(function () {
+	  $("#fileupload").fileupload({
+	    url : serverAddr + "/beerphoto03/load03.json",
+	    dataType: "json",
+	    add: function(e, data) {
+	      data.submit()
+	      },
+	    done: function(e, data) {
+	    	$("#originfilename").text(data.result.originFilename)
+	    	//$("#uldimg").attr({src: "/beerproject/upload/"+data.result.filename, height:"300px"})
+	    	//console.log(data.result.filename)
+	    	console.log(data.result.originFilename)
+	    	
+	    	 $("#uldBtn").on('click',function() {
+	    		 console.log("good?")
+	    		 var originfilename = $("#originfilename").text()
+	    		 console.log(originfilename)
+	    		 
+	    		 addfile()
+         })
+	    }
+	  })
+})
+
+
+function addfile() {
+	console.log("add하자")
+}
+
+
+</script>
+
+</body>
+</html>

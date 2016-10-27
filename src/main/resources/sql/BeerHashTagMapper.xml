@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BeerHashTagDao">
+  <resultMap type="beerHashTag" id="beerHashTagMap">
+    <id column="TAGNO" property="tagno"/> 
+    <result column="BRNO" property="brno"/>
+    <result column="MNO" property="mno"/>
+    <result column="TAG_CONT" property="tagContent"/>
+    <result column="TAG_CNT" property="tagCount"/>
+  </resultMap>
+  
+  <insert id="insert" parameterType="map">
+  insert into hashtag(brno,mno,tag_cont,tag_cnt)
+  values(#{brno}, 1, #{tagContent},1)
+  </insert>
+  
+  <select id="selectHashTagBrno" resultMap="beerHashTagMap" parameterType="map">
+  select * from hashtag
+  where brno = #{brno}
+  </select>
+  
+  <update id="updateHashTagCount" parameterType="beerHashTag">
+  update hashtag set
+  tag_cnt = #{tagCount}
+  where tagno = #{tagno}
+  
+  </update>
+  
+  
+  
+  
+  
+</mapper>

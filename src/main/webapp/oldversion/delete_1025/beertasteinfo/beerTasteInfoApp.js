@@ -1,13 +1,13 @@
 
 
 
-function ajaxLoadTasteInfoScno(no) {   // scno로 받아서 넘기기
-	$.getJSON(serverAddr + "/beertasteinfo/tasteinfoscno.json?no=" + no, function(obj) {
+function ajaxBeerTasteInfoList(no) {   // scno로 받아서 넘기기
+	$.getJSON(serverAddr + "/beertasteinfo/list.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
 		var arr = result.data
 		
 		$("#tasteAddBtn").click(function(event) {
-			location.href = "../beertasteinfo/beerTasteReview.html?no=" + $('#beerTable .noBtn').attr('data-no') +"?scno=" + no
+			location.href = "../beertasteinfo/beerTasteReview.html?no=" + $('#beerTable .noBtn').attr('data-no')
 		});
 		
 		if (result.state != "success") {
@@ -71,15 +71,14 @@ function ajaxLoadTasteInfoScno(no) {   // scno로 받아서 넘기기
 
 
 
-function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
-	$.getJSON(serverAddr + "/beertasteinfo/tasteinfobrno.json?no=" + no, function(obj) {
+function ajaxBeerTasteInfoListDetail(no) {  //brno로 받아서 넘기기
+	$.getJSON(serverAddr + "/beertasteinfo/detailList.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
 		var arr = result.data
 		
 		$("#tasteAddBtn").click(function(event) {
 			console.log(no)
-			console.log(location.search.split("?")[2].split("=")[1])
-			location.href = "../beertasteinfo/beerTasteReview.html?no=" + no + "?scno=" + location.search.split("?")[2].split("=")[1]
+			location.href = "../beertasteinfo/beerTasteReview.html?no=" + no
 			//result.data[0].brno
 		});
 		
@@ -90,6 +89,10 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 	    }
 		
 		
+//		var template = Handlebars.compile($("#trTemplateText").html())
+//	    $("#beerTable tbody").html(template(result))
+	    
+	    
 	    var radarData = {
 		  labels : ["BITTER (쓴맛)","SOUR (신맛)","SWEET (단맛)","SPARKLE (탄산)","BODY (풍미)","AROMA (향미)"],
 		  datasets : [
@@ -145,7 +148,7 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 $("#okBtn").click(function(event) {
 	  var brno = 0;
 	  if (location.search.startsWith("?")) {
-		  brno = location.search.split("?")[1].split("=")[1]
+		  brno = location.search.split("=")[1];
 		}
 	  
 	  var beerTasteInfo = {
@@ -194,16 +197,9 @@ function ajaxAddTasteInfo(beerTasteInfo) {
 			alert("등록 실패입니다.")
 			return
 		}
-		
-		var brno = 0
-		var scno = 0
-		
-		 if (location.search.startsWith("?")) {
-			  brno = location.search.split("?")[1].split("=")[1];
-			  scno = location.search.split("?")[2].split("=")[1];
-		 }
-		 
-		location.href = "../beer/beerDetailApp.html?no=" + brno +"?scno=" +scno
+		window.location.href="../beercate/beerCateApp.html"
+	//	window.location.href = "../beer/beerDetailApp.html?no=" + result.data.brno + "cate"
+	//  좀 전의 페이지로 refresh 해야함.
 	}, "json")
 }
 

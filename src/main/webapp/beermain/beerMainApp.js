@@ -30,9 +30,10 @@ function ajaxSearchBeer(beer) {
 			return
 		}
 		
-		var brno = result.data.brbrno
-		var cateno = result.data.cateno
-		window.location.href="../beer/beerDetailApp.html?no="+brno+cateno+"detail"
+		var brno = result.data.no
+		var scno = result.data.scno
+		
+		window.location.href="../beer/beerDetailApp.html?no="+brno +"?scno=" + scno
 		
 	})
 	

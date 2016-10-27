@@ -1,34 +1,7 @@
 
 
-
-$("#selectFileBtn").on('click', function() {
-	console.log("aa")
-	$("#fileupload").click()
-})
-
-
-$(function () {
-	  
-	  $("#fileupload").fileupload({
-	    url : serverAddr + "/beerphoto/add.json",
-	    dataType: "json",
-	    add: function(e, data) {
-	      data.submit()
-	    },
-	    done: function(e, data) {
-	    	$("#newFileName").text(data.result.filename)
-	    	$("#uploadImage").attr({src: "/beerproject/upload/"+data.result.filename, height:"150px"})
-	    	console.log(data.result.filename)
-	    	console.log(data.result.originFilename)
-	    	
-	    }
-	  })
-})
-
-
-
 function ajaxLoadBrandList() {
-	$.getJSON(serverAddr + "/beerlist/brandlist.json", function(obj) {
+	$.getJSON(serverAddr + "/beerlist/brandList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("조회 실패입니다.")
@@ -41,7 +14,7 @@ function ajaxLoadBrandList() {
 }
 
 function ajaxLoadCateList() {
-	$.getJSON(serverAddr + "/beerlist/subcatelist.json", function(obj) {
+	$.getJSON(serverAddr + "/beerlist/cateList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("조회 실패입니다.")
@@ -54,7 +27,7 @@ function ajaxLoadCateList() {
 }
 
 function ajaxLoadCtryList() {
-	$.getJSON(serverAddr + "/beerlist/ctrylist.json", function(obj) {
+	$.getJSON(serverAddr + "/beerlist/ctryList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("조회 실패입니다.")
@@ -67,7 +40,7 @@ function ajaxLoadCtryList() {
 }
 
 function ajaxLoadCompList() {
-	$.getJSON(serverAddr + "/beerlist/complist.json", function(obj) {
+	$.getJSON(serverAddr + "/beerlist/compList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("조회 실패입니다.")
@@ -82,12 +55,12 @@ function ajaxLoadCompList() {
 $("#okBtn").click(function(event) {
 	var beer = {
 			brbrname: $("#beerBrand").val(),
-			scname: $("#beerCate").val(),
+			catename: $("#beerCate").val(),
 			country: $("#beerCtry").val(),
 			describe: $("#beerDesc").val(),
 			company: $("#beerComp").val(),
 			alchol: parseFloat($("#beerAchl").val()),
-			brphoto_path: $("#newFileName").text()
+			volume: parseInt($("#beerVol").val())
 	}
 	
 	
@@ -95,8 +68,8 @@ $("#okBtn").click(function(event) {
 		beer.brbrname = $("#brandText").val()
 	}
 	
-	if (beer.scanem == 1) {
-		beer.scname = $("#cateText").val()
+	if (beer.catename == 1) {
+		beer.catename = $("#cateText").val()
 	}
 	
 	if (beer.country == 1) {
@@ -106,6 +79,7 @@ $("#okBtn").click(function(event) {
 	if (beer.company == 1) {
 		beer.company = $("#compText").val()
 	}
+	
 	
 	 
 	if (beer.brbrname == 0) {
@@ -129,10 +103,14 @@ $("#okBtn").click(function(event) {
 	} else if (isNaN(beer.alchol) == true) {
 		alert("Alchol(도수)의 값을 숫자로 입력 해 주세요.")
 		return
-	}  else if(beer.brphot_path == "") {
-		alert("사진을 등록 해 주세요")
+	} else if (beer.volume == 0) {
+		alert("Volume(용량)을 입력 해 주세요.")
+		return
+	} else if (isNaN(beer.volume) == true) {
+		alert("Volume(용량)의 값을 숫자로 입력 해 주세요.")
 		return
 	}
+	
 	
 	ajaxAddBeer(beer)
 	

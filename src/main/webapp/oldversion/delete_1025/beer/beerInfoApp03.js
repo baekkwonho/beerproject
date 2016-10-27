@@ -25,33 +25,13 @@ for(var i = 0; i <cateBtn.length; i++) {
 $(document.body).on('click','#section1_menu2',function(event) {
 	$("#section2").css("display", "inline")
 	
-	//ajaxLoadCateList()
 	ajaxLoadCateAleList()
 	ajaxLoadCateLagerList()
 	ajaxLoadCateEtcList()
 })
 
-/*
-function ajaxLoadCateList() {
-	$.getJSON(serverAddr + "/beerlist/cateList.json", function(obj) {
-		var result = obj.jsonResult
-		if (result.state != "success") {
-	    	 alert("서버에서 데이터를 가져오는데 실패했습니다.")
-	    	 return
-	    }
-		var template = Handlebars.compile($("#cateListTemplateText").html())
-		$("#catelist").html(template(result))
-		
-		$(".cateno").click(function(event) {
-			location.href="../beer/beerDetailApp03.html?no=" + $(this).attr("cate-no") + "cate"
-		})
-	   
-    })
-}
-*/
-
 function ajaxLoadCateAleList() {
-	$.getJSON(serverAddr + "/beerlist/cateinfoale.json", function(obj) {
+	$.getJSON(serverAddr + "/beerlist/subcateale.json", function(obj) {
 		var result = obj.jsonResult
 		
 		var template = Handlebars.compile($("#cateInfoAleTemplateText").html())
@@ -64,12 +44,13 @@ function ajaxLoadCateAleList() {
 		
 		$(".aleno").click(function(event) {
 			console.log($(this).attr("ale-no"))
+			location.href="../beer/beerDetailApp03.html?scno=" + $(this).attr("ale-no")
 		})
 	})
 }
 
 function ajaxLoadCateLagerList() {
-	$.getJSON(serverAddr + "/beerlist/cateinfolager.json", function(obj) {
+	$.getJSON(serverAddr + "/beerlist/subcatelager.json", function(obj) {
 		var result = obj.jsonResult
 		
 		var template = Handlebars.compile($("#cateInfoLagerTemplateText").html())
@@ -81,12 +62,13 @@ function ajaxLoadCateLagerList() {
 	    }
 		$(".lagerno").click(function(event) {
 			console.log($(this).attr("lager-no"))
+			location.href="../beer/beerDetailApp03.html?scno=" + $(this).attr("lager-no")
 		})
 	})
 }
 
 function ajaxLoadCateEtcList() {
-	$.getJSON(serverAddr + "/beerlist/cateinfoetc.json", function(obj) {
+	$.getJSON(serverAddr + "/beerlist/subcateetc.json", function(obj) {
 		var result = obj.jsonResult
 		
 		var template = Handlebars.compile($("#cateInfoEtcTemplateText").html())
@@ -99,6 +81,7 @@ function ajaxLoadCateEtcList() {
 		
 		$(".etcno").click(function(event) {
 			console.log($(this).attr("etc-no"))
+			location.href="../beer/beerDetailApp03.html?scno=" + $(this).attr("etc-no")
 		})
 	})
 }

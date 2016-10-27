@@ -7,7 +7,7 @@ function ajaxLoadTasteInfoScno(no) {   // scno로 받아서 넘기기
 		var arr = result.data
 		
 		$("#tasteAddBtn").click(function(event) {
-			location.href = "../beertasteinfo/beerTasteReview.html?no=" + $('#beerTable .noBtn').attr('data-no') +"?scno=" + no
+			location.href = "../beertasteinfo/beerTasteReview03.html?no=" + $('#beerTable .noBtn').attr('data-no') +"?scno=" + no
 		});
 		
 		if (result.state != "success") {
@@ -78,8 +78,7 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 		
 		$("#tasteAddBtn").click(function(event) {
 			console.log(no)
-			console.log(location.search.split("?")[2].split("=")[1])
-			location.href = "../beertasteinfo/beerTasteReview.html?no=" + no + "?scno=" + location.search.split("?")[2].split("=")[1]
+			location.href = "../beertasteinfo/beerTasteReview03.html?no=" + no
 			//result.data[0].brno
 		});
 		
@@ -90,6 +89,10 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 	    }
 		
 		
+//		var template = Handlebars.compile($("#trTemplateText").html())
+//	    $("#beerTable tbody").html(template(result))
+	    
+	    
 	    var radarData = {
 		  labels : ["BITTER (쓴맛)","SOUR (신맛)","SWEET (단맛)","SPARKLE (탄산)","BODY (풍미)","AROMA (향미)"],
 		  datasets : [
@@ -203,7 +206,7 @@ function ajaxAddTasteInfo(beerTasteInfo) {
 			  scno = location.search.split("?")[2].split("=")[1];
 		 }
 		 
-		location.href = "../beer/beerDetailApp.html?no=" + brno +"?scno=" +scno
+		location.href = "../beer/beerDetailApp03.html?no=" + brno +"?scno=" +scno
 	}, "json")
 }
 

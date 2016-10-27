@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BeerPhotoDao">
+  <resultMap type="beerPhoto" id="beerPhotoMap">
+    <id column="BRPHNO" property="no"/> 
+    <result column="BRNO" property="brno"/>
+    <result column="BRPHOT_PATH" property="brphoto_path"/>
+  </resultMap>
+  
+  <insert id="insert" parameterType="beerPhoto">
+    insert into beers_phos(brno, brphot_path)
+    values(#{brno}, #{brphoto_path})
+  </insert>
+  
+  <select id="selectOnePhoto" resultMap="beerPhotoMap" parameterType="int">
+    select * from beers_phos
+    where brno = #{brno}
+  </select>
+  
+  
+</mapper>

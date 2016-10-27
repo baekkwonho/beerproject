@@ -21,10 +21,45 @@ public class BeerTasteInfoController {
   @Autowired BeerTasteInfoDao beerTasteInfoDao;
   @Autowired BeerDao beerDao;
   
+  @RequestMapping(path="tasteinfoscno") // scno로 넘긴 값을 받는 메서드
+  public Object printTasteInfoScno(int no) throws Exception{
+    try {
+      Beer beer = beerDao.selectOneCate(no); // brno 찾기위해 scno넘겨주고 리스트중 상위에 객체를 받아온다.
+      List<BeerTasteInfo> list = beerTasteInfoDao.selectList(beer.getNo());
+      if (list.size() == 1) {
+        return JsonResult.success(list);
+      } else {
+        List<BeerTasteInfo> resultList = tasteCalc(list);
+        return JsonResult.success(resultList);
+      }
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  @RequestMapping(path="tasteinfobrno") // brno로 넘긴 값을 받는 메서드
+  public Object printTasteInfoBrno(int no) throws Exception{
+    try {
+      
+      List<BeerTasteInfo> list = beerTasteInfoDao.selectList(no);
+      if (list.size() == 1) {
+        return JsonResult.success(list);
+      } else {
+        List<BeerTasteInfo> resultList = tasteCalc(list);
+        return JsonResult.success(resultList);
+      }
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
+  
+  
+  
+  /*
   @RequestMapping(path="list") // cateno로 넘긴 값을 받는 메서드
   public Object list(int no) throws Exception{
-    
-    
     try {
       Beer beer = beerDao.selectOneCate(no);
       List<BeerTasteInfo> list = beerTasteInfoDao.selectList(beer.getNo());
@@ -56,7 +91,7 @@ public class BeerTasteInfoController {
     }
   }
   
-  
+  */
   
   
   @RequestMapping(path="add")

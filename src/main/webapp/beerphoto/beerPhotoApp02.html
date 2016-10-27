@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+<form name="uploadForm" id="uploadForm" method="post" enctype="multipart/form-data">
+   맥주사진: <input id="fileupload" type="file" name="file"><br>
+  <button id="uldBtn">등록</button>
+</form>
+  -->
+<!--  파일들어갔을때 --> 
+   맥주사진: <input id="fileupload" type="file" name="file" multiple><br>
+   <p id="originfilename"></p>
+   <img id="uldimg" src=""><br>
+  <button id="uldBtn">등록</button>
+  
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+<script>
+/*  안됨..아 ㅅㅂ
+var form = document.forms['uploadForm']
+var file = form.file.value
+console.log(form)
+var uploadfile = $("#fileupload").fileupload()
+
+
+$(document.body).on('click','#uldBtn',function(event) {
+console.log(file)
+console.log(uploadfile)
+	  $.post(serverAddr + "/beerphoto/add.json",uploadfile, function(obj) {
+	    var result = obj.jsonResult
+	    if (result.state != "success") {
+	      alert("해쉬태그 등록 실패입니다.")
+	      return
+	    }
+	    console.log("제발")
+	 })
+})
+*/
+
+$(function () {
+	  
+	  $("#fileupload").fileupload({
+	    url : serverAddr + "/beerphoto/add.json",
+	    dataType: "json",
+	    add: function(e, data) {
+	      var fname = $("#fileupload").text()
+	      console.log(fname)
+	    	console.log($("#fileupload").file)
+	    	
+	    	$("#originfilename").text("uploading....")
+	    	
+	      $("#uldBtn").on('click',function() {
+	      data.submit()
+	      })
+	    },
+	    done: function(e, data) {
+	    	$("#originfilename").text(data.result.originFilename)
+	    	$("#uldimg").attr({src: "/beerproject/upload/"+data.result.filename, height:"300px"})
+	    	console.log(data.result.filename)
+	    	console.log(data.result.originFilename)
+	    }
+	  })
+})
+
+/* 파일은 들어감
+$(function () {
+	
+	$("#fileupload").fileupload({
+		url : serverAddr + "/beerphoto/add.json",
+		dataType: "json",
+		done: function (e, data) {
+			console.log(data.result)
+			console.log(data.result.data)
+		}
+	})
+})
+ */
+
+
+
+
+
+ /*  $(document).ready(function() {
+	  
+	  $("#uploadForm").fileupload({
+		  url : serverAddr + "/beerphoto/add.json",
+		  dataType : "json",
+		  add : function(e, data) {
+			  console.log(data)
+			  submit
+		  },
+		  done: function(e, data) {
+			  console.log("done" + data)
+		  }
+	  })
+	   */
+	  
+	  
+	  /* 
+	  var file = $("#uploadForm").fileupload()
+	  console.log(file)
+	  var uploadBtn = document.querySelector("#uldBtn")
+		  $.post(serverAddr + "/beerphoto/add.json", file, function(obj) {
+			  var result = obj.jsonResult
+			  if (result.state != "success") {
+				  alert("등록 실패")
+				  return
+			  }
+			  console.log("쫌 되라")
+		  }) */
+		  
+		  
+
+
+</script>
+
+</body>
+</html>
