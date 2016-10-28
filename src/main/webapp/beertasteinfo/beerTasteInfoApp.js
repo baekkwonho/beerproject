@@ -5,22 +5,12 @@ function ajaxLoadTasteInfoScno(no) {   // scno로 받아서 넘기기
 	$.getJSON(serverAddr + "/beertasteinfo/tasteinfoscno.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
 		var arr = result.data
-//		
-//		$("#tasteAddBtn").click(function(event) {
-//			console.log($('#beerTable .noBtn').attr('data-no'))
-//			console.log(no)
-//			//location.href = "../beertasteinfo/beerTasteReview.html?no=" + $('#beerTable .noBtn').attr('data-no') +"?scno=" + no
-//		});
-//		
+		
 		if (result.state != "success") {
 	    	 alert("서버에서 데이터를 가져오는데 실패했습니다.")
 	    	 return
 	    }
 		
-//		var template = Handlebars.compile($("#trTemplateText").html())
-//	    $("#beerTable tbody").html(template(result))
-	    
-	    
 	    var radarData = {
 		  labels : ["BITTER (쓴맛)","SOUR (신맛)","SWEET (단맛)","SPARKLE (탄산)","BODY (풍미)","AROMA (향미)"],
 		  datasets : [
@@ -36,6 +26,7 @@ function ajaxLoadTasteInfoScno(no) {   // scno로 받아서 넘기기
 		}
 
 		var radarOption = {
+	      //responsive: false,
 		  legend: false,  // 제목 없애기
 	      scale : {
 	    	pointLabels : {   //라벨글자 크기
@@ -59,6 +50,9 @@ function ajaxLoadTasteInfoScno(no) {   // scno로 받아서 넘기기
 		}
 
 		var ctx2 = document.getElementById("radarChart");
+	//    ctx2.width = 150;
+	//    ctx2.height = 200;
+	    
 		var myNewChart = new Chart(ctx2, {
 		  type: "radar",
 		  data: radarData,
@@ -78,19 +72,10 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 		var result = obj.jsonResult
 		var arr = result.data
 //		
-//		$("#tasteAddBtn").click(function(event) {
-//			console.log(no)
-//			console.log(location.search.split("?")[2].split("=")[1])
-//			location.href = "../beertasteinfo/beerTasteReview.html?no=" + no + "?scno=" + location.search.split("?")[2].split("=")[1]
-//			//result.data[0].brno
-//		});
-//		
-		
 		if (result.state != "success") {
 	    	 alert("서버에서 데이터를 가져오는데 실패했습니다.")
 	    	 return
 	    }
-		
 		
 	    var radarData = {
 		  labels : ["BITTER (쓴맛)","SOUR (신맛)","SWEET (단맛)","SPARKLE (탄산)","BODY (풍미)","AROMA (향미)"],
@@ -107,6 +92,7 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 		}
 
 		var radarOption = {
+//	      responsive: false,
 		  legend: false,  // 제목 없애기
 	      scale : {
 	    	pointLabels : {   //라벨글자 크기
@@ -130,6 +116,9 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 		}
 
 		var ctx2 = document.getElementById("radarChart");
+//	    ctx2.width = 400;
+//	    ctx2.height = 280;
+	    
 		var myNewChart = new Chart(ctx2, {
 		  type: "radar",
 		  data: radarData,
@@ -137,21 +126,15 @@ function ajaxLoadTasteInfoBrno(no) {  //brno로 받아서 넘기기
 		})
 		
 		var template = Handlebars.compile($("#beerTasteScoreText").html())
-		$("#beerchart span").html(template(result.data[0])) // 확인필요 [0]으로 해놔도 문제없나?
-		
+		$("#beerScore").html(template(result.data[0])) // 확인필요 [0]으로 해놔도 문제없나?
+		//#beerChart  <- 수정전
 		
     })
 }
 
 
 $("#reviewAddBtn").click(function(event) {
-//	  var brno = 0;
-//	  if (location.search.startsWith("?")) {
-//		  brno = location.search.split("?")[1].split("=")[1]
-//		}
-//	  
 	var brno = $("#beerNo").val()
-	//console.log(brno)
 	
 	  var beerTasteInfo = {
 			brno: brno,
@@ -186,9 +169,6 @@ $("#reviewAddBtn").click(function(event) {
 	    alert("평점을 입력 해 주세요. (0~10점 사이에만 입력 해 주세요)")
 	    return
 	  }
-	  
-	  
-	//  console.log(beerTasteInfo)
 	  
 	  ajaxAddTasteInfo(beerTasteInfo)
 	  

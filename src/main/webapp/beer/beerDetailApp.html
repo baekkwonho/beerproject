@@ -6,378 +6,585 @@
 
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="../beermain/fontello-a28e58c3/css/fontello.css" /> -->
 
 <style>
+ 
 
- #header {
+header {
+    background-color: #D64700;
+}
+
+nav {
+/*    border: 1px solid pink;*/
+}
+
+footer {
+/*    border: 1px solid orange;*/
+    background: #D64700;
+}
+
+
+header img {
     height: 100px;
-    background-color: #8C8C8C;
-  }
-  
-  a {
-    color: #FFBB00;
-  }
-  
-  .logo {
-    color: #FFBB00;
-  }
-  
-  .active a{
-    color: #FFBB00 !important;
-    background: black !important;
-  }
-  
-  .menu_right{
-    float: right;
-  }
-  
-   #section1 {
-    height: 600px;
-    padding: 0;
-  }
-  
-  #beerimg {
-    height: 600px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+
+}
+
+.header_logo {
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.header_brname {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffffff;
+    vertical-align: top;
+    margin-top: 22px;
+    cursor: pointer;
+}
     
+.header_menu {
+    display: inline-block;
+    float: right;
+    margin: 30px 3px;
+}
+
+.header_menu li {
+    display: inline-block;
+}
+
+.header_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+
+.nav_button {
+    color: white;
+    font-weight: 700;
+    background: rgba(255,255,255,0);
+    border: none;
+    width: 80px;
+    margin: 0 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.header_brname a {
+  color: #ffffff;
+}
+
+.header_brname a:hover {
+  color: #FFF1CE;
+}
+
+
+  #beerimg {
+    height: 670px;
    background: url(../img/beerdesc001.jpg) no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; 
   }
-  
-  #beerpara {
-    height: 300px;
-  }
-  
-  #beerchart {
-    height: 300px;
-  }
-  
-  #info_wrap {
-    padding: 0;
-  }
-  
-  #hashTag_wrap {
-    height: 80px;
-    background-color: red;
-  }
-  
-  .tagContent {
-    font-size: 20px;
-  }
-  
-  #section2 {
-    height: 400px;
-  }
-  
-  #footer {
-    background-color: #8C8C8C;
-  }
-  
-  #fileupload, #newFileName {
+
+
+.footer_container {
+    height: 120px;
+}
+
+footer img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.footer_logo {
+    display: inline-block;
+    margin: 10px 30px;
+    position: relative;
+    top: 15px;
+}
+
+.footer_brname {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffffff;
+    top: 25px;
+    cursor: pointer;
+}
+
+.footer_brname a {
+  color: #ffffff;
+}
+
+.footer_brname a:hover {
+  color: #FFF1CE;
+}
+
+.footer_menu {
+    display: inline-block;
+    float: right;
+    margin: 0px 0px;
+    position: relative;
+    top: 40px;
+
+}
+
+.footer_menu li {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+a.icon {
+    display: inline-block;
+    padding-top: 4px;
+}
+
+.footer_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0px 0px;
+}
+
+ul.icons {
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+ul.icons li .label {
     display: none;
-  }
+
+}
+
+ul.icons li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav_button2 {
+    border:none;
+    border-radius: 5px;
+    color: #d95130;
+    background: rgb(255, 255, 255);
+    width: 120px;
+    margin: 0 15px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+.footer_bottom_menu ul {
+    margin-top: 20px;
+    
+}
+
+.footer_bottom_menu li {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: -20px;
+    font-weight: 600;
+}
+
+.footer_bottom_copyright {
+    text-align: right;
+    position: relative;
+    color: white;
+    padding-right:  34px;
+    top: -10px;
+    
+}
+
+.footer_bottom_copyright h4 {
+    font-weight: 500;
+}
+
+
+#section1 {
+  height: 700px;
+  padding: 15px 10px 15px 30px;
+/*   padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px; */
+  background-color: #002A4A;
+}
+
+div {
+  border: 1px solid black;
+}
+ 
+#fileupload, #newFileName {
+  display: none;
+}
+
+#info_wrap {
+
+  padding: 10px;
+  padding-top: 0;
+  margin: 0;
+}
+
+.info_div {
+  width: 210px;
+  height: 180px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  line-height: 180px;
+  vertical-align: middle;
   
- /*  <!-- 평가하기  -->
-   select {
-   width: 100px;
-   font-size: 20px;
-   float: right;
-   text-align: center;
- }
- #avgScore {
-   float: right;
- }
- 
- #okBtn {
-   width: 100px;
-   height: 50px;
- } */
- 
- 
- /*  
-  div {
-    border: 1px solid black;
-  } */
+}
+
+#info_country {
+  background-color: #FF9311;
+}
+
+#info_company {
+  background-color: #FF9311;
+}
+
+#info_beer {
+  background-color: #17607D;
+}
+
+#info_cate {
+  background-color: #ffd56b;
+}
+
+#info_alcohol {
+  background-color: #ffd56b;
+}
+
+
+
+#detail_chart {
+  height: 370px;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#radarChart {
+  width: 200px;
+  height: 350px;
+}
+
+#detail_score {
+  position: absolute;
+  bottom: 0;
+  
+}
+
+#beerScore {
+  color: white;
+  display: inline-block;
+}
+
+#detail_para {
+  height: 180px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #17607D;
+}
+
+#detail_hashtag {
+  height: 100px;
+  color: white;
+}
+
+#hashtag_text {
+  height: 50px;
+  font-size: 30px;
+}
+
+
 
 </style>
 
 </head>
 <body>
 
-<div class="container-fluid">
+  <header>
+        <div class="header_container">
+            <div id="bblogo" class="header_logo homeBtn"><img src="../img/beerbear_logo01.jpeg" /></div>
+            <nav id="bbname" class="header_brname homeBtn"><a>BEER BEAR</a></nav>
+            <nav id="navmenue" class="header_menu"><ul>
+                <li><input class="nav_button infoBtn" type="button" value="맥주정보" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="맥주인증" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="맥주위치" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="공지사항" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
+            </ul></nav>
+        </div>
+    </header>
   
-  <div id="header" class="row">
-  <div class="logo col-xs-4 col-sm-2 col-md-2 col-lg-2"><a class="logoMenu" href="#">BEER<br>BEAR</a></div>
-    <div class="header_space col-xs-8 col-sm-2 col-md-3 col-lg-4"></div>
-    <div class="col-xs-12 col-sm-8 col-md-7 col-lg-6">
-      <ul class="nav nav-pills menu_right">
-       <li role="presentation" class="active"><a class="infoMenu" href="#">맥주정보</a></li>
-        <li role="presentation" ><a class="videoMenu" href="#">맥주인증</a></li>
-        <li role="presentation"><a href="#">맥주위치</a></li>
-        <li role="presentation"><a href="#">공지사항</a></li>
-        <li role="presentation"><a href="#">Login</a></li>
-        <li role="presentation"><a href="#">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div id="section1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div id="beerimg" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
-      
-      <button id="beerAddBtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#beerAddModal">맥주등록</button>
+  <section id="section1" class="col-lg-12">
+    <div id="beerimg" class="col-lg-3">
+      <button id="beerAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#beerAddModal">+</button>
+    
       <!-- 맥주 등록 modal -->
-      
-      <div class="modal fade" id="beerAddModal" tabindex="-1" role="dialog" aria-labelledby="beerAddModalLabel" aria-hidden="true">
-			  <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			        <h4 class="modal-title" id="beerAddModalLabel">Beer Add</h4>
-			      </div>
-			      <div class="modal-body">
-			
-			        <div>
-			          <label for="Brand">Beer Brand (맥주브랜드)</label>
-			          <form name="beerBrandForm">
-			            <select name="Brand" id="beerBrand" onChange="checkBrandText()">
-			            </select>
-			            <input type="text" name="brandText" id="brandText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label for="cate">Category (맥주 분류)</label>
-			          <form name="beerCateForm">
-			            <select name="cate" id="beerCate" onChange="checkCateText()">
-			            </select>
-			            <input type="text" name="cateText" id="cateText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label for="country">Country (제조 국가)</label>
-			          <form name="beerCtryForm">
-			            <select name="country" id="beerCtry" onChange="checkCtryText()">
-			            </select>
-			            <input type="text" name="ctryText" id="ctryText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label>Description (맥주 설명)</label>
-			          <textarea id="beerDesc" cols="50" rows ="10" placeholder="맥주에 대해 설명 해 주세요."></textarea>
-			        </div>
-			        
-			        <div>
-			          <label for="company">Company (제조사)</label>
-			          <form name="beerCompForm">
-			            <select name="company" id="beerComp" onChange="checkCompText()">
-			            </select>
-			            <input type="text" name="compText" id="compText" style="display:none">
-			          </form>
-			        </div>
-			        
-			        <div>
-			          <label>Alcohol (도수)</label>
-			          <input type="text" id="beerAchl" value ="0" placeholder="도수를 입력 해 주세요." class="inputBox"/>
-			        </div>
-			        
-			        <div>
-			          <label>Photo (사진)</label>
-			          <img id="uploadImage" src="">
-			          <button id="selectFileBtn">파일 선택</button>
-			          <input id="fileupload" type="file" name="file" multiple>
-			          <p id="newFileName"></p>
-			          
-			        </div>
-			        
-			        </div>
-			      <div class="modal-footer">
-			        <button  id="beerAddSaveBtn" type="button" class="btn btn-primary">Save changes</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			      
-      
-    </div>
-    <div id="beerpara" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
-      <!--beerDetail.js에서 값을 넣어줌 -->
-    </div>
-    <div id="beerchart" class="col-sx-4 col-sm-4 col-md-4 col-lg-4">
-      <!-- <button id = "tasteAddBtn">평가하기</button> -->
-<button id="tasteAddBtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#reviewModal">
-  평가하기
-</button>
-
-<!-- 평가하기 modal -->
-
-<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         <h4 class="modal-title" id="reviewModalLabel">Review</h4>
-      </div>
-      
-       <div class="modal-body">
-         <div>
-            <label for="bitter">Bitter(쓴맛)</label>
-            <select name="bitter" id="bitterScore">
-              <option value="0" selected> 선택해 주세요</option>
-              <option value=10>10</option>
-              <option value="9">9</option>
-              <option value="8">8</option>
-              <option value="7">7</option>
-              <option value="6">6</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
+        
+        <div class="modal fade" id="beerAddModal" tabindex="-1" role="dialog" aria-labelledby="beerAddModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="beerAddModalLabel">Beer Add</h4>
+              </div>
+              <div class="modal-body">
+        
+                <div>
+                  <label for="Brand">Beer Brand (맥주브랜드)</label>
+                  <form name="beerBrandForm">
+                    <select name="Brand" id="beerBrand" onChange="checkBrandText()">
+                    </select>
+                    <input type="text" name="brandText" id="brandText" style="display:none">
+                  </form>
+                </div>
+                
+                <div>
+                  <label for="cate">Category (맥주 분류)</label>
+                  <form name="beerCateForm">
+                    <select name="cate" id="beerCate" onChange="checkCateText()">
+                    </select>
+                    <input type="text" name="cateText" id="cateText" style="display:none">
+                  </form>
+                </div>
+                
+                <div>
+                  <label for="country">Country (제조 국가)</label>
+                  <form name="beerCtryForm">
+                    <select name="country" id="beerCtry" onChange="checkCtryText()">
+                    </select>
+                    <input type="text" name="ctryText" id="ctryText" style="display:none">
+                  </form>
+                </div>
+                
+                <div>
+                  <label>Description (맥주 설명)</label>
+                  <textarea id="beerDesc" cols="50" rows ="10" placeholder="맥주에 대해 설명 해 주세요."></textarea>
+                </div>
+                
+                <div>
+                  <label for="company">Company (제조사)</label>
+                  <form name="beerCompForm">
+                    <select name="company" id="beerComp" onChange="checkCompText()">
+                    </select>
+                    <input type="text" name="compText" id="compText" style="display:none">
+                  </form>
+                </div>
+                
+                <div>
+                  <label>Alcohol (도수)</label>
+                  <input type="text" id="beerAchl" value ="0" placeholder="도수를 입력 해 주세요." class="inputBox"/>
+                </div>
+                
+                <div>
+                  <label>Photo (사진)</label>
+                  <img id="uploadImage" src="">
+                  <button id="selectFileBtn">파일 선택</button>
+                  <input id="fileupload" type="file" name="file" multiple>
+                  <p id="newFileName"></p>
+                  
+                </div>
+                
+                </div>
+              <div class="modal-footer">
+                <button  id="beerAddSaveBtn" type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
           </div>
-          
-          <div>
-            <label for="sour">Sour(신맛)</label>
-            <select name="sour" id="sourScore">
-              <option value="0" selected> 선택해 주세요</option>
-              <option value="10">10</option>
-              <option value="9">9</option>
-              <option value="8">8</option>
-              <option value="7">7</option>
-              <option value="6">6</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-          </div>
-          
-          <div>
-            <label for="sweet">Sweet(단맛)</label>
-            <select name="sweet" id="sweetScore">
-              <option value="0" selected> 선택해 주세요</option>
-              <option value="10">10</option>
-              <option value="9">9</option>
-              <option value="8">8</option>
-              <option value="7">7</option>
-              <option value="6">6</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-          </div>
-          
-          <div>
-            <label for="sparkle">Sparkle(탄산)</label>
-            <select name="sparkle" id="sparkleScore">
-              <option value="0" selected> 선택해 주세요</option>
-              <option value="10">10</option>
-              <option value="9">9</option>
-              <option value="8">8</option>
-              <option value="7">7</option>
-              <option value="6">6</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-          </div>
-          
-          <div>
-            <label for="body">Body(풍미)</label>
-            <select name="body" id="bodyScore">
-              <option value="0" selected> 선택해 주세요</option>
-              <option value="10">10</option>
-              <option value="9">9</option>
-              <option value="8">8</option>
-              <option value="7">7</option>
-              <option value="6">6</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-          </div>
-          
-          <div>
-            <label for="aroma">Aroma(향미)</label>
-            <select name="aroma" id="aromaScore">
-              <option value="0" selected> 선택해 주세요</option>
-              <option value="10">10</option>
-              <option value="9">9</option>
-              <option value="8">8</option>
-              <option value="7">7</option>
-              <option value="6">6</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-          </div>
-          
-          <div>
-            <label>전체평점</label>
-            <input type="text" id="avgScore" value="0">
-          </div>
+        </div>
          
-       </div> <!-- modal body -->
-       
-       <div class="modal-footer">
-        <button id="reviewAddBtn" type="button" class="btn btn-primary">Save changes</button>
-      </div>
-       
-       
+    
     </div>
-  </div>
-</div>
-
-      
+    <div id="info_wrap" class="col-lg-4">
+    </div>
+    <div id="detail_chart" class="col-lg-5">
       <canvas id="radarChart"></canvas>
-      <span id="beerScore"> 
-      <!-- 전체 평균 출력 -->
-      </span>
-      <!-- <div id="score"></div> -->
-    </div>
-    <div id="info_wrap" class="col-sx-8 col-sm-8 col-md-8 col-lg-8">
-    <!-- beerDetail.js 에서 값을 넣어줌 -->
-    </div>
-  <!--   <div id="beer_video" class="col-sx-6 col-sm-2 col-md-3 col-lg-3"><h1>Video</h1></div> -->
-    <div id="hashTag_wrap" class="col-sx-4 col-sm-4 col-md-8 col-lg-8">
-      <button id="htBtn" class="btn btn-primary" data-toggle="modal" data-target="#HashTagModal">HashTag</button>
-      
-        <div class="modal fade bs-example-modal-sm" id="HashTagModal" tabindex="-1" role="dialog" aria-labelledby="HashTagModalLabel" aria-hidden="true">
-				  <div class="modal-dialog modal-sm">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="HashTagModalLabel">HashTag</h4>
-				      </div>
-				      <div class="modal-body">
-					      <input type="text" name="tagContent" id="tagContent"> <!--  style="display:none"> -->
-					      <button id="htAddBtn" class="btn btn-primary">Save changes </button>
-					    </div>
-           </div>
-         </div>
-       </div>
-      
-      <div id="hashTag_text">
+      <div id="detail_score">
+        <span id="beerScore"></span>
+        <button id="tasteAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">
+          평가하기
+        </button>
+        <!-- 평가하기 modal -->
+          <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="reviewModalLabel">Review</h4>
+                </div>
+                
+                 <div class="modal-body">
+                   <div>
+                      <label for="bitter">Bitter(쓴맛)</label>
+                      <select name="bitter" id="bitterScore">
+                        <option value="0" selected> 선택해 주세요</option>
+                        <option value=10>10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label for="sour">Sour(신맛)</label>
+                      <select name="sour" id="sourScore">
+                        <option value="0" selected> 선택해 주세요</option>
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label for="sweet">Sweet(단맛)</label>
+                      <select name="sweet" id="sweetScore">
+                        <option value="0" selected> 선택해 주세요</option>
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label for="sparkle">Sparkle(탄산)</label>
+                      <select name="sparkle" id="sparkleScore">
+                        <option value="0" selected> 선택해 주세요</option>
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label for="body">Body(풍미)</label>
+                      <select name="body" id="bodyScore">
+                        <option value="0" selected> 선택해 주세요</option>
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label for="aroma">Aroma(향미)</label>
+                      <select name="aroma" id="aromaScore">
+                        <option value="0" selected> 선택해 주세요</option>
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label>전체평점</label>
+                      <input type="text" id="avgScore" value="0">
+                    </div>
+                   
+                 </div> <!-- modal body -->
+                 
+                 <div class="modal-footer">
+                  <button id="reviewAddBtn" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                 
+                 
+              </div>
+            </div>
+          </div>
+                  
       </div>
     </div>
-   
+    <div id="detail_para" class="col-lg-4"></div>
+    <div id="detail_hashtag" class="col-lg-9">
+      <div>
+        <button id="htBtn" class="btn btn-primary" data-toggle="modal" data-target="#HashTagModal">#</button>
+            <div class="modal fade bs-example-modal-sm" id="HashTagModal" tabindex="-1" role="dialog" aria-labelledby="HashTagModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="HashTagModalLabel" style="color: black">HashTag</h4>
+                    </div>
+                    <div class="modal-body">
+                      <input type="text" name="tagContent" id="tagContent" style="color: black"> <!--  style="display:none"> -->
+                      <button id="htAddBtn" class="btn btn-primary">Save changes </button>
+                    </div>
+                 </div>
+               </div>
+             </div>
+      </div>
+      <div id="hashtag_text">
+      </div>
     </div>
-     
-  </div>
+  </section>
   
   <div class="row">
     <div id="section2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -399,53 +606,51 @@
     
     </div>
   </div>
-  <div id="footer" class="row">
-     <div class="col-lg-1"></div>
-      <div class="logo col-xs-2 col-sm-1 col-md-1 col-lg-1"><a class="logoMenu" href="#">BEER<br>BEAR</a></div>
-     <div class="col-xs-10 col-sm-6 col-md-6 col-lg-5">
-       <ul class="nav nav-pills">
-         <li role="presentation"><a href="#">ABOUT</a></li>
-         <li role="presentation"><a href="#">BLOG</a></li>
-         <li role="presentation"><a href="#">NEWS&EVENTS</a></li>
-         <li role="presentation"><a href="#">CONTACT</a></li>
-       </ul>
-     </div>
-     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-       <ul class="nav nav-pills menu_right">
-         <li role="presentation"><a href="#">Youtube</a></li>
-         <li role="presentation"><a href="#">Facebook</a></li>
-         <li role="presentation"><a href="#">Instagram</a></li>
-         <li role="presentation"><a href="#">Email</a></li>
-       </ul>
-     </div>
-     <div class="col-lg-1"></div>
-     <div class="col-lg-11">
-       <h6>&copy;2016 BEERBEAR All rights reserved.</h6>
-     </div>
-  </div>
-</div>
+  
+  
+  <footer>
+    <div class="footer_container">
+        <div id="bblogo" class="footer_logo homeBtn"><img src="../img/beerbear_logo01.jpeg" /></div>
+        <nav id="bbname" class="footer_brname homeBtn"><a>BEER BEAR</a></nav>
+        <nav id="navmenue" class="footer_menu"><ul class="icons">
+           <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-twitter icon"><span class="label">Twitter</span></a></li>
+           <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-youtube icon"><span class="label">youtube</span></a></li>
+           <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-facebook icon"><span class="label">facebook</span></a></li>
+           <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-instagram icon"><span class="label">instagram</span></a></li>
+           <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-mail-alt icon"><span class="label">mail</span></a></li>
+        </ul></nav>
+    </div>
+    
+    <div class="footer_bottom">
+        <nav id="navmenue" class="footer_bottom_menu"><ul>
+            <li><input class="nav_button2" type="button" value="ABOUT" style="font-size:15px;" /></li>
+            <li><input class="nav_button2" type="button" value="BLOG" style="font-size:15px;" /></li>
+            <li><input class="nav_button2" type="button" value="NEWS&EVENT" style="font-size:15px;" /></li>
+            <li><input class="nav_button2" type="button" value="CONTACT" style="font-size:15px;" /></li>
+        </ul></nav>
+        <div class="footer_bottom_copyright">
+           <h4>&copy;2016 BEERBEAR All rights reserved.</h4>
+        </div>
+    </div>
+  </footer>
 
 <script id="beerParaTemplateText" type="text/x-handlebars-template">
-
-  <h1>맥주설명</h1>
   <p>{{describe}}</p>
 
 </script>
 
 <script id="beerDivTemplateText" type="text/x-handlebars-template">
-  <div id="beer_country" class="col-sm-6 col-md-6 col-lg-3"><h1>제조국가:{{country}}</h1></div>
-  <div id="beer_brandName" class="col-sm-6 col-md-6 col-lg-4"><h1>브랜드명:{{brbrname}}</h1></div>
-  <div id="beer_company" class="col-sm-6 col-md-6 col-lg-3"><h1>제조사:{{company}}</h1></div>
-  <div id="beer_alchol" class="col-sm-6 col-md-6 col-lg-4"><h1>알콜:{{alchol}}%</h1></div>
-  <div id="beer_subCate" class="col-sm-6 col-md-6 col-lg-6"><h1>제조방식:{{scname}}</h1></div>
+  <div id="info_beer" class="col-lg-5 info_div">{{brbrname}}</div> <div class="col-lg-5 info_div"></div>
+  <div id="info_country"class="col-lg-5 info_div">{{country}}</div><div id="info_company" class="col-lg-5 info_div">{{company}}</div>
+  <div id="info_cate" class="col-lg-5 info_div">{{scname}}</div><div id="info_alcohol" class="col-lg-5 info_div">{{alchol}}%</div>
   <select id="beerNo" style="display:none">
-  <option value={{no}}>{{no}}</option>
+    <option value={{no}}>{{no}}</option>
   </select>
 </script>
 
 
 <script id="beerTasteScoreText" type="text/x-handlebars-template">
-  <h1>{{score}}</h1>
+  <h1>{{score}} / 10.0</h1>
 </script>
 
 <script id="beerHashTagText" type="text/x-handlebars-template">
@@ -469,7 +674,6 @@
 </tr>
 {{/each}}
 </script>
-
 
 <script id="beerBrandTemplate" type="text/x-handlebars-template">
 <option value="0">선택해주세요</option>
@@ -505,14 +709,11 @@
 </script>
 
 
-
-
-
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
-<script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
 <script src="../node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
 <script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
 <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="beerDetailApp.js"></script>
@@ -525,7 +726,7 @@ ajaxLoadBrandList()
 ajaxLoadCateList()
 ajaxLoadCtryList()
 ajaxLoadCompList()
-  
+
   <!-- url에서 넘어오는 파라미터 값 no를 잘라낸다. -->
   
   if (location.search.startsWith("?")) {

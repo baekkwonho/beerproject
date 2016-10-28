@@ -2,7 +2,6 @@
 
 
 $("#selectFileBtn").on('click', function() {
-	console.log("aa")
 	$("#fileupload").click()
 })
 
