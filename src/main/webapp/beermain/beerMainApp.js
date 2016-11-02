@@ -20,6 +20,13 @@ for(var i = 0; i < noticeBtn.length; i++) {
 	    }
 	  }
 
+var noticeBtn = document.querySelectorAll(".noticeBtn")
+for(var i = 0; i < noticeBtn.length; i++) {
+		noticeBtn[i].onclick = function(event) {
+	      window.location.href="../beernotice/beerNoticeApp.html"
+	    }
+	  }
+
 var searchBtn = document.querySelector("#searchbtn")
 searchBtn.onclick = function(event) {
 	var beer = {
