@@ -42,7 +42,6 @@ public class AuthController {
         cookie.setMaxAge(60 * 60 * 24 * 7);
       }
       response.addCookie(cookie);
-      
 
       HashMap<String,Object> paramMap = new HashMap<>();
       paramMap.put("email", email);

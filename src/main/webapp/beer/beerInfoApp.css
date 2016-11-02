@@ -201,20 +201,32 @@ header img {
 }
 
 #section1 {
-	  border: 1px solid blue;
+	 /*  border: 1px solid blue; */
     background: #96976f;
-    position: relative;
+   /*  position: relative; */
+    /* display: table; */
     /* display: inline; */
     height: 270px;
+    position: relative;
    /*  text-align: left; */
 }
 
+#section1_wrap {
+	position: absolute;
+	margin: 0 auto;
+	left: 18%;
+	
+}
+
 .section1_menu {
-	border: 1px solid red;
-	position: relative;
+	display: inline-block;
+	/* position: relative; */
+	/* display: table-row; */
 	/* height: 150px; */
 	width: 300px;
-	float: left;
+	margin: 0 auto;
+	
+	/* float: left; */
 }
 
 .section1_menu_img {
@@ -223,15 +235,84 @@ header img {
     height: 200px;
     cursor: pointer;
     border: 4px solid #3d3c3d;
+    display: block;
+    margin: 0 auto;
     
 /*     margin-bottom: 100px; */
 }
 
-#section2 {
-  
+
+#section2_ctry{
+  display: none;
+}
+#section2_ctry h1 {
+	color: #d95130;
+  font-style: bold;
+}
+
+#section2_ctry div {
+	background: #13232f;
+}
+
+#section2_cate {
+	display: none;
+}
+#section2_cate h1 {
+	color: #d95130;
+	font-style: bold;
 }
 
 
+#section2_cate div {
+	background: #13232f;
+	padding: 0;
+}
+
+.ctryno {
+	font-size: 30px;
+  margin: 0 15px;
+	
+}
+
+.aleno {
+	font-size: 30px;
+	margin: 0 15px;
+}
+
+.lagerno {
+  font-size: 30px;
+  margin: 0 15px;
+}
+
+.etcno {
+  font-size: 30px;
+  margin: 0 15px;
+}
+
+
+
+
+  #beerrandom_img {
+    width: 200px;
+    height: 300px;
+     background: url(../img/beerdesc001.jpg); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: inline-block;
+  }
+  
+  #beerRandomText {
+    width: 350px;
+    height: 300px;
+    top: 0;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    margin: 0 20px;
+    padding: 20px;
+  }
 
 
 
@@ -406,4 +487,14 @@ ul.icons li a {
 
 .footer_bottom_copyright h4 {
     font-weight: 500;
+}
+
+#ui-id-1 {
+	width: 450px;
+	border: 1px solid #3d3c3d;
+	background-color: white;
+  font-size: 20px;
+  color: #d95130;
+  list-style:none;
+  
 }

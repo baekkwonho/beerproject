@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
+<style>
+  #beerrandom_img {
+    width: 200px;
+    height: 300px;
+     background: url(../img/beerdesc001.jpg); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: inline-block;
+  }
+  
+  #beerRandomText {
+    display: inline-block;
+  }
+
+</style>
+
+</head>
+<body>
+
+<!--  <button id="tasteAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#randomModal">
+   random
+ </button> -->
+ <img id="section1_menu3" src="../img/beerinfo_009.jpeg" data-toggle="modal" data-target="#randomModal"/>
+ 
+ 
+<div class="modal fade" id="randomModal" tabindex="-1" role="dialog" aria-labelledby="randomModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="randomModalLabel">random</h4>
+      </div>
+      
+       <div id="beerrandom" class="modal-body">
+         <div id="beerrandom_img">
+         </div>
+         <div id="beerRandomText">
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+<script id="beerRandomTemplateText" type="text/x-handlebars-template">
+ <h1>{{brbrname}}</h1>
+ <h1>{{company}}</h1>
+ <h1>{{scname}}</h1>
+ <h1>{{alchol}}</h1>
+ <h1>{{describe}}</h1>
+</script>
+
+
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
+<script type="text/javascript" src="beerRandomApp.js"></script>
+<script>
+
+ajaxLoadBeerRandom()
+
+</script>
+
+
+</body>
+</html>

@@ -62,6 +62,20 @@ public class BeerController {
     }
   }
   
+  @RequestMapping(path="ctryone")
+  public Object ctryDetailCtryno(int no) throws Exception {
+    try {
+      Beer beer = beerDao.selectOneCtry(no);
+      
+      if (beer == null)
+        throw new Exception("해당 번호의 게시물이 존재하지 않습니다.");
+      
+      return JsonResult.success(beer);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
   
 /*
  

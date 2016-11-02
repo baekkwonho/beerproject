@@ -9,6 +9,7 @@ public interface BeerDao {
   Beer selectOne(int no) throws Exception;
   Beer selectOneCate(int no) throws Exception;
   Beer selectOneBrand(int no) throws Exception;
+  Beer selectOneCtry(int no) throws Exception;
   Beer selectSubCateOneScno(int no) throws Exception;
   Beer selectSubCateOneBrno(int no) throws Exception;
   Beer getBrnoDesc() throws Exception;

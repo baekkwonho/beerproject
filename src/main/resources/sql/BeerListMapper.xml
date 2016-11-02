@@ -17,6 +17,8 @@
     <result column="CTRY" property="country"/>
     <result column="COMP" property="company"/>
     <result column="ACHL" property="alchol"/>
+    <result column="BRPHOT_PATH" property="brphoto_path"/>
+    
   </resultMap>
   
   <select id="selectBrandList" resultMap="beerMap">
@@ -111,8 +113,62 @@
     on beers.ctryno = beers_ctry.ctryno
     inner join beers_comp
     on beers.cono = beers_comp.cono
+    inner join beers_phos
+    on beers.brno = beers_phos.brno
     where beers.scno = #{no}
-    
+  </select>
+  
+   
+  <select id="selectCtryListOne" resultMap = "beerMap">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_sub_cate
+    on beers.scno = beers_sub_cate.scno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
+    inner join beers_comp
+    on beers.cono = beers_comp.cono
+    inner join beers_phos
+    on beers.brno = beers_phos.brno
+    where beers.ctryno = #{no}
+  </select>
+  
+  <select id="selectBeerList" resultMap = "beerMap">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_sub_cate
+    on beers.scno = beers_sub_cate.scno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
+    inner join beers_comp
+    on beers.cono = beers_comp.cono
+  </select>  
+  
+  <select id="selectBeerRandomOne" resultMap = "beerMap" parameterType="map">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_sub_cate
+    on beers.scno = beers_sub_cate.scno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
+    inner join beers_comp
+    on beers.cono = beers_comp.cono
+    where beers.brno = #{no}
+  </select>  
+  
+  <select id="selectDistrictBrandName" resultMap = "beerMap">
+    select distinct brbrnm from beers_brand
+  </select>
+  
+  <select id="selectDistrictSubCateName" resultMap = "beerMap">
+    select distinct scnm from beers_sub_cate
+  </select>
+  
+  <select id="selectDistrictCountryName" resultMap = "beerMap">
+    select distinct ctry from beers_ctry
   </select>
   
   

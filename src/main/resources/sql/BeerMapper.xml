@@ -122,6 +122,20 @@
     where beers.brbrno = #{value}
     order by beers.brno asc limit 0, 1
   </select>
+  
+  <select id="selectOneCtry" resultMap="beerMap" parameterType="int">
+    select * from beers
+    inner join beers_brand
+    on beers.brbrno = beers_brand.brbrno
+    inner join beers_sub_cate
+    on beers.scno = beers_sub_cate.scno
+    inner join beers_ctry
+    on beers.ctryno = beers_ctry.ctryno
+    inner join beers_comp
+    on beers.cono = beers_comp.cono
+    where beers.ctryno = #{value}
+    order by beers.brno asc limit 0, 1
+  </select>
    
   <select id="getBrnoDesc" resultMap="beerMap">
     select brno from beers

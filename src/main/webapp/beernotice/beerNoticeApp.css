@@ -21,7 +21,7 @@ nav {
 }
 
 .wrap {
-	background: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
 }
 
 header img {
@@ -40,11 +40,20 @@ header img {
 .header_brname {
     display: inline-block;
     font-size: 50px;
-    font-weight: 900;
+    font-weight: 500;
     color: #d95130;
     vertical-align: top;
     margin-top: 22px;
     cursor: pointer;
+}
+
+.header_brname a {
+	color: #d95130;
+}
+
+.header_brname a:hover {
+  color: #d95130;
+  text-decoration: none;
 }
     
 .header_menu {
@@ -77,138 +86,34 @@ header img {
     cursor: pointer;
 }
 
-
-
-.main_container {
-    height: 500px;
-    background: url(../img/beerMainIMG.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
-/*    opacity: 0.5;*/
-    padding: 0;
+#new-write {
+	float: right;
+	padding-right: 30px;
 }
 
-.main_content {
-    padding-top: 80px;
-    margin: 0 200px; 
-    color: white;
-    top: 400px;
-    text-align: center;
-    font-size: 17px;
-    font-weight: 900;
-    
-}
-
-.main_search {
-    
-    text-align: center;
-}
-
-#search_form {
-    /* border: 1px solid black; */
-    width: 1000px;
-    height: 60px;
-    display: inline-block;
-    position: absolute;
-    padding-top: 30px;
-    text-align: center;
-    left: 50%;
-    margin-left: -500px;
-    
-}
-
-.form-control {
-    display: inline-block;
-    width: 500px;
-   /*  border: 3px solid #d95130; */
-    margin: 0 10px;
-    
-}
-
-#searchbar {
-	border: 3px solid #d95130;
-	
-}
-
-::-webkit-input-placeholder {
-    color: #a2a2a2;
-    font-weight: 700;
-    font-size: 25px;
-}
-
-.form_btn {
-    display: inline-block;
-    /* font-weight: 900; */
-    /* background-color: #d95130; */
-    cursor: pointer;
-    margin-left: -10px;
-    
-}
-
-#searchbtn {
-  border: 3px solid #d95130;
-  text-align: center;
-  
-}
-
-#section1 {
-    /* border: 2px solid red; */
-    background: rgb(255, 255, 255);
-    /* height: 200px; */
-    padding-top: 70px;
-}
-
-.section1_content {
-    text-align: center;
-    
-}
-
-.section1_content h1 {
-	/* color: #d95130; */
+#new-write p {
 	color: black;
-	line-height: 10%;
-	font-weight: 500;
 }
 
-#section2 {
-    /* border: 2px solid blue; */
-    background: rgb(255, 255, 255);
-    position: relative;
-    height: 400px;
-    text-align: center;
-    
-}
-
-#section2 h4 {
+#boardTable th {
+	text-align: center;
 	color: black;
-	font-weight: 700;
-	font-size: 20px;
 }
 
-.section2_menu {
-	  top: 20px;
-    position: relative;
-/*    border: 1px solid black;*/
-    display: inline-block;
-    margin: 0 10px;
-    text-align: center;
+a.titleLink {
+	color: black;
 }
 
-.section2_menu_img {
-    border-radius: 100%;
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    border: 4px solid #d95130;
-    margin-bottom: 20px;
-}
-
-.section2_menu_desc {
-    width: 200px;
-    cursor: pointer;
+.notice-container {
+	border: 1px solid #96976f;
+	background: #5ba0cc;
+	border-radius: 10px;
+	width: 650px;
+	margin: 50px auto;
+	text-align: center;
+	align-items: center;
+	box-shadow: 0 10px 10px 0;
+	color: black;
 }
 
 .footer_container {
@@ -233,7 +138,7 @@ footer img {
     position: relative;
     display: inline-block;
     font-size: 50px;
-    font-weight: 900;
+    font-weight: 500;
     color: #ffffff;
     top: 25px;
     cursor: pointer;
@@ -245,6 +150,8 @@ footer img {
 
 .footer_brname a:hover {
 	color: #ffffff;
+	text-decoration: none;
+	
 }
 
 .footer_menu {
@@ -319,7 +226,7 @@ ul.icons li a {
     display: inline-block;
     text-decoration: none;
     margin-left: -20px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .footer_bottom_copyright {
@@ -332,15 +239,6 @@ ul.icons li a {
 }
 
 .footer_bottom_copyright h4 {
-    font-weight: 500;
-}
-
-#ui-id-1 {
-	width: 450px;
-  border: 1px solid #d95130;
-  background-color: white;
-  font-size: 20px;
-  color: #3d3c3d;
-  list-style:none;
-	
+	  font-size: 14px;
+    font-weight: 200;
 }

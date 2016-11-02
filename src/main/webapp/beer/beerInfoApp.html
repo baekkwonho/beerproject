@@ -252,6 +252,7 @@
         
         <section id="section1">
         
+        <div id="section1_wrap">
         <div class="section1_menu">
          <img id="section1_menu1" src="../img/beerinfo_013.jpeg" class="section1_menu_img" />
         </div>
@@ -261,24 +262,51 @@
         </div>
         
         <div class="section1_menu">
-        <img id="section1_menu3" src="../img/beerinfo_009.jpeg" class="section1_menu_img" />
+        <img id="section1_menu3" src="../img/beerinfo_009.jpeg" class="section1_menu_img" data-toggle="modal" data-target="#randomModal"/>
+        <div class="modal fade" id="randomModal" tabindex="-1" role="dialog" aria-labelledby="randomModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				     <!--  <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				         <h4 class="modal-title" id="randomModalLabel">random</h4>
+				      </div> -->
+				       <div id="beerrandom" class="modal-body">
+				         <div id="beerrandom_img">
+				         </div>
+				         <div id="beerRandomText">
+				         </div>
+				       </div>
+				    </div>
+				  </div>
+				</div>
+        </div>
         </div>
            
+        </section>
+        
+        <section id="section2_ctry" >
+         <div>
+           <h1>Country</h1>
+           <div id="ctrylist">
+           </div>
+         </div>
         
         </section>
         
-         <section id="section2" style="display:none">
+         <section id="section2_cate">
          <div>
          <h1>Ale</h1>
          <div id="alelist">
          </div>
          </div>
          <div>
+         <br>
          <h1>Lager</h1>
          <div id="lagerlist">
          </div>
          </div>
          <div>
+         <br>
          <h1>Etc</h1>
          <div id="etclist">
          </div>
@@ -326,38 +354,53 @@
        
     </footer>
     
-    
+    <script id="ctryInfoTemplateText" type="text/x-handlebars-template">
+    {{#each data}}
+      <h4 class="ctryno" ctry-no="{{ctryno}}">{{country}}</h4>
+    {{/each}}
+    </script>
     
     
     <script id="cateInfoAleTemplateText" type="text/x-handlebars-template">
     {{#each data}}
-      <h4 class="aleno" ale-no="{{scno}}">{{scno}} : {{scname}}</h4>
+      <h4 class="aleno" ale-no="{{scno}}">{{scname}}</h4>
     {{/each}}
     </script>
     
     <script id="cateInfoLagerTemplateText" type="text/x-handlebars-template">
     {{#each data}}
-      <h4 class="lagerno" lager-no="{{scno}}">{{scno}} : {{scname}}</h4>
+      <h4 class="lagerno" lager-no="{{scno}}">{{scname}}</h4>
     {{/each}}
     </script>
     
     <script id="cateInfoEtcTemplateText" type="text/x-handlebars-template">
     {{#each data}}
-      <h4 class="etcno" etc-no="{{scno}}">{{scno}} : {{scname}}</h4>
+      <h4 class="etcno" etc-no="{{scno}}">{{scname}}</h4>
     {{/each}}
     </script>
+    
+    <script id="beerRandomTemplateText" type="text/x-handlebars-template">
+    <h1>{{brbrname}}</h1>
+    <h1>{{company}}</h1>
+    <h1>{{scname}}</h1>
+    <h1>{{alchol}}%</h1>
+	  </script>
     
     
     <!-- 모달 관련 -->
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery-ui-dist/jquery-ui.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
     <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
     <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/bit.js"></script>
     <script src="../beermain/index.js"></script>
     <script src="beerInfoApp.js"></script>
+    <script type="text/javascript" src="beerRandomApp.js"></script>
     
-    
+<script>
+ajaxLoadBeerRandom()
+</script>
 
 </body>
 </html>

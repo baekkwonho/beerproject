@@ -17,9 +17,6 @@ $(function () {
 	    done: function(e, data) {
 	    	$("#newFileName").text(data.result.filename)
 	    	$("#uploadImage").attr({src: "/beerproject/upload/"+data.result.filename, height:"150px"})
-	    	console.log(data.result.filename)
-	    	console.log(data.result.originFilename)
-	    	
 	    }
 	  })
 })
@@ -132,6 +129,8 @@ $("#beerAddSaveBtn").click(function(event) {
 		alert("사진을 등록 해 주세요")
 		return
 	}
+	
+	console.log(beer)
 	
 	ajaxAddBeer(beer)
 	

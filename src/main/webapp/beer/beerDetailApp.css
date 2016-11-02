@@ -1,0 +1,398 @@
+
+
+@media (max-width: 1200px) {
+	/* body {
+	background: yellow;
+	} */
+	
+	#info_wrap .info_div {
+	  width: 170px;
+	  height: 180px;
+	}
+}
+
+@media (max-width: 992px) {
+	/* body {
+	background: green;
+	} */
+	#info_wrap .info_div {
+    width: 150px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px){
+	/* 
+	body {
+	background: blue;
+	} */
+}
+
+@media (min-width: 1200px) {
+	 /* 
+  body {
+	background: red;
+	}
+	 */
+  #info_wrap #info_beer {
+    
+	}
+	
+	
+}
+
+
+
+
+header {
+    background-color: #D64700;
+}
+
+nav {
+/*    border: 1px solid pink;*/
+}
+
+footer {
+/*    border: 1px solid orange;*/
+    background: #D64700;
+}
+
+
+header img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+
+}
+
+.header_logo {
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.header_brname {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffffff;
+    vertical-align: top;
+    margin-top: 22px;
+    cursor: pointer;
+    
+}
+    
+.header_menu {
+    display: inline-block;
+    float: right;
+    margin: 30px 3px;
+}
+
+.header_menu li {
+    display: inline-block;
+}
+
+.header_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+
+.nav_button {
+    color: white;
+    font-weight: 700;
+    background: rgba(255,255,255,0);
+    border: none;
+    width: 80px;
+    margin: 0 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.header_brname a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header_brname a:hover {
+  color: #FFF1CE;
+  text-decoration: none;
+}
+
+
+  #beerimg {
+    height: 670px;
+     background: url(../img/beerdesc001.jpg) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+  }
+
+
+.footer_container {
+    height: 120px;
+}
+
+footer img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.footer_logo {
+    display: inline-block;
+    margin: 10px 30px;
+    position: relative;
+    top: 15px;
+}
+
+.footer_brname {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffffff;
+    top: 25px;
+    cursor: pointer;
+}
+
+.footer_brname a {
+  color: #ffffff;
+}
+
+.footer_brname a:hover {
+  color: #FFF1CE;
+}
+
+.footer_menu {
+    display: inline-block;
+    float: right;
+    margin: 0px 0px;
+    position: relative;
+    top: 40px;
+
+}
+
+.footer_menu li {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+a.icon {
+    display: inline-block;
+    padding-top: 4px;
+}
+
+.footer_menu ul {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0px 0px;
+}
+
+ul.icons {
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+ul.icons li .label {
+    display: none;
+
+}
+
+ul.icons li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav_button2 {
+    border:none;
+    border-radius: 5px;
+    color: #d95130;
+    background: rgb(255, 255, 255);
+    width: 120px;
+    margin: 0 15px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+.footer_bottom_menu ul {
+    margin-top: 20px;
+    
+}
+
+.footer_bottom_menu li {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: -20px;
+    font-weight: 600;
+}
+
+.footer_bottom_copyright {
+    text-align: right;
+    position: relative;
+    color: white;
+    padding-right:  34px;
+    top: -10px;
+    
+}
+
+.footer_bottom_copyright h4 {
+    font-weight: 500;
+}
+
+
+#section1 {
+  height: 730px;
+  padding: 30px 30px 30px 30px;
+  margin: 0;
+/*   padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px; */
+  background-color: #002A4A;
+}
+
+#fileupload, #newFileName {
+  display: none;
+}
+
+#info_wrap {
+
+  padding: 10px;
+  padding-top: 0;
+  margin: 0;
+}
+
+.info_div {
+  width: 210px;
+  height: 180px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  line-height: 180px;
+  vertical-align: middle;
+  
+}
+
+#info_country {
+  background-color: #FF9311;
+}
+
+#info_company {
+  background-color: #FF9311;
+}
+
+#info_beer {
+  background-color: #17607D;
+}
+
+#info_cate {
+  background-color: #ffd56b;
+}
+
+#info_alcohol {
+  background-color: #ffd56b;
+}
+
+
+
+#detail_chart {
+  height: 370px;
+  padding: 0;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#radarChart {
+  width: 200px;
+  height: 450px;
+}
+
+#detail_score {
+  position: absolute;
+  bottom: 0;
+  left: 35%;
+}
+
+#beerScore {
+  color: white;
+  display: inline-block;
+}
+
+#detail_para {
+  height: 180px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #17607D;
+}
+
+#detail_hashtag {
+  height: 100px;
+  color: white;
+  over-flow: hidden;
+}
+
+#hashtag_text {
+  height: 50px;
+  font-size: 30px;
+}
+
+#section2 {
+	/* background-color: #ffd56b; */
+	
+}
+
+#columns {
+  /* column-width: 350px; */
+  column-gap: 150px;
+  /* column-gap: 30px; */
+  padding: 30px;
+	/* column-width: 350px;
+	column-gap: 15px;
+	padding: 20px; */
+}
+
+#columns figure {
+	display: inline-block;
+	border: 1px solid rgba(0,0,0,0.2);
+	margin: 0 15px;
+	margin-bottom: 20px;
+	padding: 10px;
+} 
+
+#columns figure img {
+	width: 300px;
+ /*  height: 300px;  */
+}
+
+#columns figure figcaption {
+	border-top: 1px solid rgba(0,0,0,0.2);
+	padding: 10px;
+	margin-top: 11px;
+}
+
+
+/* 
+div {
+  border: 1px solid black;
+}
+ */

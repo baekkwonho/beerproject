@@ -53,6 +53,21 @@ public class BeerTasteInfoController {
     }
   }
   
+  @RequestMapping(path="tasteinfoctryno") // ctryno로 넘긴 값을 받는 메서드
+  public Object printTasteInfoCtryno(int no) throws Exception{
+    try {
+      Beer beer = beerDao.selectOneCtry(no);// brno 찾기위해 ctryno넘겨주고 리스트중 상위에 객체를 받아온다.
+      List<BeerTasteInfo> list = beerTasteInfoDao.selectList(beer.getNo());
+      if (list.size() == 1) {
+        return JsonResult.success(list);
+      } else {
+        List<BeerTasteInfo> resultList = tasteCalc(list);
+        return JsonResult.success(resultList);
+      }
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
   
   
   

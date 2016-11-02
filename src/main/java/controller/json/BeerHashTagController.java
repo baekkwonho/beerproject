@@ -92,4 +92,20 @@ public class BeerHashTagController {
   }
   
   
+  @RequestMapping(path="taglistctryno")
+  public Object BeerHashTagListCtryno(int no) throws Exception {
+  
+    try {
+      Beer beer = beerDao.selectOneCtry(no);
+      int brno = beer.getNo();
+      HashMap<String,Object> map = new HashMap<>();
+      map.put("brno", brno);
+      List<BeerHashTag> list = beerHashTagDao.selectHashTagBrno(map);
+      return JsonResult.success(list);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }  
+  
+  
 }

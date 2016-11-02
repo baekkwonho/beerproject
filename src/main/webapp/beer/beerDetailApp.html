@@ -6,325 +6,11 @@
 
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
-<!-- <link rel="stylesheet" type="text/css" href="../beermain/fontello-a28e58c3/css/fontello.css" /> -->
+<link rel="stylesheet" href="../node_modules/icheck/skins/square/orange.css">
+<link rel="stylesheet" type="text/css" href="../beermain/fontello-a28e58c3/css/fontello.css" />
+<link rel="stylesheet" type="text/css" href="beerDetailApp.css" />
 
-<style>
- 
-
-header {
-    background-color: #D64700;
-}
-
-nav {
-/*    border: 1px solid pink;*/
-}
-
-footer {
-/*    border: 1px solid orange;*/
-    background: #D64700;
-}
-
-
-header img {
-    height: 100px;
-    width: 100px;
-    border-radius: 100%;
-    cursor: pointer;
-
-}
-
-.header_logo {
-    display: inline-block;
-    margin: 10px 30px;
-}
-
-.header_brname {
-    display: inline-block;
-    font-size: 50px;
-    font-weight: 900;
-    color: #ffffff;
-    vertical-align: top;
-    margin-top: 22px;
-    cursor: pointer;
-}
-    
-.header_menu {
-    display: inline-block;
-    float: right;
-    margin: 30px 3px;
-}
-
-.header_menu li {
-    display: inline-block;
-}
-
-.header_menu ul {
-    list-style: none;
-    display: inline-block;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-
-.nav_button {
-    color: white;
-    font-weight: 700;
-    background: rgba(255,255,255,0);
-    border: none;
-    width: 80px;
-    margin: 0 1px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
-.header_brname a {
-  color: #ffffff;
-}
-
-.header_brname a:hover {
-  color: #FFF1CE;
-}
-
-
-  #beerimg {
-    height: 670px;
-   background: url(../img/beerdesc001.jpg) no-repeat center center; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; 
-  }
-
-
-.footer_container {
-    height: 120px;
-}
-
-footer img {
-    height: 100px;
-    width: 100px;
-    border-radius: 100%;
-    cursor: pointer;
-}
-
-.footer_logo {
-    display: inline-block;
-    margin: 10px 30px;
-    position: relative;
-    top: 15px;
-}
-
-.footer_brname {
-    position: relative;
-    display: inline-block;
-    font-size: 50px;
-    font-weight: 900;
-    color: #ffffff;
-    top: 25px;
-    cursor: pointer;
-}
-
-.footer_brname a {
-  color: #ffffff;
-}
-
-.footer_brname a:hover {
-  color: #FFF1CE;
-}
-
-.footer_menu {
-    display: inline-block;
-    float: right;
-    margin: 0px 0px;
-    position: relative;
-    top: 40px;
-
-}
-
-.footer_menu li {
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    border-radius: 100%;
-    background-color: rgba(255, 255, 255, 0.15);
-    width: 40px;
-    height: 40px;
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-}
-
-a.icon {
-    display: inline-block;
-    padding-top: 4px;
-}
-
-.footer_menu ul {
-    list-style: none;
-    display: inline-block;
-    text-decoration: none;
-    margin: 0px 0px;
-}
-
-ul.icons {
-  margin-top: 25px;
-  margin-right: 25px;
-}
-
-ul.icons li .label {
-    display: none;
-
-}
-
-ul.icons li a {
-    color: white;
-    text-decoration: none;
-}
-
-.nav_button2 {
-    border:none;
-    border-radius: 5px;
-    color: #d95130;
-    background: rgb(255, 255, 255);
-    width: 120px;
-    margin: 0 15px;
-    position: relative;
-    top: 10px;
-    cursor: pointer;
-}
-
-.footer_bottom_menu ul {
-    margin-top: 20px;
-    
-}
-
-.footer_bottom_menu li {
-    list-style: none;
-    display: inline-block;
-    text-decoration: none;
-    margin-left: -20px;
-    font-weight: 600;
-}
-
-.footer_bottom_copyright {
-    text-align: right;
-    position: relative;
-    color: white;
-    padding-right:  34px;
-    top: -10px;
-    
-}
-
-.footer_bottom_copyright h4 {
-    font-weight: 500;
-}
-
-
-#section1 {
-  height: 700px;
-  padding: 15px 10px 15px 30px;
-/*   padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px; */
-  background-color: #002A4A;
-}
-
-div {
-  border: 1px solid black;
-}
- 
-#fileupload, #newFileName {
-  display: none;
-}
-
-#info_wrap {
-
-  padding: 10px;
-  padding-top: 0;
-  margin: 0;
-}
-
-.info_div {
-  width: 210px;
-  height: 180px;
-  margin-bottom: 10px;
-  margin-right: 8px;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  line-height: 180px;
-  vertical-align: middle;
-  
-}
-
-#info_country {
-  background-color: #FF9311;
-}
-
-#info_company {
-  background-color: #FF9311;
-}
-
-#info_beer {
-  background-color: #17607D;
-}
-
-#info_cate {
-  background-color: #ffd56b;
-}
-
-#info_alcohol {
-  background-color: #ffd56b;
-}
-
-
-
-#detail_chart {
-  height: 370px;
-  padding: 10px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-#radarChart {
-  width: 200px;
-  height: 350px;
-}
-
-#detail_score {
-  position: absolute;
-  bottom: 0;
-  
-}
-
-#beerScore {
-  color: white;
-  display: inline-block;
-}
-
-#detail_para {
-  height: 180px;
-  padding: 10px;
-  margin-bottom: 10px;
-  color: white;
-  background-color: #17607D;
-}
-
-#detail_hashtag {
-  height: 100px;
-  color: white;
-}
-
-#hashtag_text {
-  height: 50px;
-  font-size: 30px;
-}
-
-
-
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
@@ -343,8 +29,8 @@ div {
         </div>
     </header>
   
-  <section id="section1" class="col-lg-12">
-    <div id="beerimg" class="col-lg-3">
+  <section id="section1" class="col-md-12 col-lg-12">
+    <div id="beerimg" class="col-sm-3 col-md-3 col-lg-3">
       <button id="beerAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#beerAddModal">+</button>
     
       <!-- 맥주 등록 modal -->
@@ -361,7 +47,7 @@ div {
                 <div>
                   <label for="Brand">Beer Brand (맥주브랜드)</label>
                   <form name="beerBrandForm">
-                    <select name="Brand" id="beerBrand" onChange="checkBrandText()">
+                    <select name="Brand" id="beerBrand" onChange="checkBrandText()" class="cs-select cs-skin-border">
                     </select>
                     <input type="text" name="brandText" id="brandText" style="display:none">
                   </form>
@@ -423,9 +109,9 @@ div {
          
     
     </div>
-    <div id="info_wrap" class="col-lg-4">
+    <div id="info_wrap" class="col-sm-5 col-md-5 col-lg-5">
     </div>
-    <div id="detail_chart" class="col-lg-5">
+    <div id="detail_chart" class="col-sm-4 col-md-4 col-lg-4">
       <canvas id="radarChart"></canvas>
       <div id="detail_score">
         <span id="beerScore"></span>
@@ -444,7 +130,18 @@ div {
                  <div class="modal-body">
                    <div>
                       <label for="bitter">Bitter(쓴맛)</label>
-                      <select name="bitter" id="bitterScore">
+                      <input type="radio" name="bitter" value="10"/> 10
+                      <input type="radio" name="bitter" value="9"/> 9
+                      <input type="radio" name="bitter" value="8"/> 8
+                      <input type="radio" name="bitter" value="7"/>7
+                      <input type="radio" name="bitter" value="6"/>6
+                      <input type="radio" name="bitter" value="5"/>5
+                      <input type="radio" name="bitter" value="4"/>4
+                      <input type="radio" name="bitter" value="3"/>3
+                      <input type="radio" name="bitter" value="2"/>2
+                      <input type="radio" name="bitter" value="1"/>1
+                      
+                     <!--  <select name="bitter" id="bitterScore">
                         <option value="0" selected> 선택해 주세요</option>
                         <option value=10>10</option>
                         <option value="9">9</option>
@@ -456,11 +153,22 @@ div {
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
-                      </select>
+                      </select> -->
                     </div>
                     
                     <div>
                       <label for="sour">Sour(신맛)</label>
+                      <input type="radio" name="sour" value="10"/> 10
+                      <input type="radio" name="sour" value="9"/> 9
+                      <input type="radio" name="sour" value="8"/> 8
+                      <input type="radio" name="sour" value="7"/>7
+                      <input type="radio" name="sour" value="6"/>6
+                      <input type="radio" name="sour" value="5"/>5
+                      <input type="radio" name="sour" value="4"/>4
+                      <input type="radio" name="sour" value="3"/>3
+                      <input type="radio" name="sour" value="2"/>2
+                      <input type="radio" name="sour" value="1"/>1
+                   <!--    
                       <select name="sour" id="sourScore">
                         <option value="0" selected> 선택해 주세요</option>
                         <option value="10">10</option>
@@ -473,11 +181,23 @@ div {
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
-                      </select>
+                      </select>-->
                     </div>
                     
                     <div>
                       <label for="sweet">Sweet(단맛)</label>
+                      <input type="radio" name="sweet" value="10"/> 10
+                      <input type="radio" name="sweet" value="9"/> 9
+                      <input type="radio" name="sweet" value="8"/> 8
+                      <input type="radio" name="sweet" value="7"/>7
+                      <input type="radio" name="sweet" value="6"/>6
+                      <input type="radio" name="sweet" value="5"/>5
+                      <input type="radio" name="sweet" value="4"/>4
+                      <input type="radio" name="sweet" value="3"/>3
+                      <input type="radio" name="sweet" value="2"/>2
+                      <input type="radio" name="sweet" value="1"/>1
+                      
+                      <!-- 
                       <select name="sweet" id="sweetScore">
                         <option value="0" selected> 선택해 주세요</option>
                         <option value="10">10</option>
@@ -491,11 +211,23 @@ div {
                         <option value="2">2</option>
                         <option value="1">1</option>
                       </select>
+                       -->
                     </div>
                     
                     <div>
                       <label for="sparkle">Sparkle(탄산)</label>
-                      <select name="sparkle" id="sparkleScore">
+                      <input type="radio" name="sparkle" value="10"/> 10
+                      <input type="radio" name="sparkle" value="9"/> 9
+                      <input type="radio" name="sparkle" value="8"/> 8
+                      <input type="radio" name="sparkle" value="7"/>7
+                      <input type="radio" name="sparkle" value="6"/>6
+                      <input type="radio" name="sparkle" value="5"/>5
+                      <input type="radio" name="sparkle" value="4"/>4
+                      <input type="radio" name="sparkle" value="3"/>3
+                      <input type="radio" name="sparkle" value="2"/>2
+                      <input type="radio" name="sparkle" value="1"/>1
+                      
+                    <!--   <select name="sparkle" id="sparkleScore">
                         <option value="0" selected> 선택해 주세요</option>
                         <option value="10">10</option>
                         <option value="9">9</option>
@@ -507,12 +239,24 @@ div {
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
-                      </select>
+                      </select> -->
                     </div>
                     
                     <div>
                       <label for="body">Body(풍미)</label>
-                      <select name="body" id="bodyScore">
+                      <input type="radio" name="body" value="10"/> 10
+                      <input type="radio" name="body" value="9"/> 9
+                      <input type="radio" name="body" value="8"/> 8
+                      <input type="radio" name="body" value="7"/>7
+                      <input type="radio" name="body" value="6"/>6
+                      <input type="radio" name="body" value="5"/>5
+                      <input type="radio" name="body" value="4"/>4
+                      <input type="radio" name="body" value="3"/>3
+                      <input type="radio" name="body" value="2"/>2
+                      <input type="radio" name="body" value="1"/>1
+                      
+                      
+                   <!--    <select name="body" id="bodyScore">
                         <option value="0" selected> 선택해 주세요</option>
                         <option value="10">10</option>
                         <option value="9">9</option>
@@ -524,12 +268,23 @@ div {
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
-                      </select>
+                      </select> -->
                     </div>
                     
                     <div>
                       <label for="aroma">Aroma(향미)</label>
-                      <select name="aroma" id="aromaScore">
+                      <input type="radio" name="aroma" value="10"/> 10
+                      <input type="radio" name="aroma" value="9"/> 9
+                      <input type="radio" name="aroma" value="8"/> 8
+                      <input type="radio" name="aroma" value="7"/>7
+                      <input type="radio" name="aroma" value="6"/>6
+                      <input type="radio" name="aroma" value="5"/>5
+                      <input type="radio" name="aroma" value="4"/>4
+                      <input type="radio" name="aroma" value="3"/>3
+                      <input type="radio" name="aroma" value="2"/>2
+                      <input type="radio" name="aroma" value="1"/>1
+                      
+                <!--       <select name="aroma" id="aromaScore">
                         <option value="0" selected> 선택해 주세요</option>
                         <option value="10">10</option>
                         <option value="9">9</option>
@@ -541,7 +296,7 @@ div {
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
-                      </select>
+                      </select> -->
                     </div>
                     
                     <div>
@@ -562,8 +317,8 @@ div {
                   
       </div>
     </div>
-    <div id="detail_para" class="col-lg-4"></div>
-    <div id="detail_hashtag" class="col-lg-9">
+    <div id="detail_para" class="col-sm-4 col-md-4 col-lg-4"></div>
+    <div id="detail_hashtag" class="col-sm-7 col-md-7 col-lg-9">
       <div>
         <button id="htBtn" class="btn btn-primary" data-toggle="modal" data-target="#HashTagModal">#</button>
             <div class="modal fade bs-example-modal-sm" id="HashTagModal" tabindex="-1" role="dialog" aria-labelledby="HashTagModalLabel" aria-hidden="true">
@@ -589,7 +344,11 @@ div {
   <div class="row">
     <div id="section2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <h1>관련맥주리스트</h1>
-      <table id="beerTable" class="table table-hover">
+      
+      <div id="columns"></div>
+      
+    <!--
+     <table id="beerTable" class="table table-hover">
         <thead>
         <tr>
           <th>번호</th>
@@ -602,8 +361,8 @@ div {
         </tr>
         </thead>
         <tbody></tbody>
-        </table>
-    
+     </table>
+     -->
     </div>
   </div>
   
@@ -640,9 +399,9 @@ div {
 </script>
 
 <script id="beerDivTemplateText" type="text/x-handlebars-template">
-  <div id="info_beer" class="col-lg-5 info_div">{{brbrname}}</div> <div class="col-lg-5 info_div"></div>
-  <div id="info_country"class="col-lg-5 info_div">{{country}}</div><div id="info_company" class="col-lg-5 info_div">{{company}}</div>
-  <div id="info_cate" class="col-lg-5 info_div">{{scname}}</div><div id="info_alcohol" class="col-lg-5 info_div">{{alchol}}%</div>
+  <div id="info_beer" class="col-sm-6 col-md-6 col-lg-6 info_div">{{brbrname}}</div> <div class="col-sm-6 col-md-6 col-lg-6 info_div"></div>
+  <div id="info_country"class="col-sm-6 col-md-6 col-lg-5 info_div">{{country}}</div><div id="info_company" class="col-sm-6 col-md-6 col-lg-5 info_div">{{company}}</div>
+  <div id="info_cate" class="col-sm-6 col-md-6 col-lg-5 info_div">{{scname}}</div><div id="info_alcohol" class="col-sm-6 col-md-6 col-lg-5 info_div">{{alchol}}%</div>
   <select id="beerNo" style="display:none">
     <option value={{no}}>{{no}}</option>
   </select>
@@ -662,7 +421,30 @@ div {
 
 <script id="trTemplateText" type="text/x-handlebars-template">
 
+
+
 {{#each data}}
+
+ <figure class="noBtn" data-no="{{no}}" cate-no="{{scno}}">
+   <img src="/beerproject/upload/{{brphoto_path}}">
+   <figcaption>{{brbrname}} {{company}} <br> {{scname}} {{country}}  {{alchol}}%</figcaption>
+ </figure>
+{{/each}}
+</script>
+
+<!--
+<script id="trTemplateText" type="text/x-handlebars-template">
+
+{{#each data}}
+<div class="catelist" data-no="{{no}}" cate-no="{{scno}}">
+  <div>이미지</div>
+	<div>
+	{{brbrname}}
+	{{scname}}
+	{{country}}
+	</div>
+</div>
+
 <tr>
   <td><a href="#" class="noBtn" data-no="{{no}}" cate-no="{{scno}}">{{no}}</a></td>
   <td>{{scname}}</td>
@@ -673,7 +455,7 @@ div {
   <td>{{alchol}}</td>
 </tr>
 {{/each}}
-</script>
+</script>-->
 
 <script id="beerBrandTemplate" type="text/x-handlebars-template">
 <option value="0">선택해주세요</option>
@@ -715,10 +497,12 @@ div {
 <script src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
 <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
 <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="../node_modules/icheck/icheck.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="beerDetailApp.js"></script>
 <script type="text/javascript" src="../beertasteinfo/beerTasteInfoApp.js"></script>
 <script type="text/javascript" src="../beeradd/beerAddApp.js"></script>
+
 
 <script>
 
@@ -736,15 +520,28 @@ ajaxLoadCompList()
         ajaxLoadSubCateList(no)
         ajaxLoadTasteInfoScno(no)
         ajaxLoadHashTagScno(no)
-    } else if (location.search.split("?")[1].split("=")[0] == "no")
+    } else if (location.search.split("?")[1].split("=")[0] == "no" && location.search.split("?")[2].split("=")[0] == "scno") {
       var brno = location.search.split("?")[1].split("=")[1]
       var subcateno = location.search.split("?")[2].split("=")[1]
       ajaxLoadBeerDetailBrno(brno)
       ajaxLoadSubCateList(subcateno)
       ajaxLoadTasteInfoBrno(brno)
       ajaxLoadHashTagBrno(brno)
+    } else if (location.search.split("=")[0] == "?ctryno") {
+    	var ctryno = location.search.split("=")[1]
+    	ajaxLoadBeerDetailCtryno(ctryno)
+    	ajaxLoadTasteInfoCtryno(ctryno)
+    	ajaxLoadHashTagCtryno(ctryno)
+    	ajaxLoadCtryCateList(ctryno)
+    } else if (location.search.split("?")[1].split("=")[0] == "no" && location.search.split("?")[2].split("=")[0] == "ctryno") {
+        var brno = location.search.split("?")[1].split("=")[1]
+        var ctryno = location.search.split("?")[2].split("=")[1]
+        ajaxLoadBeerDetailBrno(brno)
+        ajaxLoadCtryCateList(ctryno)
+        ajaxLoadTasteInfoBrno(brno)
+        ajaxLoadHashTagBrno(brno)
+    } 
   }
-  
 </script>
 
 </body>

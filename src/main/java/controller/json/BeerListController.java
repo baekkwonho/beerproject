@@ -1,5 +1,6 @@
 package controller.json;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -203,6 +204,19 @@ public class BeerListController {
     }
   }
   
+  @RequestMapping(path="ctrylistone")
+  public Object ctryListOne(int no) throws Exception {
+    try {
+      List<Beer> list = beerListDao.selectCtryListOne(no);
+      return JsonResult.success(list);
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
+  
+  
   @RequestMapping(path="selectonephoto")
   public Object selectOnePhoto(int no) throws Exception {
     try {
@@ -211,6 +225,58 @@ public class BeerListController {
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
     }
+  }
+  
+  @RequestMapping(path="randomlist")
+  public Object beerRandom() throws Exception {
+    try {
+      int [] arr;
+      arr = new int[beerListDao.selectBeerList().size()];
+      
+      for (int i = 0; i < arr.length; i++) {
+        arr[i] = beerListDao.selectBeerList().get(i).getNo();
+      }
+      
+      int randomNo = (int)(Math.random() * arr.length);
+      
+      HashMap<String, Object> map = new HashMap<>();
+      map.put("no", arr[randomNo]);
+      
+      List<Beer> list = beerListDao.selectBeerRandomOne(map);
+      
+      return JsonResult.success(list);
+    } catch (Exception e) {
+      e.printStackTrace();
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+
+  @RequestMapping(path="tagnames")
+    public Object beerTagNames() throws Exception {
+      try {
+        List<Beer> list = beerListDao.selectDistrictBrandName();
+        List<Beer> list2 = beerListDao.selectDistrictSubCateName();
+        List<Beer> list3 = beerListDao.selectDistrictCountryName();
+        
+        List<String> stringList = new ArrayList<>();
+        
+        for (int i = 0; i < list.size(); i++) {
+          stringList.add(list.get(i).getBrbrname());
+        }
+        for (int i = 0; i < list2.size(); i++) {
+          stringList.add(list2.get(i).getScname());
+        }
+        for (int i = 0; i < list3.size(); i++) {
+          stringList.add(list3.get(i).getCountry());
+        }
+        
+        return JsonResult.success(stringList);
+      }catch (Exception e) {
+        e.printStackTrace();
+        return JsonResult.fail(e.getMessage());
+      }
+    
+    
   }
   
   

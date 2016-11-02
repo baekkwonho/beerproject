@@ -26,6 +26,16 @@ public interface BeerListDao {
   List<Beer> getEtcList() throws Exception;
   
   List<Beer> selectSubCateListOne(int no) throws Exception;
+  List<Beer> selectCtryListOne(int no) throws Exception;
+  
+  List<Beer> selectBeerList() throws Exception;
+  List<Beer> selectBeerRandomOne(Map<String,Object> paramMap) throws Exception;
+  
+  List<Beer> selectDistrictBrandName() throws Exception;
+  List<Beer> selectDistrictSubCateName() throws Exception;
+  List<Beer> selectDistrictCountryName() throws Exception;
+  
+  
   
 //  int insert(Beer beer) throws Exception;
 //  int update(Beer beer) throws Exception;
