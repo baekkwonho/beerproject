@@ -8,17 +8,16 @@
     <result column="EMAIL" property="email"/>
     <result column="PWD" property="password"/>
     <result column="NICK" property="nickname"/>
+    <result column="BIRTH" property="birth"/>
+    <result column="GEN" property="gender"/>
+    <result column="DRK" property="drink"/>
+    <result column="ADDR" property="address"/>
+    <result column="LEV" property="level"/>
   </resultMap>
   
   <select id="selectOneByEmailAndPassword" resultMap="memberMap" parameterType="map">
-    select MNO, NICK, EMAIL, PWD
-    from MEMBS
+    select * from membs
     where EMAIL=#{email} and PWD=password(#{password})
   </select>
-  
-  
-  <insert id="insert" parameterType="beer" useGeneratedKeys="true" keyColumn="mno" keyProperty="no" >
-  
-  </insert>
-  
+
 </mapper>

@@ -28,7 +28,8 @@
                 <li><input class="nav_button" type="button" value="맥주인증" style="font-size:15px;" /></li>
                 <li><input class="nav_button" type="button" value="맥주위치" style="font-size:15px;" /></li>
                 <li><input class="nav_button" type="button" value="공지사항" style="font-size:15px;" /></li>
-                <li><input class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
+                <li><input id="login_menu_Btn" class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
+                <li><input id="logout_menu_Btn" class="nav_button" type="button" value="로그아웃" style="font-size:15px;"/></li>
             </ul></nav>
         </div>
     </header>
@@ -86,7 +87,7 @@
           
           <h3 class="forgot"><a href="#">Forgot Password?</a></h3>
           
-          <button id="loginBtn" class="button button-block">Log In</button>
+          <button id="loginBtn" type="button" class="button button-block">Log In</button>
           
           <div>
               
@@ -393,12 +394,13 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
     <script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
     <script type="text/javascript" src="../js/common.js"></script>
-    <script type="text/javascript" src="../js/bit.js"></script>
     <script src="../beermain/index.js"></script>
     <script src="beerInfoApp.js"></script>
     <script type="text/javascript" src="beerRandomApp.js"></script>
+    <script src="../auth/authApp.js"></script>
     
 <script>
+ajaxLoginUser()
 ajaxLoadBeerRandom()
 </script>
 

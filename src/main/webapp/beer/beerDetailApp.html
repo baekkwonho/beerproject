@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="../beermain/fontello-a28e58c3/css/fontello.css" />
 <link rel="stylesheet" type="text/css" href="beerDetailApp.css" />
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -24,11 +25,10 @@
                 <li><input class="nav_button" type="button" value="맥주인증" style="font-size:15px;" /></li>
                 <li><input class="nav_button" type="button" value="맥주위치" style="font-size:15px;" /></li>
                 <li><input class="nav_button" type="button" value="공지사항" style="font-size:15px;" /></li>
-                <li><input class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
+                <li><input id="login_menu_Btn" class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
             </ul></nav>
         </div>
     </header>
-  
   <section id="section1" class="col-md-12 col-lg-12">
     <div id="beerimg" class="col-sm-3 col-md-3 col-lg-3">
       <button id="beerAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#beerAddModal">+</button>
@@ -505,7 +505,6 @@
 
 
 <script>
-
 ajaxLoadBrandList()
 ajaxLoadCateList()
 ajaxLoadCtryList()

@@ -344,3 +344,7 @@ ul.icons li a {
   list-style:none;
 	
 }
+
+#logout_menu_Btn {
+	display: none;
+}

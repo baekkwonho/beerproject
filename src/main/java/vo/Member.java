@@ -5,22 +5,17 @@ import java.util.Date;
 
 public class Member implements Serializable {
   private static final long serialVersionUID = 1L;
+
+  int no;
+  String email;
+  String password;
+  String nickname;
+  Date birth;
+  boolean gender;
+  String drink;
+  String address;
+  int level;
   
-  protected int no;
-  protected String email;
-  protected transient String password;
-  protected String nickname;
-  protected Date birth;
-  protected boolean gender;
-  protected String drink;
-  protected String address;
-  protected int level;
-  
-  @Override
-  public String toString() {
-    return "Member [no=" + no + ", email=" + email + ", password=" + password + ", nickname=" + nickname + ", birth="
-        + birth + ", gender=" + gender + ", drink=" + drink + ", address=" + address + ", level=" + level + "]";
-  }
   
   public int getNo() {
     return no;

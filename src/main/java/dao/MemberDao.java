@@ -8,6 +8,4 @@ public interface MemberDao {
   
   Member selectOneByEmailAndPassword(Map<String,Object> paramMap);
     
-
-  
 }

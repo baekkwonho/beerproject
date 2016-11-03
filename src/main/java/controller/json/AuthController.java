@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import dao.MemberDao;
@@ -19,7 +18,6 @@ import vo.Member;
 
 @Controller 
 @RequestMapping("/auth/") 
-@SessionAttributes({"member"}) // Model 객체에 저장된 정보 중에서 로그인 회원 정보는 따로 세션으로 관리한다.
 public class AuthController {
   
   @Autowired MemberDao memberDao;
@@ -31,34 +29,36 @@ public class AuthController {
       String email,
       String password,
       boolean saveEmail, 
-      Model model,
       SessionStatus sessionStatus) throws Exception {
     
     try {
       Cookie cookie = new Cookie("email", email);
       if (!saveEmail){
         cookie.setMaxAge(0); 
+        cookie.setPath("/");
       } else {
         cookie.setMaxAge(60 * 60 * 24 * 7);
+        cookie.setPath("/");
       }
       response.addCookie(cookie);
-
-      HashMap<String,Object> paramMap = new HashMap<>();
-      paramMap.put("email", email);
-      paramMap.put("password", password);
-      Member member = memberDao.selectOneByEmailAndPassword(paramMap);
+      
+      HashMap<String,Object> map = new HashMap<>();
+      map.put("email", email);
+      map.put("password", password);
+      Member member = memberDao.selectOneByEmailAndPassword(map);
       
       if (member == null) {
         sessionStatus.setComplete(); // 스프링이 관리하는 세션 값을 무효화시킨다.
         return JsonResult.fail();
         
       } else {
-        model.addAttribute("member", member); // Model 객체에 로그인 회원 정보를 담는다.
-        return JsonResult.success();
+        session.setAttribute("member", member);
+        return JsonResult.success(member);
       }
       
     } catch (Exception e) {
       return JsonResult.error(e.getMessage());
+      
     }
   }
   
@@ -68,13 +68,12 @@ public class AuthController {
       sessionStatus.setComplete();
       session.invalidate();
       return JsonResult.success();
-      
     } catch (Exception e) {
       return JsonResult.error(e.getMessage());
     }
   }
   
-  @RequestMapping(path="loginUser")
+  @RequestMapping(path="loginuser")
   public Object loginUser(HttpSession session) throws Exception {
     
     try {
@@ -83,8 +82,8 @@ public class AuthController {
         throw new Exception("로그인이 되지 않았습니다.");
       }
       return JsonResult.success(member);
-      
     } catch (Exception e) {
+      e.printStackTrace();
       return JsonResult.error(e.getMessage());
     }
   }
