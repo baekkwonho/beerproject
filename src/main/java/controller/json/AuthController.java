@@ -1,5 +1,6 @@
 package controller.json;
 
+import java.util.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.Cookie;
@@ -8,7 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -87,6 +87,94 @@ public class AuthController {
       return JsonResult.error(e.getMessage());
     }
   }
+  
+  @RequestMapping(path="confirmemail")
+  public Object confirmEmail(HttpSession session, String email) throws Exception {
+    
+    try {
+      
+      System.out.println(email);
+      
+      HashMap<String, Object> map = new HashMap<>();
+      map.put("email", email);
+      Member member = memberDao.confirmEmail(map);
+      
+      if (member == null) {
+        session.setAttribute("confirmemail", email);
+        return JsonResult.success();
+      }
+        return JsonResult.fail();
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+      return JsonResult.error(e.getMessage());
+    }
+  }
+  
+  
+  
+  @RequestMapping(path="defaultsignup")
+  public Object defaultSignUp(HttpSession session, String password, String nickname, SessionStatus sessionStatus) throws Exception {
+    try {
+      if (session.getAttribute("confirmemail") == null) {
+        return JsonResult.fail();
+      }
+      
+      HashMap<String, Object> map = new HashMap<>();
+      map.put("email", session.getAttribute("confirmemail"));
+      map.put("password", password);
+      map.put("nickname", nickname);
+      
+      memberDao.insertDefaultMember(map);
+      
+      sessionStatus.setComplete();
+      session.invalidate();
+      return JsonResult.success();
+    } catch(Exception e) {
+      e.printStackTrace();
+      return JsonResult.error(e.getMessage());
+    }
+    
+  }
+  
+  @RequestMapping(path="optionsignup")
+  public Object optionSignUp(HttpSession session, String password, String nickname,
+      String birth, String gender, String address, String drink, SessionStatus sessionStatus) throws Exception {
+    try {
+      
+      System.out.println(birth);
+      System.out.println(gender);
+      System.out.println(address);
+      System.out.println(drink);
+      
+      
+      if (session.getAttribute("confirmemail") == null) {
+        return JsonResult.fail();
+      }
+      
+      System.out.println("aaa");
+      
+      HashMap<String, Object> map = new HashMap<>();
+      map.put("email", session.getAttribute("confirmemail"));
+      map.put("password", password);
+      map.put("nickname", nickname);
+      map.put("birth", birth);
+      map.put("gender", gender);
+      map.put("address", address);
+      map.put("drink", drink);
+      
+      memberDao.insertOptionMember(map);
+      
+      sessionStatus.setComplete();
+      session.invalidate();
+      return JsonResult.success();
+    } catch(Exception e) {
+      e.printStackTrace();
+      return JsonResult.error(e.getMessage());
+    }
+    
+  }
+  
   
 }
 

@@ -19,5 +19,20 @@
     select * from membs
     where EMAIL=#{email} and PWD=password(#{password})
   </select>
+  
+  <select id="confirmEmail" resultMap="memberMap" parameterType="map">
+    select * from membs
+    where EMAIL=#{email}
+  </select>
+  
+  <insert id="insertDefaultMember" parameterType="map">
+    insert into membs (email, pwd, nick)
+    values (#{email}, password(#{password}), #{nickname})
+  </insert>
+  
+  <insert id="insertOptionMember" parameterType="map">
+    insert into membs (email, pwd, nick, birth, gen, drk, addr)
+    values (#{email}, password(#{password}), #{nickname}, #{birth}, #{gender}, #{drink}, #{address})
+  </insert>
 
 </mapper>

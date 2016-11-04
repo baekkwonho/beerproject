@@ -121,33 +121,39 @@
               <label>
                 Email Address<span class="req">*</span>
               </label>
-              <input type="email" required autocomplete="off" />
+              <input id="sign_up_email"type="email" required autocomplete="off" />
             </div>
         
             <div class="field-wrap button-conf1">
-              <button type="submit" class="button-conf button-block" style="letter-spacing: 0.5px;">Confirmation</button>
+              <button id="confirmBtn" type="button" class="button-conf button-block" style="letter-spacing: 0.5px;">Confirmation</button>
             </div>
+            
+            <div class="field-wrap button-conf2">
+              <button id="email_success" type="button" class="button-conf button-block" style="letter-spacing: 0.5px;">success!</button>
+              <button id="email_fail" type="button" class="button-conf button-block" style="letter-spacing: 0.5px;">fail!</button>
+            </div>
+            
           </div>
 
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input id="sign_up_password" type="password"required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Confirm Your Password Again<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input id="sign_up_confirm_password" type="password"required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Nickname<span class="req">*</span>
             </label>
-            <input type="text"required autocomplete="off"/>
+            <input id="sign_up_nickname" type="text"required autocomplete="off"/>
           </div>
           
           <h3>Optional Input Data</h3>
@@ -157,14 +163,14 @@
               <label>
                 Year(yyyy)
               </label>
-              <input type="text" maxlength="4" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+              <input id="birth_year" type="text" maxlength="4" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
             </div>
         
             <div class="field-wrap">
               <label>
                 Month(mm)
               </label>
-              <input type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+              <input id="birth_month" type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
             </div>
             
             <div class="field-wrap">
@@ -172,35 +178,48 @@
                 Date(dd)
               </label>
 <!--              <input type="tel" maxlength="2" required autocomplete="off"/>-->
-              <input type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+              <input id="birth_date" type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
             </div>
             
           </div>
           
 
+          <div class="gender-row">
           
-          <div class="field-wrap">
-            <label>
-              Favorite Beer Type
-            </label>
-            <input type="text"required autocomplete="off"/>
+            <div class="field-wrap gender2">
+              <label class="gender-label">Gender</label>
+            </div>
+          
+	          <div class="field-wrap gender1">
+	            <label class="gender-label">Male</label><input type="radio" name="gender" value="1" style="width:20px;height:20px;"/>
+	          </div>
+	          
+	          <div class="field-wrap gender0"> 
+	            <label class="gender-label">Female</label><input type="radio" name="gender" value="0" style="width:20px;height:20px;"/>
+	          </div>
+	          <!-- 
+	            <label>
+	              Favorite Beer Type
+	            </label>
+	            <input id="option_beer_type" type="text"required autocomplete="off"/>
+	             -->
           </div>
           
           <div class="field-wrap">
             <label>
-              Favorite Beer Brand
+              Address
             </label>
-            <input type="text"required autocomplete="off"/>
+            <input id="option_addr" type="text"required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Capability of Drinking
             </label>
-            <input type="text"required autocomplete="off"/>
+            <input id="option_drink" type="text"required autocomplete="off"/>
           </div>
           
-          <button type="button" class="button button-block">Get Started</button>
+          <button id="sign_up_btn" type="button" class="button button-block">Get Started</button>
           
           </form>
 

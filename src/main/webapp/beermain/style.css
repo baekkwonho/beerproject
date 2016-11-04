@@ -200,6 +200,7 @@ textarea {
     
 }
 
+
 .field-wrap {
   position: relative;
   margin-bottom: 40px;
@@ -287,13 +288,20 @@ h4 {
 }
 
 .button-conf1 { 
+	position: relative;
   display: inline-block;
   width: 120px;
   height: 60px;
   /* letter-spacing: 10px; */
 }
 
+.button-conf2 {
+	position: relative;
+	display: inline-block;
+}
+
 .button-conf {
+	display: inline-block;
   height: 46px;
   width: 100px;
   margin-top: px;
@@ -340,4 +348,48 @@ h4 {
   display: block;
   width: 100%;
 }
+
+#email_success {
+	background: none;
+	color: green;
+	display: none;
+}
+
+#email_fail {
+  background: none;
+  color: red;
+  display: none;
+}
+
+.gender1 {
+	position: relative;
+	display: inline-block;
+	left: 150px;
+}
+
+.gender0 {
+	position: relative;
+	display: inline-block;
+	margin-left: 150px;
+	left: 100px;
+}
+
+.gender2 label {
+	
+}
+
+.gender1 label {
+	left: 40px;
+}
+
+.gender0 label {
+  left: 40px;
+}
+
+.gender-label {
+	top: -10px;
+}
+
+
+
 
