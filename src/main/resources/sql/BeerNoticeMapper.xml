@@ -45,8 +45,8 @@
   
   <insert id="insert" parameterType="beerNotice" 
           useGeneratedKeys="true" keyColumn="no" keyProperty="no">
-    insert into BEERNOTICE(title, conts, password, cre_dt)
-    values(#{title}, #{contents}, password(#{password}), now())
+    insert into BEERNOTICE(title, writer, conts, password, cre_dt, vw_cnt)
+    values(#{title}, 'aaa', #{contents}, password(#{password}), now(), 1)
   </insert>
   
   <update id="update" parameterType="beerNotice">

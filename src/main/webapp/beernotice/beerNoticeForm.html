@@ -2,91 +2,362 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시물 입력폼</title>
+<title>Drink! Drink! Drink!</title>
+
+<link rel="stylesheet" type="text/css" href="beerNoticeForm.css" />
+<link rel="stylesheet" type="text/css" href="../beermain/fontello-a28e58c3/css/fontello.css" />
+<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- 모달 관련  -->
+ 
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../beermain/normalize.css">
+    <link rel="stylesheet" href="../beermain/style.css">
+
+
 
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 
-<style>
-.container {
-  width: 600px;
-}
-</style>
+
+
+
+
 </head>
 <body>
-<div class="container">     
-<div style='background-color:navy;font-size:150%;color:white;position:relative;'>
-  자바85기^^
 
-  <div style='position:absolute;right:0px;top:0px;font-size:15px;'>
-    <span id="userName" class="my-login"></span>
-    <a id="loginBtn" href='#' class="btn btn-success btn-xs my-logout">로그인</a>
-    <a id="logoutBtn" href='#' class="btn btn-success btn-xs my-login">로그아웃</a>
-  </div> 
 
-</div>
+    <header>
+        <div class="header_container">
+            <div id="bblogo" class="header_logo homeBtn"><img src="../img/beerbear_logo01.jpeg" /></div>
+            <nav id="bbname" class="header_brname homeBtn"><a>BEER BEAR</a></nav>
+            <nav id="navmenue" class="header_menu"><ul>
+                <li><input class="nav_button infoBtn" type="button" value="맥주정보" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="맥주인증" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="맥주위치" style="font-size:15px;" /></li>
+                <li><input class="nav_button noticeBtn" type="button" value="공지사항" style="font-size:15px;" /></li>
+                <li><input class="nav_button" type="button" value="로그인" style="font-size:15px;" data-toggle="modal" data-target="#myModal" /></li>
+            </ul></nav>
+        </div>
+    </header>
+    
+    
+    
+      <!-- 모달 팝업 -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span class="close_x" aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <div class="modal-body">   <!-- @@@@@@@@@@@@@@@@@@  -->
+    
+    
+        <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#login">Log In</a></li>
+        <li class="tab"><a href="#signup">Sign Up</a></li>
+      </ul>
+      
+      <div class="tab-content">
+       
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+           
+          <form action="/" method="post">
+          
+          
+          
+          <div id="emailbox" class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" id="email" required autocomplete="off"/>
+          </div>
+          
+          
+          
+          <div id="field-pwd" class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" id="password" required autocomplete="off"/>
+          </div>
+          
+          <div class="remem-wrap">
+              <input type="checkbox" id="saveEmail">
+              <h4>Remember Email</h4>
+          
+          </div>
+          
+          <h3 class="forgot"><a href="#">Forgot Password?</a></h3>
+          
+          <button id="loginBtn" class="button button-block">Log In</button>
+          
+          <div>
+              
+            <ul class="icons">
+               
+                <li><a href="#" class=""><input type="button" class="icon-btn icon-f" value="facebook" style="font-size:15px" /></a></li>
+                
+                <li><a href="#" class=""><input type="button" class="icon-btn icon-k" value="kakao" style="font-size:15px" /></a></li>
+                
+                <li><a href="#" class=""><input type="button" class="icon-btn icon-n" value="naver" style="font-size:15px" /></a></li>
+                
+                
+            </ul>
+              
+          </div>
+          
+          </form>
 
-<h1>게시물 입력폼</h1>
-<form class="form-horizontal">
-<div class="form-group my-view">
-  <label for="no" class="col-sm-2 control-label">번호</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="no" readonly>
-  </div>
-</div>
-<div class="form-group">
-  <label for="title" class="col-sm-2 control-label">제목</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="title" placeholder="제목입니다.">
-  </div>
-</div>
-<div class="form-group">
-  <label for="contents" class="col-sm-2 control-label">내용</label>
-  <div class="col-sm-10">
-    <textarea id="contents" class="form-control" 
-              cols="50" rows="10" placeholder="내용입니다."></textarea>
-  </div>
-</div>
-<div class="form-group">
-  <label for="password" class="col-sm-2 control-label">암호</label>
-  <div class="col-sm-10">
-    <input type="password" id="password" class="form-control" 
-           placeholder="암호입력">
-  </div>
-</div>
-<div class="form-group my-view">
-  <label class="col-sm-2 control-label">등록일</label>
-  <div class="col-sm-10">
-    <p id="createdDate" class="form-control-static"></p>
-  </div>
-</div>
-<div class="form-group my-view">
-  <label class="col-sm-2 control-label">조회수</label>
-  <div class="col-sm-10">
-    <p id="viewCount" class="form-control-static"></p>
-  </div>
-</div>
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
-    <button id="updateBtn" type="button" class="btn btn-default my-view">변경</button>
-    <button id="deleteBtn" type="button" class="btn btn-default my-view">삭제</button>
-    <button id="cancelBtn" type="button" class="btn btn-default"
-            onclick="location.href='beerNoticeApp.html'">취소</button>
-  </div>
-</div>
-</form>
+        </div>
+       
+       
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          <h3>Essential Input Data</h3>
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div id="top-email" class="field-wrap">
+              <label>
+                Email Address<span class="req">*</span>
+              </label>
+              <input type="email" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap button-conf1">
+              <button type="submit" class="button-conf button-block" style="letter-spacing: 0.5px;">Confirmation</button>
+            </div>
+          </div>
 
-<p style='background-color:yellow; text-align:center;'>
-  이 예제는 자바85기에서 사용한 것입니다.2</p>
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Confirm Your Password Again<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Nickname<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <h3>Optional Input Data</h3>
+          
+          <div class="birth-row">
+            <div class="field-wrap">
+              <label>
+                Year(yyyy)
+              </label>
+              <input type="text" maxlength="4" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Month(mm)
+              </label>
+              <input type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Date(dd)
+              </label>
+<!--              <input type="tel" maxlength="2" required autocomplete="off"/>-->
+              <input type="text" maxlength="2" required autocomplete="off" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="IME-MODE:disabled;" />
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="field-wrap">
+            <label>
+              Favorite Beer Type
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Favorite Beer Brand
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Capability of Drinking
+            </label>
+            <input type="text"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block">Get Started</button>
+          
+          </form>
+
+        </div>
+        
+       
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+    
+    
+        </div>  <!-- @@@@@@@@@@@@@@@@@@  -->
+<!--         <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+    
+    
+    
+
+
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<div class="form-container">     
+
+
+	<h1>NOTIFICATION</h1>
+	
+	<form class="form-horizontal">
+		<div class="form-group my-view">
+		  <label for="no" class="col-sm-2 control-label">번호</label>
+		  <div class="col-sm-10">
+		    <input type="text" class="form-control" id="no" readonly>
+		  </div>
+		</div>
+		
+		<div class="form-group">
+		  <label for="title" class="col-sm-2 control-label">제목</label>
+		  <div class="col-sm-10">
+		    <input type="text" class="form-control" id="title" placeholder="제목입니다.">
+		  </div>
+		</div>
+		
+		<div class="form-group">
+		  <label for="contents" class="col-sm-2 control-label">내용</label>
+		  <div class="col-sm-10">
+		    <textarea id="contents" class="form-control" 
+		              cols="50" rows="20" placeholder="내용입니다."></textarea>
+		  </div>
+		</div>
+		
+		<div class="form-group">
+		  <label for="password" class="col-sm-2 control-label">암호</label>
+		  <div class="col-sm-10">
+		    <input type="password" id="password" class="form-control" 
+		           placeholder="암호입력">
+		  </div>
+		</div>
+		
+		<div class="form-group my-view">
+		  <label class="col-sm-2 control-label">등록일</label>
+		  <div class="col-sm-10">
+		    <p id="createdDate" class="form-control-static"></p>
+		  </div>
+		</div>
+		
+		<div class="form-group my-view">
+		  <label class="col-sm-2 control-label">조회수</label>
+		  <div class="col-sm-10">
+		    <p id="viewCount" class="form-control-static"></p>
+		  </div>
+		</div>
+		
+		<div class="form-group">
+		  <div class="col-sm-offset-2 col-sm-10">
+		    <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
+		    <button id="updateBtn" type="button" class="btn btn-default my-view">변경</button>
+		    <button id="deleteBtn" type="button" class="btn btn-default my-view">삭제</button>
+		    <button id="cancelBtn" type="button" class="btn btn-default"
+		            onclick="location.href='beerNoticeApp.html'">취소</button>
+		  </div>
+		</div>
+		
+	</form>
+
   
 </div><!-- div.container -->
 
+
+
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+
+    <footer>
+        <div class="footer_container">
+           
+            <div id="bblogo" class="footer_logo homeBtn"><img src="../img/beerbear_logo01.jpeg" /></div>
+            
+            <nav id="bbname" class="footer_brname homeBtn"><a>BEER BEAR</a></nav>
+            
+            
+            
+            <nav id="navmenue" class="footer_menu"><ul class="icons">
+               
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-twitter icon"><span class="label">Twitter</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-youtube icon"><span class="label">youtube</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-facebook icon"><span class="label">facebook</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-instagram icon"><span class="label">instagram</span></a></li>
+               <li class="footer_list" style="width:30px; text-align:center;"><a href="#" class="icon-mail-alt icon"><span class="label">mail</span></a></li>
+               
+            </ul></nav>
+            
+        </div>
+        
+        <div class="footer_bottom">
+           
+            <nav id="navmenue" class="footer_bottom_menu"><ul>
+               
+                <li><input class="nav_button2" type="button" value="ABOUT" style="font-size:15px;" /></li>
+                <li><input class="nav_button2" type="button" value="BLOG" style="font-size:15px;" /></li>
+                <li><input class="nav_button2" type="button" value="NEWS&EVENT" style="font-size:15px;" /></li>
+                <li><input class="nav_button2" type="button" value="CONTACT" style="font-size:15px;" /></li>
+                
+            </ul></nav>
+            
+            <div class="footer_bottom_copyright">
+               <h4>&copy;2016 BEERBEAR All rights reserved.</h4>
+            </div>
+            
+        </div>
+       
+    </footer>
+    
+        <!-- 모달 관련 -->
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js" ></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="../js/bit.js"></script>
+<script src="../beermain/index.js"></script>
 <script type="text/javascript" src="beerNoticeForm.js"></script>
+<script>
+//ajaxLoginUser() // 로그인 유저 정보 가져오기
+//ajaxBeerNoticeList() // 게시물 목록 가져오기
+</script>
+
 <script>
 //ajaxLoginUser() // 로그인 유저 정보 가져오기
 // URL에 no 파라미터 값이 넘어오면 조회 모드로 동작해야 한다.

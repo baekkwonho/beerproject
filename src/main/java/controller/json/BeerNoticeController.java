@@ -41,6 +41,7 @@ public class BeerNoticeController {
       return JsonResult.success();
       
     } catch (Exception e) {
+      e.printStackTrace();
       return JsonResult.fail(e.getMessage());
     }
   }

@@ -1,10 +1,27 @@
-$("#loginBtn").click(function(event) {
-	location.href = "../auth/authApp.html"
-});
 
-$("#logoutBtn").click(function(event) {
-	location.href = "../auth/authApp.html"
-});
+
+var homeBtn = document.querySelectorAll(".homeBtn")
+for(var i = 0; i <homeBtn.length; i++) {
+	    homeBtn[i].onclick = function(event) {
+	      window.location.href="../beermain/beerMainApp.html"
+	    }
+	  }
+
+var infoBtn = document.querySelectorAll(".infoBtn")
+for(var i = 0; i <infoBtn.length; i++) {
+		infoBtn[i].onclick = function(event) {
+	      window.location.href="../beer/beerInfoApp.html"
+	    }
+	  }
+
+var noticeBtn = document.querySelectorAll(".noticeBtn")
+for(var i = 0; i < noticeBtn.length; i++) {
+		noticeBtn[i].onclick = function(event) {
+	      window.location.href="../beernotice/beerNoticeApp.html"
+	    }
+	  }
+
+
 
 $("#addBtn").click(function(event) {
 	var beerNotice = {
@@ -51,7 +68,7 @@ function ajaxLoadBeerNotice(no) {
 		$("#no").val(result.data.no);
 		$("#title").val(result.data.title);
 		$("#contents").val(result.data.contents);
-		$("#createdDate").text(result.data.createdDate2);
+		$("#createdDate").text(result.data.createdDate);
 		$("#viewCount").text(result.data.viewCount);
 	})
 }

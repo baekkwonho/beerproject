@@ -86,27 +86,18 @@ header img {
     cursor: pointer;
 }
 
-#new-write {
-	float: right;
-	padding-right: 30px;
+
+div.form-group {
+	text-align: left;
+	padding-right: 70px;
 }
 
-#new-write p {
-	color: black;
+input.form-control {
+	/* padding-top: 50px; */
 }
 
-#boardTable th {
-	text-align: center;
-	color: black;
-}
-
-a.titleLink {
-	color: black;
-}
-
-.notice-container {
-	border: 1px solid #e0c80f;
-	/* background: #5ba0cc; */
+ .form-container {
+	border: 1px solid #d8a113;
 	background: #d8a113;
 	border-radius: 10px;
 	width: 650px;
@@ -115,6 +106,11 @@ a.titleLink {
 	align-items: center;
 	box-shadow: 0 10px 10px 0;
 	color: black;
+} 
+
+.form-group label {
+	color: black;
+	font-size: 15px;
 }
 
 .footer_container {

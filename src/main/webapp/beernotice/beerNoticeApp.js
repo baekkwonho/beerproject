@@ -14,12 +14,12 @@ for(var i = 0; i <infoBtn.length; i++) {
 	    }
 	  }
 
-var cateBtn = document.querySelectorAll(".cateBtn")
-for(var i = 0; i <cateBtn.length; i++) {
-	cateBtn[i].onclick = function(event) {
-		window.location.href="../beercate/beerCateApp.html"
-	}
-}
+var noticeBtn = document.querySelectorAll(".noticeBtn")
+for(var i = 0; i < noticeBtn.length; i++) {
+		noticeBtn[i].onclick = function(event) {
+	      window.location.href="../beernotice/beerNoticeApp.html"
+	    }
+	  }
 
 
 // ddddddddddddddddddddddddddddddddddd
